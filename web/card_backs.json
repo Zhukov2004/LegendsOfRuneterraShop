@@ -1,0 +1,1031 @@
+[
+    {
+        "code": "Summoner's Rift (Order)",
+        "image": "https://wiki.leagueoflegends.com/images/Summoner%27s_Rift_Order_LoR_Card_Back.png?1a75a",
+        "rarity": "Common",
+        "description": "For legends who prefer the classics.",
+        "price": 100
+    },
+    {
+        "code": "Summoner's Rift (Chaos)",
+        "image": "https://wiki.leagueoflegends.com/images/Summoner%27s_Rift_Chaos_LoR_Card_Back.png?37bf1",
+        "rarity": "Common",
+        "description": "For legends who prefer the classics.",
+        "price": 100
+    },
+    {
+        "code": "Bandle City",
+        "image": "https://wiki.leagueoflegends.com/images/Bandle_City_LoR_Card_Back.png?f25e4",
+        "rarity": "Common",
+        "description": "For legends who seek out hidden realms.",
+        "price": 100
+    },
+    {
+        "code": "Bilgewater",
+        "image": "https://wiki.leagueoflegends.com/images/Bilgewater_LoR_Card_Back.png?6403f",
+        "rarity": "Common",
+        "description": "For legends who take bold risks for big rewards.",
+        "price": 100
+    },
+    {
+        "code": "Celestials",
+        "image": "https://wiki.leagueoflegends.com/images/Celestials_LoR_Card_Back.png?42b90",
+        "rarity": "Rare",
+        "description": "The majesty of the stars.",
+        "price": 300
+    },
+    {
+        "code": "Demacia",
+        "image": "https://wiki.leagueoflegends.com/images/Demacia_LoR_Card_Back.png?d68eb",
+        "rarity": "Common",
+        "description": "For legends who fight with honor.",
+        "price": 100
+    },
+    {
+        "code": "Dragonborn",
+        "image": "https://wiki.leagueoflegends.com/images/Dragonborn_LoR_Card_Back.png?29721",
+        "rarity": "Rare",
+        "description": "For legends who burn with fire and fury.",
+        "price": 300
+    },
+    {
+        "code": "Freljord",
+        "image": "https://wiki.leagueoflegends.com/images/Freljord_LoR_Card_Back.png?72ccb",
+        "rarity": "Common",
+        "description": "For legends who do what it takes to survive.",
+        "price": 100
+    },
+    {
+        "code": "Ionia",
+        "image": "https://wiki.leagueoflegends.com/images/Ionia_LoR_Card_Back.png?a24be",
+        "rarity": "Common",
+        "description": "For legends who surpass each of their enemies.",
+        "price": 100
+    },
+    {
+        "code": "Moonfall",
+        "image": "https://wiki.leagueoflegends.com/images/Moonfall_LoR_Card_Back.png?717f1",
+        "rarity": "Rare",
+        "description": "The Wisdom of the moon.",
+        "price": 300
+    },
+    {
+        "code": "Noxus",
+        "image": "https://wiki.leagueoflegends.com/images/Noxus_LoR_Card_Back.png?50f7a",
+        "rarity": "Common",
+        "description": "For legends who triumph in a blaze of glory.",
+        "price": 100
+    },
+    {
+        "code": "Piltover",
+        "image": "https://wiki.leagueoflegends.com/images/Piltover_LoR_Card_Back.png?3a364",
+        "rarity": "Common",
+        "description": "For legends who invent new methods of success.",
+        "price": 100
+    },
+    {
+        "code": "Shadow Isles",
+        "image": "https://wiki.leagueoflegends.com/images/Shadow_Isles_LoR_Card_Back.png?f698d",
+        "rarity": "Common",
+        "description": "For legends who will sacrifice anything to preveil.",
+        "price": 100
+    },
+    {
+        "code": "Sunrise",
+        "image": "https://wiki.leagueoflegends.com/images/Sunrise_LoR_Card_Back.png?b6080",
+        "rarity": "Rare",
+        "description": "The Glory of the sun.",
+        "price": 300
+    },
+    {
+        "code": "Shurima",
+        "image": "https://wiki.leagueoflegends.com/images/Shurima_LoR_Card_Back.png?b66f4",
+        "rarity": "Common",
+        "description": "For legends who come back stronger than before.",
+        "price": 100
+    },
+    {
+        "code": "Targon",
+        "image": "https://wiki.leagueoflegends.com/images/Targon_LoR_Card_Back.png?5ae0a",
+        "rarity": "Common",
+        "description": "For legends who reach for a higher power.",
+        "price": 100
+    },
+    {
+        "code": "Zaun",
+        "image": "https://wiki.leagueoflegends.com/images/LoR_Zaun_Card_Back.png?0b31a",
+        "rarity": "Common",
+        "description": "For legends who invent new methods of success.",
+        "price": 100
+    },
+    {
+        "code": "Shard of the Monolith",
+        "image": "https://wiki.leagueoflegends.com/images/Shard_of_the_Monolith_LoR_Card_Back.png?a0b5e",
+        "rarity": "Rare",
+        "description": "For legends who lie in wait.",
+        "price": 300
+    },
+    {
+        "code": "The Bloodharbor Ripper",
+        "image": "https://wiki.leagueoflegends.com/images/The_Bloodharbor_Ripper_LoR_Card_Back.png?82361",
+        "rarity": "Rare",
+        "description": "For legends who hunger for vengeance.",
+        "price": 300
+    },
+    {
+        "code": "The Blind Monk",
+        "image": "https://wiki.leagueoflegends.com/images/The_Blind_Monk_LoR_Card_Back.png?cca13",
+        "rarity": "Rare",
+        "description": "For legends who extend their senses and strike with skill.",
+        "price": 300
+    },
+    {
+        "code": "The Bounty Hunter",
+        "image": "https://wiki.leagueoflegends.com/images/The_Bounty_Hunter_LoR_Card_Back.png?86443",
+        "rarity": "Rare",
+        "description": "For legends who go in guns blazing.",
+        "price": 300
+    },
+    {
+        "code": "The Butcher of the Sands",
+        "image": "https://wiki.leagueoflegends.com/images/The_Butcher_of_the_Sands_LoR_Card_Back.png?df00e",
+        "rarity": "Rare",
+        "description": "For legends who succumb to the beast within.",
+        "price": 300
+    },
+    {
+        "code": "The Curator of the Sands",
+        "image": "https://wiki.leagueoflegends.com/images/The_Curator_of_the_Sands_LoR_Card_Back.png?99aec",
+        "rarity": "Rare",
+        "description": "For legends who do what is right, not what is easy.",
+        "price": 300
+    },
+    {
+        "code": "The Chronokeeper",
+        "image": "https://wiki.leagueoflegends.com/images/The_Chronokeeper_LoR_Card_Back.png?d9c88",
+        "rarity": "Rare",
+        "description": "For legends who take fate into their own hands.",
+        "price": 300
+    },
+    {
+        "code": "The Defender of Tomorrow",
+        "image": "https://wiki.leagueoflegends.com/images/The_Defender_of_Tomorrow_LoR_Card_Back.png?fa56a",
+        "rarity": "Rare",
+        "description": "For legends who forge the future.",
+        "price": 300
+    },
+    {
+        "code": "The Emperor of the Sands",
+        "image": "https://wiki.leagueoflegends.com/images/The_Emperor_of_the_Sands_LoR_Card_Back.png?605f6",
+        "rarity": "Rare",
+        "description": "For legends who overcome the past.",
+        "price": 300
+    },
+    {
+        "code": "The Exile",
+        "image": "https://wiki.leagueoflegends.com/images/The_Exile_LoR_Card_Back.png?bcd66",
+        "rarity": "Rare",
+        "description": "For legends born in battle and raised by war.",
+        "price": 300
+    },
+    {
+        "code": "The Keeper of the Hammer",
+        "image": "https://wiki.leagueoflegends.com/images/The_Keeper_of_the_Hammer_LoR_Card_Back.png?37307",
+        "rarity": "Rare",
+        "description": "For legends with unwavering hearts.",
+        "price": 300
+    },
+    {
+        "code": "The Loose Cannon",
+        "image": "https://wiki.leagueoflegends.com/images/The_Loose_Cannon_LoR_Card_Back.png?f161f",
+        "rarity": "Rare",
+        "description": "For legends who can't wait to blow stuff up.",
+        "price": 300
+    },
+    {
+        "code": "The Might Of Demacia",
+        "image": "https://wiki.leagueoflegends.com/images/The_Might_Of_Demacia_LoR_Card_Back.png?aff35",
+        "rarity": "Rare",
+        "description": "For legends who do not falter.",
+        "price": 300
+    },
+    {
+        "code": "The Nine-Tailed Fox",
+        "image": "https://wiki.leagueoflegends.com/images/The_Nine-Tailed_Fox_LoR_Card_Back.png?ec8b6",
+        "rarity": "Rare",
+        "description": "For legends who wander in search of home.",
+        "price": 300
+    },
+    {
+        "code": "The Redeemer",
+        "image": "https://wiki.leagueoflegends.com/images/The_Redeemer_LoR_Card_Back.png?c8205",
+        "rarity": "Rare",
+        "description": "For legends who find hope in the darkest hour.",
+        "price": 300
+    },
+    {
+        "code": "The Rogue Sentinel",
+        "image": "https://wiki.leagueoflegends.com/images/The_Rogue_Sentinel_LoR_Card_Back.png?f49e1",
+        "rarity": "Rare",
+        "description": "For legends who see rules as... suggestions.",
+        "price": 300
+    },
+    {
+        "code": "The Ruined King",
+        "image": "https://wiki.leagueoflegends.com/images/The_Ruined_King_LoR_Card_Back.png?01664",
+        "rarity": "Rare",
+        "description": "For legends who refuse to give death the last word.",
+        "price": 300
+    },
+    {
+        "code": "The Sherriff of Piltover",
+        "image": "https://wiki.leagueoflegends.com/images/The_Sherriff_of_Piltover_LoR_Card_Back.png?680e6",
+        "rarity": "Rare",
+        "description": "For legends who never miss.",
+        "price": 300
+    },
+    {
+        "code": "The Stoneweaver",
+        "image": "https://wiki.leagueoflegends.com/images/The_Stoneweaver_LoR_Card_Back.png?c084b",
+        "rarity": "Rare",
+        "description": "For legends who move mountains",
+        "price": 300
+    },
+    {
+        "code": "The Tidal Trickster",
+        "image": "https://wiki.leagueoflegends.com/images/The_Tidal_Trickster_LoR_Card_Back.png?59191",
+        "rarity": "Rare",
+        "description": "For legends who slip past every trap.",
+        "price": 300
+    },
+    {
+        "code": "The Unforgiven",
+        "image": "https://wiki.leagueoflegends.com/images/The_Unforgiven_LoR_Card_Back.png?7f20e",
+        "rarity": "Rare",
+        "description": "For legends who follow only one path—their own.",
+        "price": 300
+    },
+    {
+        "code": "The Void Burrower",
+        "image": "https://wiki.leagueoflegends.com/images/The_Void_Burrower_LoR_Card_Back.png?e8368",
+        "rarity": "Rare",
+        "description": "For legends who unleash death from below.",
+        "price": 300
+    },
+    {
+        "code": "The Yordle Gunner",
+        "image": "https://wiki.leagueoflegends.com/images/The_Yordle_Gunner_LoR_Card_Back.png?fa66e",
+        "rarity": "Rare",
+        "description": "For legends who give it their all.",
+        "price": 300
+    },
+    {
+        "code": "Arclight",
+        "image": "https://wiki.leagueoflegends.com/images/Arclight_LoR_Card_Back.png?b316d",
+        "rarity": "Rare",
+        "description": "Only the worthiest will be chosen.",
+        "price": 300
+    },
+    {
+        "code": "Arclight Varus",
+        "image": "https://wiki.leagueoflegends.com/images/Arclight_Varus_LoR_Card_Back.png?18205",
+        "rarity": "Rare",
+        "description": "Three as one.",
+        "price": 300
+    },
+    {
+        "code": "Above the Clouds",
+        "image": "https://wiki.leagueoflegends.com/images/Above_the_Clouds_LoR_Card_Back.png?b4dcb",
+        "rarity": "Rare",
+        "description": "Soar to new heights.",
+        "price": 300
+    },
+    {
+        "code": "Arcade",
+        "image": "https://wiki.leagueoflegends.com/images/Arcade_LoR_Card_Back.png?76dc1",
+        "rarity": "Rare",
+        "description": "Take your game to the next level.",
+        "price": 300
+    },
+    {
+        "code": "Arcade Anivia",
+        "image": "https://wiki.leagueoflegends.com/images/Arcade_Anivia_LoR_Card_Back.png?4ff42",
+        "rarity": "Rare",
+        "description": "Can ydodge 'em all?",
+        "price": 300
+    },
+    {
+        "code": "Arcade Miss Fortune",
+        "image": "https://wiki.leagueoflegends.com/images/Arcade_Miss_Fortune_LoR_Card_Back.png?488b3",
+        "rarity": "Rare",
+        "description": "Shoot 'em up.",
+        "price": 300
+    },
+    {
+        "code": "Battle Academia Ezreal",
+        "image": "https://wiki.leagueoflegends.com/images/Battle_Academia_LoR_Ezreal_Card_Back.png?a09b2",
+        "rarity": "Rare",
+        "description": "For legends who are probably late for class.",
+        "price": 300
+    },
+    {
+        "code": "Battle Academia Lux",
+        "image": "https://wiki.leagueoflegends.com/images/Battle_Academia_LoR_Lux_Card_Back.png?6a7e8",
+        "rarity": "Rare",
+        "description": "For legends who help their class shine bright.",
+        "price": 300
+    },
+    {
+        "code": "Bullet Birds 2",
+        "image": "https://wiki.leagueoflegends.com/images/Bullet_Birds_2_LoR_Card_Back.png?f62b3",
+        "rarity": "Rare",
+        "description": "A remake of the old classic.",
+        "price": 300
+    },
+    {
+        "code": "Boo!",
+        "image": "https://wiki.leagueoflegends.com/images/Boo%21_LoR_Card_Back.png?ce25c",
+        "rarity": "Rare",
+        "description": "Happy Harrowing!",
+        "price": 300
+    },
+    {
+        "code": "Corrupted Azir",
+        "image": "https://wiki.leagueoflegends.com/images/Corrupted_Azir_LoR_Card_Back.png?94125",
+        "rarity": "Rare",
+        "description": "Even god-emperors can fall.",
+        "price": 300
+    },
+    {
+        "code": "Corrupted Nasus",
+        "image": "https://wiki.leagueoflegends.com/images/Corrupted_Nasus_LoR_Card_Back.png?1960e",
+        "rarity": "Rare",
+        "description": "The curator's judgment, warped by blood.",
+        "price": 300
+    },
+    {
+        "code": "Corrupted Pantheon",
+        "image": "https://wiki.leagueoflegends.com/images/Corrupted_Pantheon_LoR_Card_Back.png?595d8",
+        "rarity": "Rare",
+        "description": "Divine power corrupts even the strongest of hearts.",
+        "price": 300
+    },
+    {
+        "code": "Corrupted Renekton",
+        "image": "https://wiki.leagueoflegends.com/images/Corrupted_Renekton_LoR_Card_Back.png?66565",
+        "rarity": "Rare",
+        "description": "The butcher's fury, fueled by blood.",
+        "price": 300
+    },
+    {
+        "code": "Corrupted Xerath",
+        "image": "https://wiki.leagueoflegends.com/images/Corrupted_Xerath_LoR_Card_Back.png?77c51",
+        "rarity": "Rare",
+        "description": "Empowered by the blood of the desert itself.",
+        "price": 300
+    },
+    {
+        "code": "Corrupted Zoe",
+        "image": "https://wiki.leagueoflegends.com/images/Corrupted_Zoe_LoR_Card_Back.png?8f82b",
+        "rarity": "Rare",
+        "description": "Cursed kids can be so cruel.",
+        "price": 300
+    },
+    {
+        "code": "Cosmic Exile",
+        "image": "https://wiki.leagueoflegends.com/images/Cosmic_Exile_LoR_Card_Back.png?2e47f",
+        "rarity": "Rare",
+        "description": "For legends hoping to find their place among the stars.",
+        "price": 300
+    },
+    {
+        "code": "Coven Ahri",
+        "image": "https://wiki.leagueoflegends.com/images/Coven_Ahri_LoR_Card_Back.png?b67f7",
+        "rarity": "Rare",
+        "description": "Follow the Half-Light Jackal.",
+        "price": 300
+    },
+    {
+        "code": "Coven Ashe",
+        "image": "https://wiki.leagueoflegends.com/images/Coven_Ashe_LoR_Card_Back.png?a8433",
+        "rarity": "Rare",
+        "description": "Wield the power of the Jet-Black Ibex.",
+        "price": 300
+    },
+    {
+        "code": "Coven Evelynn",
+        "image": "https://wiki.leagueoflegends.com/images/Coven_Evelynn_LoR_Card_Back.png?73139",
+        "rarity": "Rare",
+        "description": "More than mortal.",
+        "price": 300
+    },
+    {
+        "code": "Crossed Spirits",
+        "image": "https://wiki.leagueoflegends.com/images/Crossed_Spirits_LoR_Card_Back.png?219d9",
+        "rarity": "Rare",
+        "description": "\"I'm not the man you think I am.\"",
+        "price": 300
+    },
+    {
+        "code": "Darkin",
+        "image": "https://wiki.leagueoflegends.com/images/Darkin_LoR_Card_Back.png?fdf71",
+        "rarity": "Rare",
+        "description": "The fallen god-warriors have reawakened.",
+        "price": 300
+    },
+    {
+        "code": "Eclipse Knight",
+        "image": "https://wiki.leagueoflegends.com/images/Eclipse_Knight_LoR_Card_Back.png?fb9a9",
+        "rarity": "Rare",
+        "description": "The Order will be strong enough to face these Old Gods again. To fail means annihilation.",
+        "price": 300
+    },
+    {
+        "code": "Eclipse Knight Diana",
+        "image": "https://wiki.leagueoflegends.com/images/Eclipse_Knight_Diana_LoR_Card_Back.png?365d5",
+        "rarity": "Rare",
+        "description": "Even in perpetual darkness, the truth must be brought to light.",
+        "price": 300
+    },
+    {
+        "code": "Emerald Rift",
+        "image": "https://wiki.leagueoflegends.com/images/Emerald_Rift_LoR_Card_Back.png?c9f36",
+        "rarity": "Common",
+        "description": "For legends who prefer emerald to aquamarine.",
+        "price": 100
+    },
+    {
+        "code": "Eye of Zaun",
+        "image": "https://wiki.leagueoflegends.com/images/Eye_of_Zaun_LoR_Card_Back.png?cbd57",
+        "rarity": "Rare",
+        "description": "The Undercity sees all.",
+        "price": 300
+    },
+    {
+        "code": "First Year",
+        "image": "https://wiki.leagueoflegends.com/images/First_Year_LoR_Card_Back.png?1bac1",
+        "rarity": "Rare",
+        "description": "For all the legends who made our first year spectacular.",
+        "price": 300
+    },
+    {
+        "code": "Fist Bump",
+        "image": "https://wiki.leagueoflegends.com/images/Fist_Bump_LoR_Card_Back.png?df14e",
+        "rarity": "Rare",
+        "description": "For legends who make Runeterra a better place.",
+        "price": 300
+    },
+    {
+        "code": "Final Boss Veigar",
+        "image": "https://wiki.leagueoflegends.com/images/Final_Boss_Veigar_LoR_Card_Back.png?ba8c2",
+        "rarity": "Rare",
+        "description": "Veigar's Game Over, coming soon to arcades near you.",
+        "price": 300
+    },
+    {
+        "code": "Fortune's Bounty",
+        "image": "https://wiki.leagueoflegends.com/images/Fortune%27s_Bounty_LoR_Card_Back.png?908c0",
+        "rarity": "Rare",
+        "description": "Celebrate with a bang.",
+        "price": 300
+    },
+    {
+        "code": "Fortune's Faithful",
+        "image": "https://wiki.leagueoflegends.com/images/Fortune%27s_Faithful_LoR_Card_Back.png?5f9cd",
+        "rarity": "Rare",
+        "description": "Celebrate with a whisper.",
+        "price": 300
+    },
+    {
+        "code": "Festival Spirit",
+        "image": "https://wiki.leagueoflegends.com/images/Festival_Spirit_LoR_Card_Back.png?922f0",
+        "rarity": "Rare",
+        "description": "For those who sojourn with spirits.",
+        "price": 300
+    },
+    {
+        "code": "Gem of Runeterra",
+        "image": "https://wiki.leagueoflegends.com/images/Gem_of_Runeterra_LoR_Card_Back.png?99745",
+        "rarity": "Rare",
+        "description": "Gleaming crystals light your path.",
+        "price": 300
+    },
+    {
+        "code": "Gods & Monsters",
+        "image": "https://wiki.leagueoflegends.com/images/Gods_%26_Monsters_LoR_Card_Back.png?ade0e",
+        "rarity": "Rare",
+        "description": "Seek what sleeps beneath the old wood.",
+        "price": 300
+    },
+    {
+        "code": "Hextech Crystal",
+        "image": "https://wiki.leagueoflegends.com/images/Hextech_Crystal_LoR_Card_Back.png?9073b",
+        "rarity": "Rare",
+        "description": "Handle with care.",
+        "price": 300
+    },
+    {
+        "code": "Jack",
+        "image": "https://wiki.leagueoflegends.com/images/Jack_LoR_Card_Back.png?5e98c",
+        "rarity": "Rare",
+        "description": "\"Can't be king without breaking a few bones.\"",
+        "price": 300
+    },
+    {
+        "code": "Janna",
+        "image": "https://wiki.leagueoflegends.com/images/Janna_LoR_Card_Back.png?e8e25",
+        "rarity": "Rare",
+        "description": "The wind carries prayers for protection.",
+        "price": 300
+    },
+    {
+        "code": "Kayn & Rhaast",
+        "image": "https://wiki.leagueoflegends.com/images/Kayn_%26_Rhaast_LoR_Card_Back.png?d2681",
+        "rarity": "Rare",
+        "description": "Eventually, only one will remain.",
+        "price": 300
+    },
+    {
+        "code": "K/DA ALL OUT",
+        "image": "https://wiki.leagueoflegends.com/images/KDA_ALL_OUT_LoR_Card_Back.png?8acb6",
+        "rarity": "Rare",
+        "description": "Calling all BLADES.",
+        "price": 300
+    },
+    {
+        "code": "Lab of Legends: The Saltwater Scrouge",
+        "image": "https://wiki.leagueoflegends.com/images/Lab_of_Legends_The_Saltwater_Scourge_LoR_Card_Back.png?efb1f",
+        "rarity": "Rare",
+        "description": "Legends Labs, August 2021",
+        "price": 300
+    },
+    {
+        "code": "Lady of Luminosity",
+        "image": "https://wiki.leagueoflegends.com/images/Lady_of_Luminosity_LoR_Card_Back.png?2479b",
+        "rarity": "Rare",
+        "description": "For legends who do not fear the dark.",
+        "price": 300
+    },
+    {
+        "code": "Nidalee and Neeko",
+        "image": "https://wiki.leagueoflegends.com/images/Nidalee_and_Neeko_LoR_Card_Back.png?d90fa",
+        "rarity": "Rare",
+        "description": "Love comes in all shapes and colors.",
+        "price": 300
+    },
+    {
+        "code": "Nightshade Spirit",
+        "image": "https://wiki.leagueoflegends.com/images/Nightshade_Spirit_LoR_Card_Back.png?d2603",
+        "rarity": "Rare",
+        "description": "For those who dance with danger.",
+        "price": 300
+    },
+    {
+        "code": "Nilah",
+        "image": "https://wiki.leagueoflegends.com/images/Nilah_LoR_Card_Back.png?6eee3",
+        "rarity": "Rare",
+        "description": "By one blade-bound evil, she will destroy the rest...",
+        "price": 300
+    },
+    {
+        "code": "Planet Urf",
+        "image": "https://wiki.leagueoflegends.com/images/Planet_Urf_LoR_Card_Back.png?86c39",
+        "rarity": "Rare",
+        "description": "Abs of gold > abs of steel",
+        "price": 300
+    },
+    {
+        "code": "Plaque of Runeterra",
+        "image": "https://wiki.leagueoflegends.com/images/Plaque_of_Runeterra_LoR_Card_Back.png?d12b9",
+        "rarity": "Rare",
+        "description": "A metallic sheen guides your journey.",
+        "price": 300
+    },
+    {
+        "code": "Pool Party Heimerdinger",
+        "image": "https://wiki.leagueoflegends.com/images/Pool_Party_Heimerdinger_LoR_Card_Back.png?274b9",
+        "rarity": "Rare",
+        "description": "For legends who get the guns out when the sun's out.",
+        "price": 300
+    },
+    {
+        "code": "Pool Party Taliyah",
+        "image": "https://wiki.leagueoflegends.com/images/Pool_Party_Taliyah_LoR_Card_Back.png?c828a",
+        "rarity": "Rare",
+        "description": "For legends who love the sand between their toes.",
+        "price": 300
+    },
+    {
+        "code": "Pulsefire Rogue",
+        "image": "https://wiki.leagueoflegends.com/images/Pulsefire_Rogue_LoR_Card_Back.png?d24bf",
+        "rarity": "Rare",
+        "description": "Things to do. Timelines to save.",
+        "price": 300
+    },
+    {
+        "code": "Pulsefire Siblings",
+        "image": "https://wiki.leagueoflegends.com/images/Pulsefire_Siblings_LoR_Card_Back.png?5472c",
+        "rarity": "Rare",
+        "description": "They will reunite beyond time's boundaries.",
+        "price": 300
+    },
+    {
+        "code": "Pulsefire Truthseeker",
+        "image": "https://wiki.leagueoflegends.com/images/Pulsefire_Truthseeker_LoR_Card_Back.png?9314a",
+        "rarity": "Rare",
+        "description": "Uncover the lies of the past.",
+        "price": 300
+    },
+    {
+        "code": "Pulsefire Virtuoso",
+        "image": "https://wiki.leagueoflegends.com/images/Pulsefire_Virtuoso_LoR_Card_Back.png?cb4bc",
+        "rarity": "Rare",
+        "description": "Art requires a certain deviance.",
+        "price": 300
+    },
+    {
+        "code": "Ruination",
+        "image": "https://wiki.leagueoflegends.com/images/Ruination_LoR_Card_Back.png?d2b1a",
+        "rarity": "Rare",
+        "description": "For legends who answer to the winds of the mist.",
+        "price": 300
+    },
+    {
+        "code": "Samira",
+        "image": "https://wiki.leagueoflegends.com/images/Samira_LoR_Card_Back.png?4b4cc",
+        "rarity": "Rare",
+        "description": "\"Blink and you'll miss me.\"",
+        "price": 300
+    },
+    {
+        "code": "Scout's Honor",
+        "image": "https://wiki.leagueoflegends.com/images/Scout%27s_Honor_LoR_Card_Back.png?b8dcd",
+        "rarity": "Rare",
+        "description": "For legends who go above and beyond.",
+        "price": 300
+    },
+    {
+        "code": "Scroll of Runeterra",
+        "image": "https://wiki.leagueoflegends.com/images/Scroll_of_Runeterra_LoR_Card_Back.png?27f55",
+        "rarity": "Rare",
+        "description": "Faded parchment reveals your destination.",
+        "price": 300
+    },
+    {
+        "code": "Seasonal Competitor",
+        "image": "https://wiki.leagueoflegends.com/images/LoR_Seasonal_Competitor_Card_Back.png?21af5",
+        "rarity": "Rare",
+        "description": "Take pride in each and every victory.",
+        "price": 300
+    },
+    {
+        "code": "Sentinels of Light",
+        "image": "https://wiki.leagueoflegends.com/images/Sentinels_of_Light_LoR_Card_Back.png?78b29",
+        "rarity": "Rare",
+        "description": "For legends who light the way with a steadfast heart.",
+        "price": 300
+    },
+    {
+        "code": "Sett",
+        "image": "https://wiki.leagueoflegends.com/images/Sett_LoR_Card_Back.png?93245",
+        "rarity": "Rare",
+        "description": "\"I'm the boss. That's all there is to it.\"",
+        "price": 300
+    },
+    {
+        "code": "Sett's Invitation",
+        "image": "https://wiki.leagueoflegends.com/images/Sett%27s_Invitation_LoR_Card_Back.png?2d40c",
+        "rarity": "Rare",
+        "description": "\"Welcome to the arena.\"",
+        "price": 300
+    },
+    {
+        "code": "Shadow of the Dark Star",
+        "image": "https://wiki.leagueoflegends.com/images/Shadow_of_the_Dark_Star_LoR_Card_Back.png?e1883",
+        "rarity": "Rare",
+        "description": "For legends who embrace the chaos within.",
+        "price": 300
+    },
+    {
+        "code": "Snow Day",
+        "image": "https://wiki.leagueoflegends.com/images/Snow_Day_LoR_Card_Back.png?4edb2",
+        "rarity": "Rare",
+        "description": "'Tis the season… for victory!",
+        "price": 300
+    },
+    {
+        "code": "Solar Eclipse Leona",
+        "image": "https://wiki.leagueoflegends.com/images/Solar_Eclipse_Leona_LoR_Card_Back.png?856be",
+        "rarity": "Rare",
+        "description": "\"Upon this sun-imbued shield, I swear: our Order shall not fall.\"",
+        "price": 300
+    },
+    {
+        "code": "Soul Bound",
+        "image": "https://wiki.leagueoflegends.com/images/Soul_Bound_LoR_Card_Back.png?4ab0a",
+        "rarity": "Rare",
+        "description": "This bond of friendship bridges death itself.",
+        "price": 300
+    },
+    {
+        "code": "Soul Fighter Nidalee",
+        "image": "https://wiki.leagueoflegends.com/images/Soul_Fighter_Nidalee_LoR_Card_Back.png?5f7d3",
+        "rarity": "Rare",
+        "description": "The hunt for victory begins.",
+        "price": 300
+    },
+    {
+        "code": "Soul Fighter Samira",
+        "image": "https://wiki.leagueoflegends.com/images/Soul_Fighter_Samira_LoR_Card_Back.png?5e9d2",
+        "rarity": "Rare",
+        "description": "Style to spare.",
+        "price": 300
+    },
+    {
+        "code": "Soul Fighter Viego",
+        "image": "https://wiki.leagueoflegends.com/images/Soul_Fighter_Viego_LoR_Card_Back.png?bcb88",
+        "rarity": "Rare",
+        "description": "This is the year his Isolde will be returned to him--Viego is sure of it! What are a few souls more?",
+        "price": 300
+    },
+    {
+        "code": "Spirit Blossom",
+        "image": "https://wiki.leagueoflegends.com/images/Spirit_Blossom_LoR_Card_Back.png?672e2",
+        "rarity": "Rare",
+        "description": "For those who find wisdom in tradition.",
+        "price": 300
+    },
+    {
+        "code": "Spirit of Nature",
+        "image": "https://wiki.leagueoflegends.com/images/Spirit_of_Nature_LoR_Card_Back.png?0e366",
+        "rarity": "Rare",
+        "description": "Never underestimate the power of the forest.",
+        "price": 300
+    },
+    {
+        "code": "Spirit of Obsession",
+        "image": "https://wiki.leagueoflegends.com/images/Spirit_of_Obsession_LoR_Card_Back.png?0a75b",
+        "rarity": "Rare",
+        "description": "\"What is the worth of a soul?\"",
+        "price": 300
+    },
+    {
+        "code": "Spirit of the Bloom",
+        "image": "https://wiki.leagueoflegends.com/images/Spirit_of_the_Bloom_LoR_Card_Back.png?8f284",
+        "rarity": "Rare",
+        "description": "\"Appreciate the delicate art in every stem, every petal.\"",
+        "price": 300
+    },
+    {
+        "code": "Star Gem",
+        "image": "https://wiki.leagueoflegends.com/images/Star_Gem_LoR_Card_Back.png?8daad",
+        "rarity": "Rare",
+        "description": "A twinkling symbol of hope.",
+        "price": 300
+    },
+    {
+        "code": "Star Guardian Hotshot",
+        "image": "https://wiki.leagueoflegends.com/images/Star_Guardian_Hotshot_LoR_Card_Back.png?6a140",
+        "rarity": "Rare",
+        "description": "Explode 'em into stardust.",
+        "price": 300
+    },
+    {
+        "code": "Star Guardian Luminary",
+        "image": "https://wiki.leagueoflegends.com/images/Star_Guardian_Luminary_LoR_Card_Back.png?ebc2a",
+        "rarity": "Rare",
+        "description": "Be their guiding light.",
+        "price": 300
+    },
+    {
+        "code": "Star Guardian Protector",
+        "image": "https://wiki.leagueoflegends.com/images/Star_Guardian_Protector_LoR_Card_Back.png?63458",
+        "rarity": "Rare",
+        "description": "Stand your ground, even in the darkest hour.",
+        "price": 300
+    },
+    {
+        "code": "Starphone",
+        "image": "https://wiki.leagueoflegends.com/images/Starphone_LoR_Card_Back.png?1ddb2",
+        "rarity": "Rare",
+        "description": "Answer starlight's call.",
+        "price": 300
+    },
+    {
+        "code": "The Bashful Bloom",
+        "image": "https://wiki.leagueoflegends.com/images/The_Bashful_Bloom_LoR_Card_Back.png?e9f47",
+        "rarity": "Rare",
+        "description": "For legends not afraid to dream.",
+        "price": 300
+    },
+    {
+        "code": "The Beast",
+        "image": "https://wiki.leagueoflegends.com/images/The_Beast_LoR_Card_Back.png?8077c",
+        "rarity": "Rare",
+        "description": "Bring the boom.",
+        "price": 300
+    },
+    {
+        "code": "The Cosmos",
+        "image": "https://wiki.leagueoflegends.com/images/The_Cosmos_LoR_Card_Back.png?14637",
+        "rarity": "Rare",
+        "description": "The birth of all things.",
+        "price": 300
+    },
+    {
+        "code": "The Dancer",
+        "image": "https://wiki.leagueoflegends.com/images/The_Dancer_LoR_Card_Back.png?89353",
+        "rarity": "Rare",
+        "description": "\"I got different DNA.\"",
+        "price": 300
+    },
+    {
+        "code": "The Dancer (SE)",
+        "image": "https://wiki.leagueoflegends.com/images/The_Dancer_SE_LoR_Card_Back.png?d5e8f",
+        "rarity": "Epic",
+        "description": "\"I got different DNA.\"Personally signed by Kai'Sa after you went ALL OUT for K/DA.",
+        "price": 600
+    },
+    {
+        "code": "The Dark Star",
+        "image": "https://wiki.leagueoflegends.com/images/The_Dark_Star_LoR_Card_Back.png?6c6e6",
+        "rarity": "Rare",
+        "description": "The death of all things.",
+        "price": 300
+    },
+    {
+        "code": "The Diva",
+        "image": "https://wiki.leagueoflegends.com/images/The_Diva_LoR_Card_Back.png?f8324",
+        "rarity": "Rare",
+        "description": "\"A picture perfect face, with the wild in my veins.\"",
+        "price": 300
+    },
+    {
+        "code": "The Diva (SE)",
+        "image": "https://wiki.leagueoflegends.com/images/The_Diva_SE_LoR_Card_Back.png?46e69",
+        "rarity": "Epic",
+        "description": "\"A picture perfect face, with the wild in my veins.\"Personally signed by Evelynn after you went ALL OUT for K/DA.",
+        "price": 600
+    },
+    {
+        "code": "The Queen",
+        "image": "https://wiki.leagueoflegends.com/images/The_Queen_LoR_Card_Back.png?d682d",
+        "rarity": "Rare",
+        "description": "\"We're gonna wear the crown.\"",
+        "price": 300
+    },
+    {
+        "code": "The Gloomist",
+        "image": "https://wiki.leagueoflegends.com/images/The_Gloomist_LoR_Card_Back.png?90427",
+        "rarity": "Rare",
+        "description": "For legends who hate everything.",
+        "price": 300
+    },
+    {
+        "code": "The Queen (SE)",
+        "image": "https://wiki.leagueoflegends.com/images/The_Queen_SE_LoR_Card_Back.png?3d7e0",
+        "rarity": "Epic",
+        "description": "\"We're gonna wear the crown.\"Personally signed by Ahri after you went ALL OUT for K/DA.",
+        "price": 600
+    },
+    {
+        "code": "The Rebel",
+        "image": "https://wiki.leagueoflegends.com/images/The_Rebel_LoR_Card_Back.png?5df1c",
+        "rarity": "Rare",
+        "description": "\"I'm the realest in the game.\"",
+        "price": 300
+    },
+    {
+        "code": "The Rebel (SE)",
+        "image": "https://wiki.leagueoflegends.com/images/The_Rebel_SE_LoR_Card_Back.png?65834",
+        "rarity": "Epic",
+        "description": "\"I'm the realest in the game.\"Personally signed by Akali after you went ALL OUT for K/DA.",
+        "price": 600
+    },
+    {
+        "code": "The Rising Star",
+        "image": "https://wiki.leagueoflegends.com/images/The_Rising_Star_LoR_Card_Back.png?407a1",
+        "rarity": "Rare",
+        "description": "\"Feeling like an ocean, on a wave now...\"",
+        "price": 300
+    },
+    {
+        "code": "The Rising Star (SE)",
+        "image": "https://wiki.leagueoflegends.com/images/The_Rising_Star_SE_LoR_Card_Back.png?6b912",
+        "rarity": "Epic",
+        "description": "\"Feeling like an ocean, on a wave now...\"Personally signed by Seraphine after you went ALL OUT for K/DA.",
+        "price": 600
+    },
+    {
+        "code": "Tournament Competitor",
+        "image": "https://wiki.leagueoflegends.com/images/Tournament_Competitor_LoR_Card_Back.png?05a5c",
+        "rarity": "Epic",
+        "description": "Take pride in each and every victory.",
+        "price": 600
+    },
+    {
+        "code": "Turning Two",
+        "image": "https://wiki.leagueoflegends.com/images/Turning_Two_LoR_Card_Back.png?b4ae7",
+        "rarity": "Rare",
+        "description": "For all the legends who made this a year to remember.",
+        "price": 300
+    },
+    {
+        "code": "Turning Three",
+        "image": "https://wiki.leagueoflegends.com/images/Turning_Three_LoR_Card_Back.png?20fa0",
+        "rarity": "Rare",
+        "description": "For all the legends who made this year so special.",
+        "price": 300
+    },
+    {
+        "code": "Turning Four",
+        "image": "https://wiki.leagueoflegends.com/images/Turning_Four_LoR_Card_Back.png?fe04b",
+        "rarity": "Rare",
+        "description": "For all the legends who made this year so special.",
+        "price": 300
+    },
+    {
+        "code": "Turning Five",
+        "image": "https://wiki.leagueoflegends.com/images/Turning_Five_LoR_Card_Back.png?0d79d",
+        "rarity": "Rare",
+        "description": "High fives all around!",
+        "price": 300
+    },
+    {
+        "code": "Two of a Kind",
+        "image": "https://wiki.leagueoflegends.com/images/Two_of_a_Kind_LoR_Card_Back.png?ceb3a",
+        "rarity": "Rare",
+        "description": "It's not about the hand that you've been dealt, but the people you share it with.",
+        "price": 300
+    },
+    {
+        "code": "Volibear",
+        "image": "https://wiki.leagueoflegends.com/images/Volibear_LoR_Card_Back.png?b7910",
+        "rarity": "Rare",
+        "description": "The tundra was carved by these very claws.",
+        "price": 300
+    },
+    {
+        "code": "Year of the Ox",
+        "image": "https://wiki.leagueoflegends.com/images/Year_of_the_Ox_LoR_Card_Back.png?37460",
+        "rarity": "Rare",
+        "description": "Success through strength.",
+        "price": 300
+    },
+    {
+        "code": "World Championship 2021",
+        "image": "https://wiki.leagueoflegends.com/images/LoR_World_Championship_2021_Card_Back.png?9dc60",
+        "rarity": "Rare",
+        "description": "For legends who rise to the challenge.",
+        "price": 300
+    },
+    {
+        "code": "Worlds Championship 2022",
+        "image": "https://wiki.leagueoflegends.com/images/Worlds_Championship_2022_LoR_Card_Back.png?6c9ff",
+        "rarity": "Epic",
+        "description": "For legends who share in the greatest moments.",
+        "price": 600
+    },
+    {
+        "code": "World Championship 2023",
+        "image": "https://wiki.leagueoflegends.com/images/World_Championship_2023_LoR_Card_Back.png?d071e",
+        "rarity": "Epic",
+        "description": "Witness the glory of competition.",
+        "price": 600
+    },
+    {
+        "code": "World Competitor 2021",
+        "image": "https://wiki.leagueoflegends.com/images/World_Competitor_2021_LoR_Card_Back.png?3ec9b",
+        "rarity": "Epic",
+        "description": "For legends who fight to the finish.",
+        "price": 600
+    },
+    {
+        "code": "World Competitor 2022",
+        "image": "https://wiki.leagueoflegends.com/images/World_Competitor_2022_LoR_Card_Back.png?0ecb6",
+        "rarity": "Epic",
+        "description": "For legends who fight to the finish.",
+        "price": 600
+    },
+    {
+        "code": "World Competitor 2023",
+        "image": "https://wiki.leagueoflegends.com/images/World_Competitor_2023_LoR_Card_Back.png?984c7",
+        "rarity": "Epic",
+        "description": "Climb to the pinnacle of competition.",
+        "price": 600
+    },
+    {
+        "code": "World Spectator 2021",
+        "image": "https://wiki.leagueoflegends.com/images/World_Spectator_2021_LoR_Card_Back.png?25564",
+        "rarity": "Epic",
+        "description": "For legends who share in the greatest moments.",
+        "price": 600
+    },
+    {
+        "code": "World Spectator 2022",
+        "image": "https://wiki.leagueoflegends.com/images/World_Spectator_2022_LoR_Card_Back.png?bc005",
+        "rarity": "Rare",
+        "description": "For legends who share in the greatest triumphs.",
+        "price": 300
+    }
+]

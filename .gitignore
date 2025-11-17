@@ -1,0 +1,17 @@
+web/images/
+# Bỏ thư mục build và dist
+build/
+dist/
+
+# Bỏ file class sinh ra
+*.class
+
+# Bỏ file jar/war sinh ra
+*.jar
+*.war
+
+# Bỏ thư mục private của NetBeans
+nbproject/private/
+
+# Bỏ file log, cache
+*.log
