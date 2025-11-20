@@ -31,6 +31,8 @@ public class PostDAO {
                 post.setUpdatedAt(rs.getTimestamp("updated_at"));
                 post.setThumbnail(rs.getString("thumbnail"));
                 post.setDescription(rs.getString("description"));
+                post.setVideoUrl(rs.getString("videoUrl"));
+
                 posts.add(post);
             }
 
@@ -65,6 +67,8 @@ public class PostDAO {
                 post.setUpdatedAt(rs.getTimestamp("updated_at"));
                 post.setThumbnail(rs.getString("thumbnail"));
                 post.setDescription(rs.getString("description"));
+                post.setVideoUrl(rs.getString("videoUrl"));
+
             }
 
             rs.close();
@@ -80,7 +84,7 @@ public class PostDAO {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASS);
-            String sql = "INSERT INTO Post (title, content, category_id, author, thumbnail, description) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Post (title, content, category_id, author, thumbnail, description, videoUrl) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, post.getTitle());
             ps.setString(2, post.getContent());
@@ -88,6 +92,7 @@ public class PostDAO {
             ps.setString(4, post.getAuthor());
             ps.setString(5, post.getThumbnail());
             ps.setString(6, post.getDescription());
+            ps.setString(7, post.getVideoUrl());
             int rows = ps.executeUpdate();
 
             ps.close();
@@ -103,7 +108,7 @@ public class PostDAO {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASS);
-            String sql = "UPDATE Post SET title=?, content=?, category_id=?, author=?, thumbnail=?, description=? WHERE id=?";
+            String sql = "UPDATE Post SET title=?, content=?, category_id=?, author=?, thumbnail=?, description=?, videoUrl=? WHERE id=?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, post.getTitle());
             ps.setString(2, post.getContent());
@@ -111,7 +116,8 @@ public class PostDAO {
             ps.setString(4, post.getAuthor());
             ps.setString(5, post.getThumbnail());
             ps.setString(6, post.getDescription());
-            ps.setInt(7, post.getId());
+            ps.setString(7, post.getVideoUrl());
+            ps.setInt(8, post.getId());
             int rows = ps.executeUpdate();
 
             ps.close();
@@ -157,6 +163,8 @@ public class PostDAO {
                 p.setCreatedAt(rs.getTimestamp("created_at"));
                 p.setThumbnail(rs.getString("thumbnail"));
                 p.setDescription(rs.getString("description"));
+                p.setVideoUrl(rs.getString("videoUrl"));
+
                 list.add(p);
             }
             rs.close();
@@ -189,6 +197,7 @@ public class PostDAO {
             post.setUpdatedAt(rs.getTimestamp("updated_at"));
             post.setThumbnail(rs.getString("thumbnail"));
             post.setDescription(rs.getString("description"));
+            post.setVideoUrl(rs.getString("videoUrl"));
             posts.add(post);
         }
 
@@ -230,6 +239,7 @@ public static List<Post> searchByKeyword(String keyword) {
                     post.setUpdatedAt(rs.getTimestamp("updated_at"));
                     post.setThumbnail(rs.getString("thumbnail"));
                     post.setDescription(rs.getString("description"));
+                    post.setVideoUrl(rs.getString("videoUrl"));
                     posts.add(post);
                 }
             }

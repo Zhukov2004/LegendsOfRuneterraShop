@@ -17,6 +17,7 @@
   <meta charset="UTF-8">
   <title>Giỏ hàng</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="bg-dark text-white">
@@ -109,7 +110,10 @@
     <input type="hidden" name="price" value="<%= item.getPrice() %>">
     <input type="hidden" name="quantity" value="<%= item.getQuantity() %>">
     <input type="hidden" name="itemType" value="<%= item.getItemType() %>">
-    <button type="submit" class="btn btn-sm btn-success">🛒 Mua ngay</button>
+    <button type="button" class="btn btn-sm btn-success"
+        onclick="openConfirmModal('<%= item.getItemCode() %>', '<%= item.getItemType() %>')">
+  🛒 Mua ngay
+</button>
   </form>
           </td>
         </tr>
@@ -132,5 +136,90 @@
     </div>
   <% } %>
 </div>
+<div class="modal fade" id="confirmModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Xác nhận mua</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Bạn có chắc muốn mua vật phẩm này?</p>
+      </div>
+      <div class="modal-footer">
+        <form method="post" id="modalForm" class="w-100">
+  <input type="hidden" id="modalItemCode"> <!-- chỉ có id, name sẽ set bằng JS -->
+  <input type="hidden" name="confirm" value="true">
+  <input type="hidden" name="returnPage" value="cart.jsp">
+  <input type="hidden" name="showSuccess" value="true">
+  <button type="submit" class="btn btn-success w-100">✅ Đồng ý mua</button>
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="insufficientModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-danger text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">⚠️ Không đủ Xu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Bạn không đủ Xu để mua vật phẩm này.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="successModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-success text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">🎉 Mua thành công!</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Bạn đã mua vật phẩm thành công.</p>
+        <p>Hãy kiểm tra mục <strong>Lịch sử mua</strong> để xem chi tiết giao dịch.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    function openConfirmModal(itemCode, itemType) {
+  const form = document.getElementById("modalForm");
+  const hiddenInput = document.getElementById("modalItemCode");
+
+  hiddenInput.value = itemCode;
+
+  if (itemType === "card") {
+    form.action = "purchase";
+    hiddenInput.name = "cardCode";       // servlet đọc cardCode
+  } else if (itemType === "relic") {
+    form.action = "purchase-relic";
+    hiddenInput.name = "relicCode";      // servlet đọc relicCode
+  } else if (itemType === "cardback") {
+    form.action = "purchase-cardback";
+    hiddenInput.name = "cardBackCode";   // servlet đọc cardBackCode
+  }
+
+  const modal = new bootstrap.Modal(document.getElementById("confirmModal"));
+  modal.show();
+}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<% if (request.getAttribute("showSuccessModal") != null) { %>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+  successModal.show();
+});
+</script>
+<% } %>
+
 </body>
 </html>

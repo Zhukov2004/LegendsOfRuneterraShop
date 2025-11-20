@@ -9,49 +9,23 @@ package model;
  * @author Admin
  */
 public class Item {
-    private String name;
+    private String code;       // mã định danh (cardCode, relicCode, cardBackCode)
+    private String name;       // tên hiển thị
     private String imagePath;
     private int price;
     private String type;
 
-    public Item(String name, String imagePath, int price, String type) {
+    public Item(String code, String name, String imagePath, int price, String type) {
+        this.code = code;
         this.name = name;
         this.imagePath = imagePath;
         this.price = price;
         this.type = type;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    
+    public String getCode() { return code; }
+    public String getName() { return name; }
+    public String getImagePath() { return imagePath; }
+    public int getPrice() { return price; }
+    public String getType() { return type; }
 }

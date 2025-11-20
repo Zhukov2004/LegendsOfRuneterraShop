@@ -12,7 +12,16 @@ public class Post {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private String thumbnail;
+    private String videoUrl;
 private String description;
+
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
 
     // Getters & Setters
     public int getId() { return id; }

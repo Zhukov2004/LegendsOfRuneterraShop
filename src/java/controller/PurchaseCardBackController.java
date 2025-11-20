@@ -10,6 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.List;
+import model.CartItem;
 
 @WebServlet("/purchase-cardback")
 public class PurchaseCardBackController extends HttpServlet {
@@ -95,6 +97,12 @@ public class PurchaseCardBackController extends HttpServlet {
             }
 
             response.sendRedirect(redirectURL);
+            // sau khi ghi lịch sử mua
+List<CartItem> cart = (List<CartItem>) request.getSession().getAttribute("cart");
+if (cart != null) {
+    cart.removeIf(ci -> ci.getItemCode().equals(cardBackCode));
+    request.getSession().setAttribute("cart", cart);
+}
 
         } catch (Exception e) {
             e.printStackTrace();

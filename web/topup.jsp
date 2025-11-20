@@ -126,8 +126,9 @@
       <div class="col-md-4"><div class="amount-card" data-value="200000">200.000 VNĐ<br><small>230.000 Xu – +15%</small></div></div>
     </div>
     <div class="text-center mt-3" id="qr-info">
-      <img id="qrImage" src="images/qr/qr-code.png" alt="Mã QR thanh toán" style="width: 450px;" class="mx-auto d-block rounded">
-      <p class="mt-2">Quét mã QR bằng ứng dụng ngân hàng để chuyển khoản.</p>
+      <img id="qrImage" src="" style="width: 450px;" class="mx-auto d-block rounded d-none">
+<p class="mt-2">Quét mã QR bằng ứng dụng ngân hàng để chuyển khoản.</p>
+
     </div>
   </div>
 
@@ -292,7 +293,7 @@ methodCards.forEach(card => {
       const el = document.getElementById(id);
       if (el) el.classList.add("d-none");
     });
-
+    
     if (method === "qr") document.getElementById("qr-info").classList.remove("d-none");
     if (method === "bank") document.getElementById("bank-info").classList.remove("d-none");
     if (method === "momo") document.getElementById("price-momo").classList.remove("d-none");
@@ -328,5 +329,24 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+function selectAmount(val) {
+  amountInput.value = val;
+
+  document.querySelectorAll(".amount-card").forEach(el => el.classList.remove("active"));
+  document.querySelectorAll(".amount-card").forEach(el => {
+    if (parseInt(el.dataset.value) === val) {
+      el.classList.add("active");
+    }
+  });
+
+  // Gắn link QR động
+  const username = "<%= username %>";
+  const qrImage = document.getElementById("qrImage");
+  qrImage.src = `https://img.vietqr.io/image/MB-9378513062004-compact.png?amount=${val}&addInfo=napxu+${username}`;
+  
+  // Hiện ảnh QR sau khi chọn
+  qrImage.classList.remove("d-none");
+}
+
 
 </script>

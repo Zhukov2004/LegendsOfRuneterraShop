@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
 import java.util.List;
+import model.CartItem;
 
 @WebServlet("/purchase")
 public class PurchaseController extends HttpServlet {
@@ -24,6 +25,11 @@ public class PurchaseController extends HttpServlet {
         String cardCode = request.getParameter("cardCode");
         String returnPage = request.getParameter("returnPage");
         String showSuccess = request.getParameter("showSuccess");
+        List<CartItem> cart = (List<CartItem>) request.getSession().getAttribute("cart");
+if (cart != null) {
+    cart.removeIf(ci -> ci.getItemCode().equals(cardCode));
+    request.getSession().setAttribute("cart", cart);
+}
 
         if (username == null) {
             response.sendRedirect("login.jsp");
@@ -154,4 +160,10 @@ if ("card-detail.jsp".equals(returnPage)) {
         RequestDispatcher rd = request.getRequestDispatcher(returnPage);
         rd.forward(request, response);
     }
+    @Override
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    doPost(request, response); // chuyển GET sang xử lý như POST
+}
+
 }

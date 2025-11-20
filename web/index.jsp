@@ -33,16 +33,21 @@
     List<Item> allItems = new ArrayList<>();
 
     for (Card c : cards) {
-        allItems.add(new Item(c.getName(), "images/anh/" + c.getCardCode() + ".png", c.getPrice(), "oranges"));
-    }
+    allItems.add(new Item(c.getCardCode(), c.getName(), "images/anh/" + c.getCardCode() + ".png", c.getPrice(), "oranges"));
+
+}
+
 
     for (Relic r : relics) {
-        allItems.add(new Item(r.getName(), "images/relics/" + r.getRelicCode() + ".png", r.getPrice(), "fresh-meat"));
+        allItems.add(new Item(r.getRelicCode(), r.getName(), "images/relics/" + r.getRelicCode() + ".png", r.getPrice(), "fresh-meat"));
+
     }
 
     for (CardBack cb : cardbacks) {
-        String encoded = cb.getCode().replace(" ", "%20");
-        allItems.add(new Item(cb.getCode(), "images/cardback/" + encoded + ".png", cb.getPrice(), "cardback"));
+        String safeFileName = cb.getCode().replace(" ", "%20");
+allItems.add(new Item(cb.getCode(), cb.getCode(),
+    "images/cardback/" + safeFileName + ".png", cb.getPrice(), "cardback"));
+
     }
 
     Collections.shuffle(allItems); // 🔀 Xáo trộn danh sách
@@ -53,6 +58,12 @@
   <meta charset="UTF-8">
   <title>Runeterra Shop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 5 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Hoặc Font Awesome 6 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link rel="stylesheet" href="assets/style.css">
   <link href="css/style.css" rel="stylesheet" type="text/css"/>
   <style>
@@ -339,25 +350,33 @@
                     </div>
                 </div>
             </div>
-            <div class="row featured__filter">
+<div class="row featured__filter">
   <% for (Item item : allItems) { %>
-    <div class="col-lg-3 col-md-4 col-sm-6 mix <%= item.getType() %>">
-      <div class="featured__item">
-        <div class="featured__item__pic set-bg" data-setbg="<%= item.getImagePath() %>">
-          <ul class="featured__item__pic__hover">
-            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-          </ul>
-        </div>
-        <div class="featured__item__text">
-          <h6><%= item.getName() %></h6>
-          <h5><%= item.getPrice() %> Xu</h5>
-        </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 mix <%= item.getType() %>">
+    <div class="featured__item">
+      <div class="featured__item__pic set-bg" data-setbg="<%= item.getImagePath() %>">
+        <ul class="featured__item__pic__hover">
+          <% if ("oranges".equals(item.getType())) { %>
+            <!-- Card -->
+            <li><a href="cards?cardCode=<%= item.getCode() %>"><i class="fa fa-search"></i></a></li>
+          <% } else if ("fresh-meat".equals(item.getType())) { %>
+            <!-- Relic -->
+            <li><a href="detail-relic?relicCode=<%= item.getCode() %>"><i class="fa fa-search"></i></a></li>
+          <% } else if ("cardback".equals(item.getType())) { %>
+            <!-- CardBack -->
+            <li><a href="CardBackDetailController?cardBackCode=<%= item.getCode() %>"><i class="fa fa-search"></i></a></li>
+          <% } %>
+        </ul>
+      </div>
+      <div class="featured__item__text">
+        <h6><%= item.getName() %></h6> <!-- tên hiển thị -->
+        <h5><%= item.getPrice() %> Xu</h5>
       </div>
     </div>
+  </div>
   <% } %>
 </div>
+
 
 
 
@@ -517,11 +536,12 @@
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
                         <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@duckgaming2004"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+</div>
+
                     </div>
                 </div>
             </div>

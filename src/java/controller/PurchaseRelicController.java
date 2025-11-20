@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
 import java.util.List;
+import model.CartItem;
 
 @WebServlet("/purchase-relic")
 public class PurchaseRelicController extends HttpServlet {
@@ -153,6 +154,11 @@ if ("detail-relic.jsp".equals(returnPage)) {
     request.setAttribute("relic", relic);
 }
 
+List<CartItem> cart = (List<CartItem>) request.getSession().getAttribute("cart");
+if (cart != null) {
+    cart.removeIf(ci -> ci.getItemCode().equals(relicCode));
+    request.getSession().setAttribute("cart", cart);
+}
 
 RequestDispatcher rd = request.getRequestDispatcher(returnPage);
 rd.forward(request, response);

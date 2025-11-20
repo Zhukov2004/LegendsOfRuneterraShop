@@ -19,6 +19,13 @@
     boolean isAdmin = "admin".equals(role);
     String username = (String) session.getAttribute("username");
 %>
+<%
+    if ("true".equals(request.getParameter("logout"))) {
+        session.invalidate();
+        response.sendRedirect("blog.jsp");
+        return;
+    }
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -41,8 +48,19 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
     <link href="assets/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+        @media (min-width: 992px) {
+  .navbar-expand-lg {
+    justify-content: space-between !important;
+  }
+  .navbar-nav.ms-auto {
+    margin-left: auto !important;
+  }
+}
+
+    </style>
     </head>
 
 <body>
@@ -51,7 +69,7 @@
         <div class="loader"></div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-runeterra">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand" href="index.jsp">
         <img src="images/images/logo.png" alt="Runeterra" style="height: 32px;">
       </a>
@@ -74,7 +92,7 @@
       Xin chào, <strong><%= username %></strong> | 💰 <strong><%= String.format("%,d", balance) %> Xu</strong>
     </a>
   </li>
-  <li class="nav-item"><a class="nav-link" href="?logout=true">Đăng xuất</a></li>
+  <li class="nav-item"><a class="nav-link" href="logout">Đăng xuất</a></li>
 <% } else { %>
 
             <li class="nav-item"><a class="nav-link" href="login.jsp">Đăng nhập</a></li>
@@ -138,40 +156,6 @@
         <% } %>
     </ul>
 </div>
-
-
-                        <div class="blog__sidebar__item">
-                            <h4>Recent News</h4>
-                            <div class="blog__sidebar__recent">
-                                <a href="#" class="blog__sidebar__recent__item">
-                                    <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-1.jpg" alt="">
-                                    </div>
-                                    <div class="blog__sidebar__recent__item__text">
-                                        <h6>09 Kinds Of Vegetables<br /> Protect The Liver</h6>
-                                        <span>MAR 05, 2019</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="blog__sidebar__recent__item">
-                                    <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-2.jpg" alt="">
-                                    </div>
-                                    <div class="blog__sidebar__recent__item__text">
-                                        <h6>Tips You To Balance<br /> Nutrition Meal Day</h6>
-                                        <span>MAR 05, 2019</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="blog__sidebar__recent__item">
-                                    <div class="blog__sidebar__recent__item__pic">
-                                        <img src="img/blog/sidebar/sr-3.jpg" alt="">
-                                    </div>
-                                    <div class="blog__sidebar__recent__item__text">
-                                        <h6>4 Principles Help You Lose <br />Weight With Vegetables</h6>
-                                        <span>MAR 05, 2019</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-7">
