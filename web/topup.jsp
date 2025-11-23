@@ -4,7 +4,11 @@
   Integer balance = (session != null && session.getAttribute("balance") != null)
     ? (Integer) session.getAttribute("balance")
     : 0;
-
+  // Kiểm tra đăng nhập
+  if (username == null) {
+    response.sendRedirect("login.jsp");
+    return; // dừng xử lý JSP
+  }
 %>
 <%
   String role = (String) session.getAttribute("role");
@@ -246,6 +250,7 @@ const priceValues = {
   zalopay: [100000]
 };
 
+// Render các thẻ mệnh giá
 function renderAmounts(method) {
   amountOptions.innerHTML = "";
   priceValues[method].forEach((val) => {
@@ -255,23 +260,48 @@ function renderAmounts(method) {
     card.className = "amount-card";
     card.setAttribute("data-value", val);
     card.textContent = val.toLocaleString() + " VNĐ";
-    card.onclick = () => selectAmount(val);
+    card.onclick = () => selectAmount(val); // gọi trực tiếp
     div.appendChild(card);
     amountOptions.appendChild(div);
   });
 }
 
+// Chọn mệnh giá và cập nhật QR
 function selectAmount(val) {
-  amountInput.value = val;
+  console.log("👉 Selected amount:", val);
+
+  // ép kiểu thành số nguyên
+  const amount = parseInt(val, 10);
+  console.log("👉 Parsed amount:", amount);
+
+  amountInput.value = amount;
 
   document.querySelectorAll(".amount-card").forEach(el => el.classList.remove("active"));
   document.querySelectorAll(".amount-card").forEach(el => {
-    if (parseInt(el.dataset.value) === val) {
+    if (parseInt(el.dataset.value) === amount) {
       el.classList.add("active");
     }
   });
+
+  const username = "<%= username %>";
+  console.log("👉 Current username:", username);
+
+  const timestamp = new Date().getTime();
+  const qrLink = "https://img.vietqr.io/image/MB-9378513062004-compact.png"
+    + "?amount=" + amount
+    + "&addInfo=napxu+" + encodeURIComponent(username)
+    + "&t=" + timestamp;
+
+  console.log("👉 QR Link:", qrLink);
+
+  const qrImage = document.getElementById("qrImage");
+  qrImage.src = qrLink;
+  qrImage.classList.remove("d-none");
 }
 
+
+
+// Xử lý chọn phương thức thanh toán
 methodCards.forEach(card => {
   card.addEventListener("click", () => {
     const method = card.dataset.method;
@@ -293,7 +323,7 @@ methodCards.forEach(card => {
       const el = document.getElementById(id);
       if (el) el.classList.add("d-none");
     });
-    
+
     if (method === "qr") document.getElementById("qr-info").classList.remove("d-none");
     if (method === "bank") document.getElementById("bank-info").classList.remove("d-none");
     if (method === "momo") document.getElementById("price-momo").classList.remove("d-none");
@@ -306,47 +336,5 @@ methodCards.forEach(card => {
 
 // Khởi tạo mặc định
 document.querySelector('.method-card[data-method="card"]').click();
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("amount-card")) {
-    const value = parseInt(e.target.dataset.value);
-    amountInput.value = value;
-
-    document.querySelectorAll(".amount-card").forEach(el => el.classList.remove("active"));
-    e.target.classList.add("active");
-  }
-});
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("amount-card")) {
-    const value = parseInt(e.target.dataset.value);
-    if (!isNaN(value)) {
-      amountInput.value = value;
-
-      // Bỏ chọn tất cả
-      document.querySelectorAll(".amount-card").forEach(el => el.classList.remove("active"));
-
-      // Chọn duy nhất thẻ vừa click
-      e.target.classList.add("active");
-    }
-  }
-});
-function selectAmount(val) {
-  amountInput.value = val;
-
-  document.querySelectorAll(".amount-card").forEach(el => el.classList.remove("active"));
-  document.querySelectorAll(".amount-card").forEach(el => {
-    if (parseInt(el.dataset.value) === val) {
-      el.classList.add("active");
-    }
-  });
-
-  // Gắn link QR động
-  const username = "<%= username %>";
-  const qrImage = document.getElementById("qrImage");
-  qrImage.src = `https://img.vietqr.io/image/MB-9378513062004-compact.png?amount=${val}&addInfo=napxu+${username}`;
-  
-  // Hiện ảnh QR sau khi chọn
-  qrImage.classList.remove("d-none");
-}
-
-
 </script>
+

@@ -261,7 +261,7 @@ allItems.add(new Item(cb.getCode(), cb.getCode(),
                             <li><a href="CardBackController">Lưng bài</a></li>
                             <li><a href="#">Sàn đấu</a></li>
                             <li><a href="blog.jsp">Bài viết</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
+                            <li><a href="guardians.jsp">Linh thú (sắp mở bán) </a></li>
                         </ul>
                     </div>
                 </div>
@@ -507,26 +507,27 @@ allItems.add(new Item(cb.getCode(), cb.getCode(),
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="footer__widget">
+    <h6>Liên kết hữu ích</h6>
+    <ul>
+      <li><a href="#">Về chúng tôi</a></li>
+      <li><a href="#">Giới thiệu cửa hàng</a></li>
+      <li><a href="#">Mua sắm an toàn</a></li>
+      <li><a href="#">Thông tin giao hàng</a></li>
+      <li><a href="#">Chính sách bảo mật</a></li>
+      <li><a href="#">Sơ đồ trang web</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Chúng tôi là ai</a></li>
+      <li><a href="#">Dịch vụ của chúng tôi</a></li>
+      <li><a href="#">Dự án</a></li>
+      <li><a href="#">Liên hệ</a></li>
+      <li><a href="#">Đổi mới</a></li>
+      <li><a href="#">Khách hàng đánh giá</a></li>
+    </ul>
+  </div>
+</div>
+
                 <div class="col-lg-4 col-md-12">
                     <div class="footer__widget">
                         <h6>Join Our Newsletter Now</h6>
