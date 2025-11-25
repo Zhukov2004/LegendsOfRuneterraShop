@@ -94,7 +94,7 @@
             <div class="card-body text-center">
                 <h5 class="card-title"><%= c.getName() %></h5>
                 <p class="card-text text-danger"><strong><%= c.getPrice() %> Xu</strong></p>
-                <a href="CardDetail?code=<%= c.getCardCode() %>" class="btn btn-info btn-sm">Xem chi tiết</a>
+                <a href="cards?cardCode=<%= c.getCardCode() %>" class="btn btn-info btn-sm">Xem chi tiết</a>
                 <a href="AddToCart?type=card&code=<%= c.getCardCode() %>" class="btn btn-success btn-sm">Mua</a>
             </div>
         </div>
@@ -111,7 +111,7 @@
             <div class="card-body text-center">
                 <h5 class="card-title"><%= r.getName() %></h5>
                 <p class="card-text text-danger"><strong><%= r.getPrice() %> Xu</strong></p>
-                <a href="RelicDetail?code=<%= r.getRelicCode() %>" class="btn btn-info btn-sm">Xem chi tiết</a>
+                <a href="detail-relic?relicCode=<%= r.getRelicCode() %>" class="btn btn-info btn-sm">Xem chi tiết</a>
                 <a href="AddToCart?type=relic&code=<%= r.getRelicCode() %>" class="btn btn-success btn-sm">Mua</a>
             </div>
         </div>

@@ -1,3 +1,7 @@
+<%@page import="model.Board"%>
+<%@page import="d.BoardDAO"%>
+<%@page import="model.Guardian"%>
+<%@page import="d.GuardianDAO"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="d.PostDAO"%>
@@ -9,6 +13,7 @@
 <%@page import="model.Relic"%>
 <%@page import="model.Card"%>
 <%@page import="java.util.List"%>
+<%@page import="java.sql.*"%>
 <%@ page import="model.Item" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -29,6 +34,19 @@
   List<CardBack> cardbacks = CardBackDAO.getRandomCardBacks(6);
   List<Post> randomPosts = PostDAO.getRandomPosts(3);
 %>
+<%
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection conn = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/runeterra_shop", "root", ""
+    );
+
+    GuardianDAO guardianDAO = new GuardianDAO(conn);
+    List<Guardian> randomGuardians = guardianDAO.getRandom10();
+BoardDAO boardDAO = new BoardDAO(conn);
+    List<Board> randomBoards = boardDAO.getRandom10();
+    conn.close();
+%>
+
 <%
     List<Item> allItems = new ArrayList<>();
 
@@ -259,9 +277,9 @@ allItems.add(new Item(cb.getCode(), cb.getCode(),
                             <li><a href="cards">Thẻ bài</a></li>
                             <li><a href="relics">Cổ vật</a></li>
                             <li><a href="CardBackController">Lưng bài</a></li>
-                            <li><a href="#">Sàn đấu</a></li>
+                            <li><a href="hangsapve.jsp">Hàng sắp mở bán </a></li>
+                            <li><a href="hangngungban.jsp">Hàng đã ngừng kinh doanh </a></li>
                             <li><a href="blog.jsp">Bài viết</a></li>
-                            <li><a href="guardians.jsp">Linh thú (sắp mở bán) </a></li>
                         </ul>
                     </div>
                 </div>
@@ -422,6 +440,46 @@ allItems.add(new Item(cb.getCode(), cb.getCode(),
     </div>
   </div>
 </section>
+        <section class="product-slider-section">
+  <div class="container">
+      <h2 class="text-center text-light mb-5">🚀 Hàng sắp mở bán</h2>
+    <div class="row text-center">
+
+      <!-- Linh thú -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h4 class="slider-title">🦊 Linh thú</h4>
+        <div class="product-card" id="card-box">
+          <img id="random-img" src="<%= randomGuardians.get(0).getImagePath() %>" 
+     alt="<%= randomGuardians.get(0).getName() %>" style="height:200px; object-fit:contain;">
+      <h5 id="random-name"><%= randomGuardians.get(0).getName() %></h5>
+      <p id="random-price"><%= randomGuardians.get(0).getPrice() %> Xu</p>
+        </div>
+      </div>
+
+      <!-- Bàn đấu -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h4 class="slider-title">🏟 Bàn đấu</h4>
+        <div class="product-card" id="relic-box">
+          <img id="board-icon" src="<%= randomBoards.get(0).getIcon() %>" 
+       alt="<%= randomBoards.get(0).getName() %>" style="height:200px; object-fit:contain;">
+  <h5 id="board-name"><%= randomBoards.get(0).getName() %></h5>
+  <p id="board-price"><%= randomBoards.get(0).getPrice() %> Xu</p>
+        </div>
+      </div>
+
+      <!-- Cardbacks -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h4 class="slider-title">🎴 Lưng bài</h4>
+        <div class="product-card" id="cardback-box">
+          <img id="cardback-img" src="images/cardback/<%= cardbacks.get(0).getCode() %>.png" alt="">
+          <h6 id="cardback-name"><%= cardbacks.get(0).getCode() %></h6>
+          <span id="cardback-price"><%= cardbacks.get(0).getPrice() %> Xu</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <section class="from-blog spad">
         <div class="container">
             <div class="row">
@@ -490,6 +548,43 @@ allItems.add(new Item(cb.getCode(), cb.getCode(),
     }, 4000);
   });
 </script>
+<script>
+  const guardians = [
+    <% for (Guardian g : randomGuardians) { %>
+      {
+        img: "<%= g.getImagePath() %>",   // lấy trực tiếp từ DB
+        name: "<%= g.getName() %>",
+        price: "<%= g.getPrice() %> Xu"
+      },
+    <% } %>
+  ];
+
+  let j = 0;
+  setInterval(() => {
+    j = (j + 1) % guardians.length;
+    document.getElementById("random-img").src = guardians[j].img;
+    document.getElementById("random-name").innerText = guardians[j].name;
+    document.getElementById("random-price").innerText = guardians[j].price;
+  }, 4000);
+  const boards = [
+    <% for (Board b : randomBoards) { %>
+      {
+        icon: "<%= b.getIcon() %>",
+        name: "<%= b.getName() %>",
+        price: "<%= b.getPrice() %> Xu"
+      },
+    <% } %>
+  ];
+
+  let k = 0;
+  setInterval(() => {
+    k = (k + 1) % boards.length;
+    document.getElementById("board-icon").src = boards[k].icon;
+    document.getElementById("board-name").innerText = boards[k].name;
+    document.getElementById("board-price").innerText = boards[k].price;
+  }, 4000);
+</script>
+
   <footer class="footer spad">
         <div class="container">
             <div class="row">

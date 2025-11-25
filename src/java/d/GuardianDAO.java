@@ -21,9 +21,12 @@ public class GuardianDAO {
         Guardian g = new Guardian(
             rs.getInt("id"),
             rs.getString("name"),
+                
             rs.getString("rarity"),
             rs.getString("description"),
-            rs.getInt("price")
+            rs.getInt("price"),
+                rs.getString("image")
+                
         );
         list.add(g);
     }
@@ -39,12 +42,33 @@ public Guardian getById(int id) throws SQLException {
         return new Guardian(
             rs.getInt("id"),
             rs.getString("name"),
+                
             rs.getString("rarity"),
             rs.getString("description"),
-            rs.getInt("price")
+            rs.getInt("price"),
+                rs.getString("image")
         );
     }
     return null;
+}
+public List<Guardian> getRandom10() throws SQLException {
+    List<Guardian> list = new ArrayList<>();
+    String sql = "SELECT * FROM guardians ORDER BY RAND() LIMIT 10";
+    PreparedStatement stmt = conn.prepareStatement(sql);
+    ResultSet rs = stmt.executeQuery();
+    while (rs.next()) {
+        Guardian g = new Guardian(
+           rs.getInt("id"),
+            rs.getString("name"),
+                
+            rs.getString("rarity"),
+            rs.getString("description"),
+            rs.getInt("price"),
+                rs.getString("image")
+        );
+        list.add(g);
+    }
+    return list;
 }
 
 }

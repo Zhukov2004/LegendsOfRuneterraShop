@@ -10,21 +10,20 @@ public class Guardian {
     private String rarity;       // độ hiếm (Common, Rare, Epic…)
     private String description;  // mô tả chi tiết
     private int price;           // giá Xu
-    private boolean purchased;   // đã mua hay chưa
-
+    private String imagePath;
     // Constructor rỗng
     public Guardian() {}
 
-    // Constructor đầy đủ
-    public Guardian(int id, String name,
-                    String rarity, String description, int price) {
+    public Guardian(int id, String name, String rarity, String description, int price, String imagePath) {
         this.id = id;
         this.name = name;
         this.rarity = rarity;
         this.description = description;
         this.price = price;
-        this.purchased = false;
+        this.imagePath = imagePath;
     }
+
+    
 
     // Getter & Setter
     public int getId() {
@@ -62,17 +61,9 @@ public class Guardian {
     public void setPrice(int price) {
         this.price = price;
     }
-
-    public boolean isPurchased() {
-        return purchased;
-    }
-    public void setPurchased(boolean purchased) {
-        this.purchased = purchased;
-    }
     public String getImagePath() {
         // Ví dụ: name = "Little Legend" → LoR_Little_Legend_Guardian.png
-        String fileName = "LoR_" + name.replace(" ", "_") + "_Guardian.png";
-        return "images/linhthu/" + fileName;
+        return imagePath;
     }
 }
 
