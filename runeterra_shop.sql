@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 17, 2025 lúc 05:13 PM
+-- Thời gian đã tạo: Th10 25, 2025 lúc 10:56 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -20,6 +20,79 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `runeterra_shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `boards`
+--
+
+CREATE TABLE `boards` (
+  `id` int(11) NOT NULL,
+  `name` varchar(29) DEFAULT NULL,
+  `icon` varchar(98) DEFAULT NULL,
+  `display` varchar(93) DEFAULT NULL,
+  `loadingScreen` varchar(92) DEFAULT NULL,
+  `rarity` varchar(9) DEFAULT NULL,
+  `description` varchar(359) DEFAULT NULL,
+  `price` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `boards`
+--
+
+INSERT INTO `boards` (`id`, `name`, `icon`, `display`, `loadingScreen`, `rarity`, `description`, `price`) VALUES
+(1, 'Summoner\'s Rift', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Summoner%27s_Rift_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Summoner%27s_Rift_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Summoner%27s_Rift_Loading_Screen.png', 'Common', 'Summoner\'s Rift', 0),
+(2, 'Ascended Oasis', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ascended_Oasis_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ascended_Oasis_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ascended_Oasis_Loading_Screen.png', 'Rare', 'Shurima', 300),
+(3, 'Bandlewood Outpost', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Bandlewood_Outpost_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Bandlewood_Outpost_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Bandlewood_Outpost_Loading_Screen.png', 'Epic', 'Bandle City', 600),
+(4, 'Celestial Summit', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Celestial_Summit_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Celestial_Summit_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Celestial_Summit_Loading_Screen.png', 'Rare', 'Targon', 300),
+(5, 'Clifftop Monastery', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Clifftop_Monastery_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Clifftop_Monastery_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Clifftop_Monastery_Loading_Screen.png', 'Rare', 'Ionia', 300),
+(6, 'Cursed Ruins', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Cursed_Ruins_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Cursed_Ruins_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Cursed_Ruins_Loading_Screen.png', 'Rare', 'Shadow Isles', 300),
+(7, 'Hall of Valor', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hall_of_Valor_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hall_of_Valor_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hall_of_Valor_Loading_Screen.png', 'Rare', 'Demacia', 300),
+(8, 'Hextech Lab', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hextech_Lab_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hextech_Lab_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hextech_Lab_Loading_Screen.png', 'Rare', 'Piltover', 300),
+(9, 'Iceborn Peak', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Iceborn_Peak_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Iceborn_Peak_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Iceborn_Peak_Loading_Screen.png', 'Rare', 'Freljord', 300),
+(10, 'Reckoners Arena', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Reckoners_Arena_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Reckoners_Arena_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Reckoners_Arena_Loading_Screen.png', 'Rare', 'Noxus', 300),
+(11, 'Slaughter Docks', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Slaughter_Docks_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Slaughter_Docks_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Slaughter_Docks_Loading_Screen.png', 'Rare', 'Bilgewater', 300),
+(12, 'The Undercity', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Undercity_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Undercity_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Undercity_Loading_Screen.png', 'Rare', 'Zaun', 300),
+(13, 'Darkin Reaper', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Darkin_Reaper_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Darkin_Reaper_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Darkin_Reaper_Loading_Screen.png', 'Epic', 'Kayn', 600),
+(14, 'Garen\'s Might', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Garen%27s_Might_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Garen%27s_Might_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/01DE012T1-full.png', 'Rare', 'Garen', 300),
+(15, 'Jinx\'s Mayhem', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Jinx%27s_Mayhem_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Jinx%27s_Mayhem_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/01PZ040T1-full.png', 'Rare', 'Jinx', 300),
+(16, 'Kayn\'s Shadow', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Kayn%27s_Shadow_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Kayn%27s_Shadow_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Darkin_Reaper_Loading_Screen.png', 'Epic', 'Kayn', 600),
+(17, 'Lee Sin\'s Iron Will', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Lee_Sin%27s_Iron_Will_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Lee_Sin%27s_Iron_Will_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/02IO006T1-full.png', 'Rare', 'Lee Sin', 300),
+(18, 'Sunken Shipyard', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sunken_Shipyard_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sunken_Shipyard_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sunken_Shipyard_Loading_Screen.png', 'Rare', 'Pyke', 300),
+(19, 'The Time Temple', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Time_Temple_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Time_Temple_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Time_Temple_Loading_Screen.png', 'Rare', 'Zilean', 300),
+(20, 'Vastayan Glade', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Vastayan_Glade_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Vastayan_Glade_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Vastayan_Glade_Loading_Screen.png', 'Rare', 'Ahri', 300),
+(21, 'Arcade', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Arcade_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Arcade_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Arcade_Loading_Screen.png', 'Rare', 'Arcade', 300),
+(22, 'Club Ox', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Club_Ox_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Club_Ox_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Club_Ox_Loading_Screen.png', 'Rare', 'Lunar Quad', 300),
+(23, 'Durandal Stadium', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Durandal_Stadium_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Durandal_Stadium_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Durandal_Stadium_Loading_Screen.png', 'Rare', 'Battle Academia', 300),
+(24, 'Dark Emissary\'s Realm', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Emissary%27s_Realm_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Emissary%27s_Realm_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Emissary%27s_Realm_Loading_Screen.png', 'Legendary', 'Dark Horizon', 1000),
+(25, 'Dark Horizon', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Horizon_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Horizon_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Horizon_Loading_Screen.png', 'Rare', 'Dark Horizon', 300),
+(26, 'Festival Shrine', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Festival_Shrine_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Festival_Shrine_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Spirit_Blossom_Loading_Screen.png', 'Epic', 'Spirit Blossom', 600),
+(27, 'Haunted Grounds', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Haunted_Grounds_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Haunted_Grounds_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Haunted_Grounds_Loading_Screen.png', 'Rare', 'Harrowing', 300),
+(28, 'Lagoon of Legends', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Lagoon_of_Legends_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Lagoon_of_Legends_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Lagoon_of_Legends_Loading_Screen.png', 'Rare', 'Pool Party', 300),
+(29, 'K/DA World Tour', 'https://wiki.leagueoflegends.com/en-us/images/LoR_KDA_World_Tour_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_KDA_World_Tour_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_KDA_World_Tour_Loading_Screen.png', 'Epic', 'K/DA ALL OUT', 600),
+(30, 'Magma Chamber', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Magma_Chamber_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Magma_Chamber_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Magma_Chamber_Loading_Screen.jpg', 'Rare', 'Infernal', 300),
+(31, 'Nightshade Shrine', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Nightshade_Shrine_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Nightshade_Shrine_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Spirit_Blossom_Loading_Screen.png', 'Epic', 'Spirit Blossom', 600),
+(32, 'Piltovan Rooftops', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Piltovan_Rooftops_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Piltovan_Rooftops_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Piltovan_Rooftops_Loading_Screen.png', 'Epic', 'The Paths of Champions', 600),
+(33, 'Pinnacle of Glory', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Pinnacle_of_Glory_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Pinnacle_of_Glory_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Pinnacle_of_Glory_Loading_Screen.png', 'Rare', 'Victorious', 300),
+(34, 'Planet Urf', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Planet_Urf_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Planet_Urf_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Planet_Urf_Loading_Screen.png', 'Rare', 'Urf', 300),
+(35, 'Ritual Altar', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ritual_Altar_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ritual_Altar_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ritual_Altar_Loading_Screen.png', 'Rare', 'Eclipse', 300),
+(36, 'Sentinel Sanctuary', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_Loading_Screen.png', 'Epic', 'Sentinels of Light', 600),
+(37, 'Sentinel Sanctuary (Amethyst)', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_%28Amethyst%29_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_%28Amethyst%29_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_Loading_Screen.png', 'Epic', 'Sentinels of Light', 600),
+(38, 'Sentinel Sanctuary (Citrine)', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_%28Citrine%29_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_%28Citrine%29_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_Loading_Screen.png', 'Epic', 'Sentinels of Light', 600),
+(39, 'Sentinel Sanctuary (Pearl)', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_%28Pearl%29_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_%28Pearl%29_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Sanctuary_Loading_Screen.png', 'Epic', 'Sentinels of Light', 600),
+(40, 'Snowy Glade', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Snowy_Glade_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Snowy_Glade_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Snowy_Glade_Loading_Screen.png', 'Rare', 'Snow Day', 300),
+(41, 'Starlight Stage', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Starlight_Stage_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Starlight_Stage_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Starlight_Stage_Loading_Screen.png', 'Legendary', 'Star Guardian', 1000),
+(42, 'Tabletop Tavern', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Tabletop_Tavern_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Tabletop_Tavern_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Tabletop_Tavern_Loading_Screen.png', 'Rare', 'Rift Quest', 300),
+(43, 'Temple of the Sun', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Temple_of_the_Sun_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Temple_of_the_Sun_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Temple_of_the_Sun_Loading_Screen.png', 'Rare', 'Worldbreaker', 300),
+(44, 'The Chronosphere', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Chronosphere_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Chronosphere_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Chronosphere_Loading_Screen.png', 'Epic', 'Pulsefire', 600),
+(45, 'The Final Stage', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Final_Stage_Board_icon.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Final_Stage_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_The_Final_Stage_Loading_Screen.png', 'Legendary', 'Arcade', 1000),
+(46, '', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Default_Lab_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Labs_Loading_Screen.png', '', 'Default', 'Region:  Piltover\nCharacter: 5Heimerdinger\nSpecial visual effects, sound effects, animations, and music.\nIncludes animated board elements, special  Nexus model with animations and sound effects when it takes damage.\nNot Collectible.\nForced to use for Labs without their own board.\nThemed after Heimerdinger\'s lab.', 200),
+(47, '', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Spirit_Blossom_Lab_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Spirit_Blossom_Loading_Screen.png', '', 'Default', 'Region:  Piltover,  Ionia\nCharacter: 5Heimerdinger\nSpecial visual effects, sound effects, animations, and music.\nShares most characteristics with the default lab board.\nNot Collectible.\nForced to use for the Bestow.\nThemed after Heimerdinger\'s lab and the  Spirit Blossom Festival.', 200),
+(48, '', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Targon_Lab_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Celestial_Summit_Loading_Screen.png', '', 'Default', 'Region:  Targon,  Targon Prime\nSpecial visual effects, sound effects, animations, and music.\nIncludes a sound effect at Round End, a special  Nexus model with a constellation surrounding it, animated borders, and more.\nHeavily animated background.\nNot Collectible.\nForced to use for the Discover Targon, Inventor, Journey To The Peak, and A Landmark Occasion.', 200),
+(49, '', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Jungle_Lab_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/99NU001-full.png', '', 'Default', 'Universe:  Institute of War\nFaction:  Freljord,  Piltover\nThemed after Summoner\'s Rift,  League of Legends  jungling, and Heimerdinger\'s lab.\nSpecial visual effects, sound effects, animations, and music.\nNot Collectible.\nForced to use for the Welcome to the Jungle.', 200),
+(50, '', 'https://wiki.leagueoflegends.com/en-us/images/LoR_KDA_Lab_Board.png', 'https://wiki.leagueoflegends.com/en-us/images/LoR_KDA_World_Tour_Loading_Screen.png', '', 'Default', 'Universe:  KDA.\nSpecial visual effects, sound effects, animations, and music.\nIncludes a special, diamond-shaped  Nexus model, animated borders and unit backrow, and more\nNot Collectible.\nForced to use for the Star Power lab.', 200);
 
 -- --------------------------------------------------------
 
@@ -2796,7 +2869,11 @@ INSERT INTO `card_back_purchase_history` (`id`, `username`, `cardBackCode`, `car
 (9, 'admin', 'Arcade Miss Fortune', 'Shoot \'em up.', 300, '2025-11-09 22:39:30'),
 (10, 'admin', 'Battle Academia Ezreal', NULL, 300, '2025-11-12 22:50:05'),
 (11, 'admin', 'Above the Clouds', 'Soar to new heights.', 300, '2025-11-14 09:48:51'),
-(12, 'admin', 'Arcade', 'Take your game to the next level.', 300, '2025-11-15 22:51:49');
+(12, 'admin', 'Arcade', 'Take your game to the next level.', 300, '2025-11-15 22:51:49'),
+(13, 'admin', 'Bandle City', 'Bandle City', 100, '2025-11-20 10:08:58'),
+(14, 'admin', 'Zaun', 'For legends who invent new methods of success.', 100, '2025-11-20 16:07:54'),
+(15, 'admin', 'Year of the Ox', 'Success through strength.', 300, '2025-11-20 16:08:05'),
+(16, 'admin', 'Arclight Varus', 'Three as one.', 300, '2025-11-25 09:59:57');
 
 -- --------------------------------------------------------
 
@@ -2819,8 +2896,197 @@ INSERT INTO `category` (`id`, `name`, `slug`, `description`) VALUES
 (1, 'Meta & Chiến thuật', 'meta', 'Phân tích meta hiện tại, deck mạnh, cách khắc chế'),
 (2, 'Hướng dẫn chơi', 'guides', 'Cách chơi từng khu vực, combo cơ bản'),
 (3, 'Tin tức & Cập nhật', 'news', 'Patch notes, sự kiện mới, thay đổi thẻ bài'),
-(4, 'Deck Builder', 'decks', 'Gợi ý xây dựng bộ bài theo phong cách hoặc khu vực'),
+(4, 'Cộng đồng', 'community', 'Lắng nghe những góp ý của cộng đồng và trả lời các câu hỏi liên quan'),
 (5, 'Lore & Cốt truyện', 'lore', 'Câu chuyện đằng sau các nhân vật và vùng đất');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `emotes`
+--
+
+CREATE TABLE `emotes` (
+  `id` int(11) NOT NULL,
+  `name` varchar(18) DEFAULT NULL,
+  `icon` varchar(123) DEFAULT NULL,
+  `description` varchar(79) DEFAULT NULL,
+  `rarity` varchar(50) DEFAULT 'Common',
+  `price` int(11) DEFAULT 190
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `emotes`
+--
+
+INSERT INTO `emotes` (`id`, `name`, `icon`, `description`, `rarity`, `price`) VALUES
+(1, 'Calculating...', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Calculating..._LoR_Emote.png/100px-Calculating..._LoR_Emote.png', 'Mistakes were made.', 'Thường', 190),
+(2, 'Hello There', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Hello_There_LoR_Emote.png/100px-Hello_There_LoR_Emote.png', 'Now that is what you call crazy.', 'Thường', 190),
+(3, 'Sad Poro', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Sad_Poro_LoR_Emote.png/100px-Sad_Poro_LoR_Emote.png', '\"With honor.\"', 'Thường', 190),
+(4, 'Alriiight', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Alriiight_LoR_Emote.png/100px-Alriiight_LoR_Emote.png', '\"Your reputation will recover… eventually.\"', 'Thường', 190),
+(5, 'Can\'t Touch This', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Can%27t_Touch_This_LoR_Emote.png/100px-Can%27t_Touch_This_LoR_Emote.png', '\"Don\'t say I didn\'t warn you.\"', 'Thường', 190),
+(6, 'Cheers', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Cheers_LoR_Emote.png/100px-Cheers_LoR_Emote.png', 'Too much and two sweet makes... just right?', 'Thường', 190),
+(7, 'Gotcha', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Gotcha_LoR_Emote.png/100px-Gotcha_LoR_Emote.png', '\"Works like a charm.\"', 'Thường', 190),
+(8, 'Hey Hi Hello', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Hey_Hi_Hello_LoR_Emote.png/100px-Hey_Hi_Hello_LoR_Emote.png', '\"Yep, that tasted purple.\"', 'Thường', 190),
+(9, 'Mind Blown', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Mind_Blow_LoR_Emote.png/100px-Mind_Blow_LoR_Emote.png', '\"Excuse my impertinence.\"', 'Thường', 190),
+(10, 'Need A Moment', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Need_a_Moment_LoR_Emote.png/100px-Need_a_Moment_LoR_Emote.png', '\"I\'m watching you.\"', 'Thường', 190),
+(11, 'No Mercy', 'https://wiki.leagueoflegends.com/en-us/images/thumb/No_Mercy_LoR_Emote.png/100px-No_Mercy_LoR_Emote.png', '\"This story is not yet finished.\"', 'Thường', 190),
+(12, 'Not Sure If', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Not_Sure_If_LoR_Emote.png/100px-Not_Sure_If_LoR_Emote.png', 'He\'s doing his best...', 'Thường', 190),
+(13, 'Over It', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Over_It_LoR_Emote.png/100px-Over_It_LoR_Emote.png', '\"The right play? It\'s crystal clear.\"', 'Thường', 190),
+(14, 'Smooth Move', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Smooth_Move_LoR_Emote.png/100px-Smooth_Move_LoR_Emote.png', '\"Wait uh. What are you uh gonna play there.\"', 'Thường', 190),
+(15, 'This Right Here', 'https://wiki.leagueoflegends.com/en-us/images/thumb/This_Right_Here_LoR_Emote.png/100px-This_Right_Here_LoR_Emote.png', 'From the back of theater comes the sound of the smallest violin...', 'Thường', 190),
+(16, 'Too Funny', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Too_Funny_LoR_Emote.png/100px-Too_Funny_LoR_Emote.png', '\"AAARRRGH\"', 'Thường', 190),
+(17, 'Unlucky', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Unlucky_LoR_Emote.png/100px-Unlucky_LoR_Emote.png', '\"Stars… did you not hear me?\"', 'Thường', 190),
+(18, 'Yay!', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Yay%21_LoR_Emote.png/100px-Yay%21_LoR_Emote.png', '\"Any last words?\"', 'Thường', 190),
+(19, '#1 Fan', 'https://wiki.leagueoflegends.com/en-us/images/thumb/No.1_Fan_LoR_Emote.png/100px-No.1_Fan_LoR_Emote.png', '\"Let\'s become legends!\"', 'Thường', 190),
+(20, 'All is Fine', 'https://wiki.leagueoflegends.com/en-us/images/thumb/All_is_Fine_LoR_Emote.png/100px-All_is_Fine_LoR_Emote.png', 'Can hardly hold them.', 'Thường', 190),
+(21, 'Backfire', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Backfire_LoR_Emote.png/100px-Backfire_LoR_Emote.png', 'Don\'t call it a comeback.', 'Thường', 190),
+(22, 'Blown Away', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Blown_Away_LoR_Emote.png/100px-Blown_Away_LoR_Emote.png', 'That was my last arrow...', 'Thường', 190),
+(23, 'Cheeky', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Cheeky_LoR_Emote.png/100px-Cheeky_LoR_Emote.png', '\"Did I see what I think I just saw?\"', 'Thường', 190),
+(24, 'Come Here', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Come_Here_LoR_Emote.png/100px-Come_Here_LoR_Emote.png', 'GrrrAAHHH...ah forget it.', 'Thường', 190),
+(25, 'Disgusted', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Disgusted_LoR_Emote.png/100px-Disgusted_LoR_Emote.png', '\"Call it a flex.\"', 'Thường', 190),
+(26, 'Dramatic Yordle', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Dramatic_Yordle_LoR_Emote.png/100px-Dramatic_Yordle_LoR_Emote.png', 'Unstoppably smooth.', 'Thường', 190),
+(27, 'Eject!', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Eject%21_LoR_Emote.png/100px-Eject%21_LoR_Emote.png', 'Our differences make us stronger.', 'Thường', 190),
+(28, 'Feels Good', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Feels_Good_LoR_Emote.png/100px-Feels_Good_LoR_Emote.png', 'They can\'t take the heat.', 'Thường', 190),
+(29, 'Goofy', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Goofy_LoR_Emote.png/100px-Goofy_LoR_Emote.png', '\"It was an honor!\"', 'Thường', 190),
+(30, 'Great Match 2022', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Great_Match_2022_LoR_Emote.png/100px-Great_Match_2022_LoR_Emote.png', '\"I\'ll have both. Quickly now, darling.\"', 'Thường', 190),
+(31, 'Heart Eyes', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Heart_Eyes_LoR_Emote.png/100px-Heart_Eyes_LoR_Emote.png', 'Oh, what might\'ve been...', 'Thường', 190),
+(32, 'Hehe', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Hehe_LoR_Emote.png/100px-Hehe_LoR_Emote.png', 'What just happened?', 'Thường', 190),
+(33, 'Hope this Works', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Hope_this_Works_LoR_Emote.png/100px-Hope_this_Works_LoR_Emote.png', 'This changes things.', 'Thường', 190),
+(34, 'I Guess', 'https://wiki.leagueoflegends.com/en-us/images/thumb/I_Guess_LoR_Emote.png/100px-I_Guess_LoR_Emote.png', 'Light can anything you can imagine.', 'Thường', 190),
+(35, 'Interesting', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Interesting_LoR_Emote.png/100px-Interesting_LoR_Emote.png', 'This will be fun... for me.', 'Thường', 190),
+(36, 'Jackal Cackle', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Jackal_Cackle_LoR_Emote.png/100px-Jackal_Cackle_LoR_Emote.png', '\"Please say sike.\"', 'Thường', 190),
+(37, 'Just a Dash', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Just_a_Dash_LoR_Emote.png/100px-Just_a_Dash_LoR_Emote.png', 'Behind every mask is... another mask?', 'Thường', 190),
+(38, 'Let\'s Shine!', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Let%27s_Shine%21_LoR_Emote.png/96px-Let%27s_Shine%21_LoR_Emote.png', 'There\'s more where that came from.', 'Thường', 190),
+(39, 'Not Amused!', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Not_Amused%21_LoR_Emote.png/100px-Not_Amused%21_LoR_Emote.png', '\"You\'re adorable when you\'re angry.\"', 'Thường', 190),
+(40, 'Overwhelming Joy', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Overwhelming_Joy_LoR_Emote.png/100px-Overwhelming_Joy_LoR_Emote.png', 'What was all that about?', 'Thường', 190),
+(41, 'Piece of Cake', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Piece_of_Cake_LoR_Emote.png/100px-Piece_of_Cake_LoR_Emote.png', 'Eyes on the prize.', 'Thường', 190),
+(42, 'Poro Pride', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Poro_Pride_LoR_Emote.png/100px-Poro_Pride_LoR_Emote.png', 'Nobody can resist those eyes.', 'Thường', 190),
+(43, 'Pure Magic', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Pure_Magic_LoR_Emote.png/100px-Pure_Magic_LoR_Emote.png', '\"MEGA GNARRR!!\"', 'Thường', 190),
+(44, 'Rainbow Flush', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Rainbow_Flush_LoR_Emote.png/100px-Rainbow_Flush_LoR_Emote.png', '\"Excellent.\"', 'Thường', 190),
+(45, 'Scoped Out', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Scoped_Out_LoR_Emote.png/100px-Scoped_Out_LoR_Emote.png', '\"Time to shut up.\"', 'Thường', 190),
+(46, 'Selfies', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Selfies_LoR_Emote.png/100px-Selfies_LoR_Emote.png', '\"None shall oppose me!\"', 'Thường', 190),
+(47, 'Sharp & Sweet', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Sharp_%26_Sweet_LoR_Emote.png/100px-Sharp_%26_Sweet_LoR_Emote.png', '\"Good heavens!\"', 'Thường', 190),
+(48, 'Sorry, Not Sorry', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Sorry%2C_Not_Sorry_LoR_Emote.png/100px-Sorry%2C_Not_Sorry_LoR_Emote.png', 'Don\'t chase the laser. BE the laser.', 'Thường', 190),
+(49, 'Starry-Eyed', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Starry-Eyed_LoR_Emote.png/100px-Starry-Eyed_LoR_Emote.png', 'Let him live, bro.', 'Thường', 190),
+(50, 'Sweet Surprise', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Sweet_Surprise_LoR_Emote.png/100px-Sweet_Surprise_LoR_Emote.png', 'Aren\'t you just the cutest?', 'Thường', 190),
+(51, 'Take Notes', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Take_Notes_LoR_Emote.png/100px-Take_Notes_LoR_Emote.png', '...unless you want an encore.', 'Thường', 190),
+(52, 'The Look', 'https://wiki.leagueoflegends.com/en-us/images/thumb/The_Look_LoR_Emote.png/100px-The_Look_LoR_Emote.png', '\"Ooh, I\'m writin\' that down!\"', 'Thường', 190),
+(53, 'This Again?', 'https://wiki.leagueoflegends.com/en-us/images/thumb/This_Again%3F_LoR_Emote.png/100px-This_Again%3F_LoR_Emote.png', '\"Oh! I do like this.\"', 'Thường', 190),
+(54, 'Vastaya Pride', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Vastaya_Pride_LoR_Emote.png/100px-Vastaya_Pride_LoR_Emote.png', 'Voli gets what he wants-or else.', 'Thường', 190),
+(55, 'Wait For It', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Wait_for_It_LoR_Emote.png/100px-Wait_for_It_LoR_Emote.png', 'Say what you want about the Tournament\'s owner--Viego\'s third eye is wide open.', 'Thường', 190),
+(56, 'Wait, What?', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Wait%2C_What%3F_LoR_Emote.png/100px-Wait%2C_What%3F_LoR_Emote.png', 'Can\'t kill this vibe.', 'Thường', 190),
+(57, 'What is This?', 'https://wiki.leagueoflegends.com/en-us/images/thumb/What_is_This%3F_LoR_Emote.png/100px-What_is_This%3F_LoR_Emote.png', '\"If you say so~\"', 'Thường', 190),
+(58, 'Whoa', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Whoa_LoR_Emote.png/100px-Whoa_LoR_Emote.png', 'Substance and style.', 'Thường', 190),
+(59, 'Worlds Mordekaiser', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Worlds_Mordekaiser_LoR_Emote.png/100px-Worlds_Mordekaiser_LoR_Emote.png', 'GGWP to all 2023 World Competitors!', 'Thường', 190),
+(60, 'Wowza!', 'https://wiki.leagueoflegends.com/en-us/images/thumb/Wowza%21_LoR_Emote.png/100px-Wowza%21_LoR_Emote.png', 'Charmed, I\'m sure.', 'Thường', 190),
+(61, 'You Fools!', 'https://wiki.leagueoflegends.com/en-us/images/thumb/You_Fools%21_LoR_Emote.png/100px-You_Fools%21_LoR_Emote.png', 'Sorry we can\'t both be me!', 'Thường', 190);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `guardians`
+--
+
+CREATE TABLE `guardians` (
+  `id` int(11) NOT NULL,
+  `name` varchar(25) DEFAULT NULL,
+  `image` varchar(88) DEFAULT NULL,
+  `rarity` varchar(9) DEFAULT NULL,
+  `description` varchar(154) DEFAULT NULL,
+  `price` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `guardians`
+--
+
+INSERT INTO `guardians` (`id`, `name`, `image`, `rarity`, `description`, `price`) VALUES
+(1, 'Poro', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Poro_Guardian.png', 'Thường', 'Personality: Joyful\nLoves: You\nPoros are found all over Runeterra, but they mostly want to be found next to you.', 100),
+(2, 'Astra', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Astra_Guardian.png', 'Thường', 'Personality: Gentle\nHobby: Floriculture\nWhere Astra flies, the night blooms.', 100),
+(3, 'Baley', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Baley_Guardian.png', 'Thường', 'Personality: Innocent\nHobby: Staring contest\nThe most adorable omen of death you\'ll ever see.', 100),
+(4, 'Basilisk', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Basilisk_Guardian.png', 'Thường', 'Personality: Feisty\nHobby: Biting\nOnce you start the belly rubs, it\'s dangerous to stop.', 100),
+(5, 'Chip', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Chip_Guardian.png', 'Thường', 'Personality: Grounded\nBest Friend: 7Malphite\nThe most popular companion for legends with allergies.', 100),
+(6, 'Cosmo', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Cosmo_Guardian.png', 'Thường', 'Personality: Loyal\nHobby: Chasing stars\nWho\'s the best Celestial? You are! Yes, you are!', 100),
+(7, 'Dragonling', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dragonling_Guardian.png', 'Thường', 'Personality: Calm\nOrigin: Ionian rivers\nA smooth surface hides a swift current.', 100),
+(8, 'Ellie', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ellie_Guardian.png', 'Thường', 'Personality: Clumsy\nBest friend: 1Zoe\nCan we address the magical floating elephant in the room?', 100),
+(9, 'Festive Faeling', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Festive_Faeling_Guardian.png', 'Thường', 'Personality: Precious\nLoves: Pumpkin Pie\nGet festive with faeling and friends at the harvest festival!', 100),
+(10, 'Friendly Faeling', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Friendly_Faeling_Guardian.png', 'Thường', 'Personality: Affable\nLoves: Treats\nThis faeling is friend, not food.', 100),
+(11, 'Gloomtooth', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Gloomtooth_Guardian.png', 'Thường', 'Personality: Dopey\nHobby: Chariot Racing\nMost sharks don\'t breathe air. This shark doesn\'t breathe at all.', 100),
+(12, 'Gromp Jr.', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Gromp_Jr._Guardian.png', 'Thường', 'Personality: Jittery\nHobby: Inflation\nIt hop while you bop.', 100),
+(13, 'Infernal Drake', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Infernal_Drake_Guardian.png', 'Hiếm', 'Personality: Firey\nFavorite food: Barbecue\nIf magma could fly. And had an attitude.', 300),
+(14, 'Infernal Gloomtooth', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Infernal_Gloomtooth_Guardian.png', 'Thường', 'Personality: Impulsive\nHobby: Swimming through hoops of fire\nFound in volcanic pools, this free-spirited creature loves a good adventure.', 100),
+(15, 'Infernal Silverwing', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Infernal_Silverwing_Guardian.png', 'Thường', 'Personality: Hot-headed\nEats: Flaming worms\nDon\'t get him too fired up, if you value your things.', 100),
+(16, 'Lunar Beast', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Lunar_Beast_Guardian.png', 'Thường', 'Personality: Rascally\nDislikes: Loud noises\nAppears once a year to wreak delightful havoc on mortals.', 100),
+(17, 'Minion', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Minion_Guardian.png', 'Thường', 'Personality: Giddy\nHobby: Coin collecting\nWith you all the way to the last hit.', 100),
+(18, 'Powder Monkey', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Powder_Monkey_Guardian.png', 'Thường', 'Personality: Cheeky\nHobby: Hot Potato\nHanging out with this one is a blast.', 100),
+(19, 'Ruined Gentleman Basilisk', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ruined_Gentleman_Basilisk_Guardian.png', 'Thường', 'Personality: Sophisticated\nPrefers: The finer thing in death\nDistinguished AND Dangerous? Get yourself a guardian who can do both.', 100),
+(20, 'Scaled Snapper', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Scaled_Snapper_Guardian.png', 'Thường', 'Personality: Timid\nDiet: Herbivore\nThere\'s so much world out there! Snappers go when they\'re ready.', 100),
+(21, 'Silverwing', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Silverwing_Guardian.png', 'Thường', 'Personality: Earnest\nLikes: Courage\nThose chirps are cheers for you. And justice. Always for justice.', 100),
+(22, 'T-Hex', 'https://wiki.leagueoflegends.com/en-us/images/LoR_T-Hex_Guardian.png', 'Thường', 'Personality: Eager\nTrait: Rechargeable\nACTIVATING OPPONENT EXTINCTION PROTOCOL', 100),
+(23, 'Umpa', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Umpa_Guardian.png', 'Thường', 'Personality: Frosty\nLikes: Eating snowflakes\nAdominable, adorable - depends on the mood.', 100),
+(24, 'Urf', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Urf_Guardian.png', 'Hiếm', 'Personality: Extra\nFavorite food: Pancakes\nCarpe spatula!Keep an eye out for flying fish...\nUrf has special visual effects when you tap or rub him.', 300),
+(25, 'Von Yipp', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Von_Yipp_Guardian.png', 'Thường', 'Personality: Devious\nHobby: Unregulated experimentation\nUnrivaled genius in Zaun. Beloved companion in Piltover.', 100),
+(26, 'Worldbreaker Chip', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Worldbreaker_Chip_Guardian.png', 'Thường', 'Personality: Solid\nLoves: Rocking out\nChip was supposeed to shatter the world, but he took a nap instead.', 100),
+(27, 'Blue Minion', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Blue_Minion_Guardian.png', 'Thường', 'Personality: Envious\nHobby: Cosplay\nBest friends can come from either side of the battlefield.', 100),
+(28, 'Chrono-Chip', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Chrono-Chip_Guardian.png', 'Thường', 'Personality: Punctual\nEnjoys: Countdowns\nCareful. If he wags his tail too hard, he could send us back to the Great Darkin War.', 100),
+(29, 'Firecracker T-Hex', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Firecracker_T-Hex_Guardian.png', 'Thường', 'Personality: Bombastic\nHobby: Setting off fireworks\nINITIALIZING HAPPY NEW YEAR PROTOCOL.', 100),
+(30, 'Nightshade Dragonling', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Nightshade_Dragonling_Guardian.png', 'Hiếm', 'Personality: Mysterious\nAttracts: Burning passion\nThse who fear their darkness will never move past it.', 300),
+(31, 'Nyandroid Von Yipp', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Nyandroid_Von_Yipp_Guardian.png', 'Hiếm', 'Personality: Supervillain\nEvolution: Glorious\nScience isn\'t about why—it\'s about why not.', 300),
+(32, 'Rainbow Ellie', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Rainbow_Ellie_Guardian.png', 'Thường', 'Personality: Supportive\nLoves: Everyone, just the way they are\nShowing your true colors is always worth celebrating!', 100),
+(33, 'Rainbow Monkey', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Rainbow_Monkey_Guardian.png', 'Thường', 'Personality: Joyous\nLoves: Having fun with loved ones\nCelebrate love with an explosion of color!', 100),
+(34, 'Rainbow Poro', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Rainbow_Poro_Guardian.png', 'Thường', 'Personality: Accepting\nLoves: Love\nRainbow Poros are known for having the biggest hearts and brightest colors in all of Runeterra.', 100),
+(35, 'Snow Day Umpa', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Snow_Day_Umpa_Guardian.png', 'Thường', 'Personality: Festive\nFavorite food: Peppermint snowcones\nAlso hold the records for most gingerbread eaten in one sitting.', 100),
+(36, 'Surfrider Fen', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Surfrider_Fen_Guardian.png', 'Thường', 'Personality: Mellow\nHobby: Vibing\nEarly tales of mermaid sightings were later attributed to manatees, but... we have other theories.', 100),
+(37, 'Ascended Cosmo', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ascended_Cosmo_Guardian.png', 'Hiếm', 'Personality: Awe-inspiring\nEnjoys: Being the bestest boy.\nMore worshippers means more treats.', 300),
+(38, 'Corrupted Stella', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Corrupted_Stella_Guardian.png', 'Thường', 'Personality: Feisty\nLikes: Mischief-making\nLeads travelers astray with its deceptively cute smile.', 100),
+(39, 'Cosmic Construct T-Hex', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Cosmic_Construct_T-Hex_Guardian.png', 'Thường', 'Personality: Astute\nHobby: Calculating possible futures\nENABLING ENIGMATIC DEITY PROTOCOL', 100),
+(40, 'Cosmic Genius Von Yipp', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Cosmic_Genius_Von_Yipp_Guardian.png', 'Thường', 'Personality: Mercurial\nLoves: Long naps near suns\nDon\'t even get the professor started on String Theory.', 100),
+(41, 'Dark Star Drake', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Star_Drake_Guardian.png', 'Hiếm', 'Personality: Insatiable\nFavorite Food: Star systems\nHe once got the Dark Emissary\'s autograph.', 300),
+(42, 'Dark Star Von Yipp', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Star_Von_Yipp_Guardian.png', 'Thường', 'Personality: Beguiling\nLoves: Batting planets out of orbit\nDon\'t let his cute widdle paws distract you from the promise of Armageddon in his eyes.', 100),
+(43, 'Dark Storm', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Dark_Storm_Guardian.png', 'Hiếm', 'Personality: Stealthy\nSkill: Spying\nStealth mode, activate.', 300),
+(44, 'Detective Pup', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Detective_Pup_Guardian.png', 'Hiếm', 'Personality: Inquisitive\nHobby: Reading detective novels\nThere\'s no crime he can\'t sniff out.', 300),
+(45, 'Elderwood Stella', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Elderwood_Stella_Guardian.png', 'Thường', 'Personality: Mystical\nLives: Underneath the bramblefoot tree\nQuiet, or you\'ll scare it away!', 100),
+(46, 'Festival Bloomtooth', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Festival_Bloomtooth_Guardian.png', 'Thường', 'Personality: Simple-minded\nHobby: Flower arrangement\nPink sharks are a rare sight in ether realm.', 100),
+(47, 'Fen', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Fen_Guardian.png', 'Hiếm', 'Personality: Clever\nHobby: Sand surfing\nThe desert holds many wonders, and Fen may just be the cutest of them all.', 300),
+(48, 'Festival Kitt', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Festival_Kitt_Guardian.png', 'Hiếm', 'Personality: Spirited\nAttracts: Playful temptation\nPlaytime with spirits? What could go wrong.', 300),
+(49, 'Gunner Pup', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Gunner_Pup_Guardian.png', 'Hiếm', 'Personality: Dogged\nLoves: The smell of gunpowder\nBeware of the dog.', 300),
+(50, 'Hector', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hector_Guardian.png', 'Thường', 'Personality: Gallant\nLoves: Polishing his armor\nHe\'ll catch up to Hecarim, just you wait!', 100),
+(51, 'Hextech Beast', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hextech_Beast_Guardian.png', 'Thường', 'Personality: Fierce\nEats: Scraps of Metals\nNothing gets past the mechanical guard beast.', 100),
+(52, 'Hextech Dragonling', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hextech_Dragonling_Guardian.png', 'Thường', 'Personality: Debonair\nHobby: Modeling\nThe very model of elegance.', 100),
+(53, 'Hextech Drake', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hextech_Drake_Guardian.png', 'Hiếm', 'Personality: Robotic\nLoves: Getting new upgrades\nYour piercest defender... until the battery runs out.', 300),
+(54, 'Hextech Minion', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hextech_Minion_Guardian.png', 'Thường', 'Personality: Straightforward\nHobby: Running in a straight line\nDoing the same routine every game... I mean, everyday.', 100),
+(55, 'Hextech Poro', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Hextech_Poro_Guardian.png', 'Thường', 'Personality: Breathless\nHobby: Relaxing in the furnace\nOne poppin hot poro, fresh from the smithy!', 100),
+(56, 'Ina', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ina_Guardian.png', 'Thường', 'Personality: Devoted\nLoves: Drinking Boba\nThere\'s no hurdle too high for 5Kai\'Sa\'s faithful familiar.', 100),
+(57, 'Infernal Poro', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Infernal_Poro_Guardian.png', 'Thường', 'Personality: Warm-hearted\nHobby: Juggling fire\nWho needs furnace when you\'ve got this little critter?', 100),
+(58, 'Kitt', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Kitt_Guardian.png', 'Thường', 'Personality: Enchanting\nLikes: Admiration\nSome chase their entire lives to only ever catch a glimpse.', 100),
+(59, 'Lil\' Rhaast', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Lil%E2%80%99_Rhaast_Guardian.png', 'Hiếm', 'Personality: Devious\nLikes: Manipulating 5Kayn\nTry not to listen when he whispers in your mind.', 300),
+(60, 'Minionaut', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Minionaut_Guardian.png', 'Thường', 'Personality: Spacey\nLoves: Moonwalking\nThat\'s one small step for minions…', 100),
+(61, 'Moonstruck Poro', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Moonstruck_Poro_Guardian.png', 'Thường', 'Personality: Welcoming\nLoves: Being first\nMoonstruck poros are only found by those on a journey before dawn.', 100),
+(62, 'Nightshade Gromp', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Nightshade_Gromp_Guardian.png', 'Thường', 'Personality: Poisonous\nHobby: Realm-hopping\nFound where only the foolish tread.', 100),
+(63, 'Popstar Stella', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Popstar_Stella_Guardian.png', 'Hiếm', 'Personality: Artistic\nLikes: Brown sugar milk tea\n\"Feeling like I\'m floating, never weighed down.\"', 300),
+(64, 'Prof. Snappington', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Prof._Snappington_Guardian.png', 'Thường', 'Personality: Easygoing\nLoves: Taking life at his own pace\nBlazing trails and eating snails.', 100),
+(65, 'Puffcap Pup', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Puffcap_Pup_Guardian.png', 'Thường', 'Personality: Trusty\nLoves: Rolling in mud\n“Bark woof” means this pup’s reporting for duty!', 100),
+(66, 'Pulsefire Chip', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Pulsefire_Chip_Guardian.png', 'Thường', 'Personality: Unchanging\nHobby: Time-traveling back to his favorite moments with Papa\nThe ideal companion for time travelers who need some stability.', 100),
+(67, 'Pulsefire Tibbers', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Pulsefire_Tibbers_Guardian.png', 'Hiếm', 'Personality: Frenzied\nLoves: Charging through portals\nStunning you in the past, present, and future.', 300),
+(68, 'Queen Kitt', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Queen_Kitt_Guardian.png', 'Thường', 'Personality: Charismatic\nHobby: Stealing the show\n\"So keep your eyes on me now...\"', 100),
+(69, 'Rebel Monkey', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Rebel_Monkey_Guardian.png', 'Thường', 'Personality: Rebellious\nHobby: Burning rubber\n\"I\'m trouble and you\'re wanting it.\"', 100),
+(70, 'Royal Powder Monkey', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Royal_Powder_Monkey_Guardian.png', 'Thường', 'Personality: Gilded\nEnjoys: Gold. Lots of Gold.\nAll that glitters belongs to the Monkey.', 100),
+(71, 'Ruined Urf', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Ruined_Urf_Guardian.png', 'Hiếm', 'Personality: Fiendish\nFavorite food: Burnt Pancakes\nMany champions will enter his arena... NONE SHALL LEAVE!', 300),
+(72, 'Seamstress Doll', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Seamstress_Doll_Guardian.png', 'Thường', 'Personality: Delightful\nHobby: Cross-stich\nThere\'s nothing a needle and thread can\'t mend.', 100),
+(73, 'Sentinel Gloomtooth', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Gloomtooth_Guardian.png', 'Thường', 'Personality: Hopeful\nWants: To prove themselves\nA reformed wraith of the Shadow Isles, Gloomtooth now vows to fight the very darkness they were born from.', 100),
+(74, 'Sentinel Hauntling', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sentinel_Hauntling_Guardian.png', 'Thường', 'Personality: Bright\nNemesis: Viego Hauntling\nAn unfaltering light to keep the shadows at bay.', 100),
+(75, 'Sharpsteel Silverwing', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sharpsteel_Silverwing_Guardian.png', 'Thường', 'Personality: Honorable\nHobby: Polishing armor\nFor justice—and honor.', 100),
+(76, 'Spirit Blossom Silverwing', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Spirit_Blossom_Silverwing_Guardian.png', 'Thường', 'Personality: Valorous\nLikes: Guarding the spirit realm\nA warrior honors both tradition and beauty.', 100),
+(77, 'Star Guardian Doll', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Star_Guardian_Doll_Guardian.png', 'Thường', 'Personality: Sparkling\nLoves: Watching mateorite showers\nSewn on with starlit thread, that twinkle in her eye can’t be faked.', 100),
+(78, 'Star Guardian Drake', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Star_Guardian_Drake_Guardian.png', 'Hiếm', 'Personality: Benevolent\nRadiates: Moonbeams\nBorn from the constellations, this little creature gives off a faint glow.', 300),
+(79, 'Stella', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Stella_Guardian.png', 'Thường', 'Personality: Cuddly\nLikes: Soaring\nA beacon of hope for weary travelers.', 100),
+(80, 'Storm', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Storm_Guardian.png', 'Hiếm', 'Personality: Sharp\nLoves: Flying in a V-shaped formation.\nDon\'t underestimate her wings of steel.', 300),
+(81, 'Sunbeam Baley', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Sunbeam_Baley_Guardian.png', 'Thường', 'Personality: Sunny\nEnjoys: Being your sunrise on a cloudy day.\nDark omen of the desert, or adorable guide through the dunes? You decide!', 100),
+(82, 'Tibbers', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Tibbers_Guardian.png', 'Thường', 'Personality: Protective\nEats: Honey Chili\n\"Have you seen my bear, Tibbers?\" - Annie', 100),
+(83, 'Viego Hauntling', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Viego_Hauntling_Guardian.png', 'Thường', 'Personality: Lovesick\nFavorite color: Black, like his heart\nThere is no salvation from the darkness... not even darkness this cute.', 100),
+(84, 'Voxel Chip', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Voxel_Chip_Guardian.png', 'Thường', 'Personality: Foundational\nEats: Pixels\nFound in the Voxel Forest, this unassuming critter is Arcadia\'s oldest specimen.', 100),
+(85, 'Mega', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Mega_Guardian.png', 'Huyền Tho', 'Always equipped when in use  Dark Emissary\'s Realm Board.', 1000),
+(86, 'Mega Robo-Veigar Guardian', 'https://wiki.leagueoflegends.com/en-us/images/LoR_Mega_Robo-Veigar_Guardian.png', 'Huyền Tho', 'Always equipped when in use  The Final Stage Board.', 1000);
 
 -- --------------------------------------------------------
 
@@ -2837,17 +3103,20 @@ CREATE TABLE `post` (
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `thumbnail` varchar(255) DEFAULT NULL,
-  `description` text DEFAULT NULL
+  `description` text DEFAULT NULL,
+  `videoUrl` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `post`
 --
 
-INSERT INTO `post` (`id`, `title`, `content`, `category_id`, `author`, `created_at`, `updated_at`, `thumbnail`, `description`) VALUES
-(1, 'Thông tin cơ bản về Ngọc', 'Chúng tôi sắp giới thiệu một tính năng mới để bạn có thể cường hóa Anh hùng ưa thích của mình bằng cách sử dụng Ngọc.\n\nCác anh hùng Hoa Linh Lục Địa mới ra mắt của Huyền Thoại Runeterra sẽ có một nhánh đặc biệt trong tinh tú của họ gọi là Sao Ngọc. Bạn sẽ có thể thu thập Ngọc, về cơ bản là các Sức Mạnh, sau đó đặt chúng vào Sao Ngọc để ban cho anh hùng sức mạnh đó trong các cuộc phiêu lưu! Bạn có thể coi chúng như ngôi sao lớn thứ 4 của một anh hùng, nhưng thay vì bị giới hạn vào một sức mạnh cụ thể mà nhà thiết kế đã đặt ra, bạn có thể chọn một trong những sức mạnh mà bạn đã thu thập được dưới dạng các viên Ngọc.\n\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/499cc57ee794ee862825209796368796826e0795-1920x1080.jpg[/img]\n\nNgọc có thể được thu thập thông qua Thùng Ngọc Trồi Non Đầu Xuân hoặc được chế tạo từ một hệ thống tài nguyên mới gọi là Mảnh Ngọc. Ngọc có các độ hiếm sau: Thường, Hiếm, và Huyền Thoại. Chúng có một loạt các sức mạnh mới và cũ được thiết kế đặc trưng cho các anh hùng của một khu vực cụ thể.\n\nNgọc có đặc trưng theo khu vực, có nghĩa là chúng chỉ có thể được gắn với các anh hùng phù hợp với khu vực được chỉ định của Ngọc. Bản cập nhật đầu tiên này chỉ bao gồm Ngọc Hoa Linh Lục Địa, tuy nhiên theo kế hoạch chúng tôi sẽ triển khai Ngọc mới cho mọi khu vực.\n\nGiải thích chi tiết về Ngọc:\n\nGiờ hãy thực sự bắt đầu đi vào chi tiết nào. Chúng hoạt động như thế nào? Dưới đây là phân tích từng bước của chúng tôi.\n\nBước 1: Mở khóa\n\nCác Sao Ngọc có thể được mở khóa trong tinh tú của một anh hùng sau khi thu thập 3 ngôi sao với Ngọc Tinh Tú Hoa Linh Lục Địa.\n\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/9a1457026a621fd727a5099276c622adebdf0de4-1920x1080.jpg[/img]\n\nBước 2: Thu thập\n\nKhi bạn đã mở khóa Sao Ngọc của một anh hùng, đã đến lúc thu thập vài viên Ngọc rồi! Bạn có thể làm điều này theo hai cách:\n\n1. Bằng các Thùng Ngọc, một loại phần thưởng mới đi kèm với Bản Cập Nhật 6.8. Chúng cũng là một cách tuyệt vời để kiếm tài nguyên mới, Mảnh Ngọc.\n\nNói về Mảnh Ngọc, chúng có thể được dùng để chế tạo Ngọc, vì vậy nếu các Thùng Ngọc không mang lại viên Ngọc bạn muốn, với đủ số mảnh ngọc, bạn có thể tự chế tạo viên Ngọc mà bạn mong muốn!\n\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/1d4342b18adbf2251bf011539f94ce7c190c404f-1920x1056.jpg[/img]\n\nBước 3: Trang bị\n\nKhi bạn đã thu thập hoặc chế tạo được vài viên Ngọc mới tuyệt vời, chúng cần được trang bị vào ô Ngọc của anh hùng.\n\nĐể thực hiện điều này, hãy điều hướng đến tinh tú của anh hùng, mở trang Ngọc của bạn bằng cách nhấp vào ô Sao Ngọc, và chọn Ngọc mà bạn muốn gán vào anh hùng của mình.\n\nLưu ý: Khi một viên Ngọc đã được gán vào một anh hùng cụ thể, nó sẽ không thể được trang bị cho anh hùng khác. Không giống như cổ vật, bạn sẽ cần phải có thêm bản sao nếu muốn trang bị một viên Ngọc cho nhiều anh hùng cùng lúc.\n\nBước 4: Chơi\n\nKhi bạn đã mở khóa một ô Sao Ngọc, thu thập được vài viên Ngọc và trang bị chúng cho anh hùng yêu thích của mình thì bạn đã sẵn sàng để sử dụng sức mạnh huyền diệu của ngọc rồi đấy! Sức mạnh lớn đi kèm với trách nhiệm lớn, nhưng cũng đừng quên chơi thật vui vẻ và cho chúng tôi biết suy nghĩ của bạn nhé!\n\nTương lai của Ngọc:\n\nVới bản cập nhật đầu tiên, những viên Ngọc sẽ dành riêng cho các anh hùng Hoa Linh Lục Địa với kế hoạch phát hành Ngọc cho các khu vực khác trong tương lai.\n\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/53f50b27d55aa2a6b7f136d121d86615cb9c1c7d-921x1151.jpg[/img]\n\nCảm ơn vì đã đọc bài viết! Chúng tôi hy vọng các bạn sẽ có những giây phút vui vẻ với sự bổ sung tính năng mới này vào trò chơi, và như mọi khi, hãy cho chúng tôi biết ý kiến của bạn nhé!\n\nTóm tắt:\n\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/05a3f34e15ee5f445b3d436fef4b40868bbcb979-1920x1056.jpg[/img]\n\n- Ngọc là một cách mới để cường hóa sức mạnh cho anh hùng của bạn.\n- Ngọc là những sức mạnh có thể trang bị được gắn liền với Sao Ngọc.\n- Các Sao Ngọc là các nhánh được tìm thấy trong tinh tú của một anh hùng và có thể mở khóa sau khi đạt sức mạnh ngôi sao thứ ba.\n- Ngọc được thu thập thông qua Thùng Ngọc hoặc có thể được chế tạo thông qua Mảnh Ngọc.\n- Ngọc bổ trợ gán với một anh hùng khi đã được sử dụng, nhưng sẽ được giữ lại trong kho của anh hùng đó vĩnh viễn khi được bỏ ra.\n- Tất cả Ngọc đều gắn liền với một khu vực cụ thể.\n- Ngọc có biểu tượng khu vực ở trên cùng, cho biết anh hùng của khu vực nào có thể trang bị chúng.\n\nCâu Hỏi Thường Gặp\n\nHỏi: Có kế hoạch phát hành Ngọc cho tất cả các khu vực không và điều này sẽ ảnh hưởng như thế nào đến các anh hùng đa khu vực?\n\nĐáp: Trong tương lai, chúng tôi sẽ phát hành Ngọc từ tất cả các khu vực khác nhau, với các anh hùng đa khu vực có thể trang bị từ cả hai loại khu vực.\n\nHỏi: Có bao nhiêu viên Ngọc?\n\nĐáp: 28. Tính đến thời điểm hiện tại.\n\nHỏi: Có dễ để nhận được Ngọc/Mảnh Ngọc không?\n\nĐáp: Chúng tôi muốn người chơi có cơ hội tương tác toàn diện với Ngọc, vì vậy ban đầu bạn có thể tích lũy chúng khá nhanh chóng. Khi mở rộng tính năng này cho nhiều anh hùng và khu vực hơn trong tương lai, chúng tôi sẽ cố gắng đạt được sự cân bằng để việc sưu tầm chúng thú vị hơn và không trở nên nhàm chán.\n\nHỏi: Tại sao lại chọn Ngọc thay vì thêm một ô Cổ Vật hoặc tinh tú 7 sao?\n\nĐáp: Các Cổ Vật cực kỳ mạnh mẽ khi kết hợp với nhau, và mỗi ô mới mà chúng tôi thêm vào sẽ tạo ra những kết hợp lớn hơn theo cấp số nhân, điều đó sẽ khiến trò chơi trở nên rối loạn trong thời gian ngắn. Vì mỗi anh hùng chỉ có một ô Ngọc, chúng ta không phải lo lắng về việc hai Ngọc mâu thuẫn với nhau, nên hiệu ứng Ngọc sẽ trở nên thú vị hơn nhiều!\n', 3, 'Bùi Hải Đăng', '2025-11-10 20:40:03', '2025-11-13 21:44:22', 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/56b10e077a1202cdd45760e41ab1c036120f82a0-1920x1080.jpg', 'Ngọc là một tính năng mới để giúp bạn thăng cấp anh hùng'),
-(2, 'Câu hỏi thường gặp trong Huyền Thoại Runeterra', '<h1>Câu hỏi thường gặp trong Huyền thoại Runeterra</h1>\r\n\r\n<h2>Huyền thoại Runeterra là gì?</h2>\r\n<p>Lấy bối cảnh trong vũ trụ Liên Minh Huyền Thoại, Huyền Thoại Runeterra là trò chơi thẻ bài chiến thuật, nơi kỹ năng, sự sáng tạo và nhanh trí chính là chìa khóa dẫn tới thành công.</p>\r\n<p>Trong HTR, bạn có thể:</p>\r\n<ul>\r\n  <li>Xây dựng bộ bài với những anh hùng LMHT yêu thích của mình (và cả những nhân vật mới) từ các khu vực trong Runeterra, mỗi khu vực có lối chơi riêng và lợi thế chiến thuật khác nhau.</li>\r\n  <li>Tham gia những cuộc giao tranh tràn đầy tính chiến thuật, với vô vàn cơ hội để giăng bẫy cũng như qua mặt đối phương.</li>\r\n  <li>Kiếm bài miễn phí trong quá trình chơi hoặc mua đích xác những lá bài mong muốn, hãy sưu tập theo sở thích của bạn.</li>\r\n</ul>\r\n<p>Đó chỉ là cái nhìn sơ lược mà thôi, hãy xem <a href=\"https://youtu.be/rPrgrwNARvE\" target=\"_blank\">video này</a> để có thể hiểu rõ hơn về trò chơi.</p>\r\n\r\n<h2>Có thể chơi HTR trên nền tảng nào? HTR có hệ thống chơi đa nền tảng không?</h2>\r\n<p>HTR đang được phát triển cho cả máy tính và di động (sẽ được phát hành song song) và có thể chơi đa nền tảng.</p>\r\n\r\n<h2>Làm cách nào để nhận quyền chơi HTR?</h2>\r\n<p>Chúng tôi vẫn đang trong quá trình chuẩn bị cho khu vực Đông Nam Á, Đài Loan, Hồng Kông và Ma Cao. Bởi vậy những khu vực kể trên sẽ không được hỗ trợ trong bản xem trước đặc biệt.</p>\r\n\r\n<h2>Khi nào HTR sẽ chính thức phát hành?</h2>\r\n<p>Trò chơi sẽ được phát hành chính thức trong năm 2020, bao gồm cả phiên bản di động.</p>\r\n\r\n<h2>Có phần thưởng nào cho việc đăng ký sớm không?</h2>\r\n<p>Tất cả những tài khoản đăng ký sớm sẽ nhận được một Poro Hộ Vệ Ngáo Ngơ độc nhất khi Huyền thoại Runeterra chính thức phát hành trong năm 2020. Để nhận chú Poro Hộ Vệ này, bạn chỉ cần đăng nhập vào trò chơi trong vòng 7 ngày kể từ khi HTR được phát hành.</p>\r\n\r\n<h2>Tại sao Riot lại phát triển một trò chơi thẻ bài?</h2>\r\n<p>Rất nhiều người trong chúng tôi đã và đang chơi các trò chơi thẻ bài từ khi còn nhỏ, bởi vậy chúng tôi hiểu rõ những vấn đề của thể loại trò chơi này: Tiêu tốn cả một tháng lương chỉ để thử một bộ bài mới. \"Nhân phẩm\" quyết định quá nhiều ai sẽ là người chiến thắng. Phải đấu đi đấu lại với một vài bộ bài và những lá bài quá mạnh không được cân bằng trong thời gian dài.</p>\r\n<p>Và chúng tôi tự hỏi rằng: liệu chúng tôi có thể thay đổi được điều đó không?</p>\r\n<p>Nói tóm lại, chúng tôi đã dành rất nhiều thời gian để nghĩ xem chúng tôi có thể làm gì khác biệt. Và giờ đây, cơ hội đã tới để chúng tôi muốn đưa thể loại này đến đỉnh cao mới bằng cách lưu giữ những tính năng tốt, cải thiện những điểm hạn chế, và thêm vào những yếu tố đặc sắc mới của riêng chúng tôi.</p>\r\n\r\n<h2>HTR có gì khác biệt?</h2>\r\n<p>Ngoài việc mang thế giới Liên Minh Huyền Thoại—bao gồm các tướng, nhân vật, sinh vật và các khu vực của Runeterra—vào một trò chơi hoàn toàn mới, có 3 điều khiến cho HTR trở nên khác biệt:</p>\r\n<ul>\r\n  <li>Đạt được cân bằng giữa giới hạn tiếp cận và chiều sâu chiến thuật.</li>\r\n  <li>Trao cho người chơi nhiều quyền lựa chọn hơn trong việc làm cách nào để nhận các lá bài.</li>\r\n  <li>Hỗ trợ cho lối chơi phong phú và thử nghiệm không ngừng bằng việc liên tục đưa ra các cập nhật bổ sung và cân bằng.</li>\r\n</ul>\r\n<p>Thật sự thì đó mới chỉ là một phần rất nhỏ về HTR mà thôi, hãy xem <a href=\"https://youtu.be/zDS1qCrFuCU\" target=\"_blank\">video này</a> để hiểu rõ hơn.</p>\r\n<h2>Tại sao người chơi lại bị giới hạn số tiền có thể tiêu cho các lá bài?</h2>\r\n<p>Đây là một câu hỏi rất hay, và câu trả lời cũng hơi phức tạp một chút.</p>\r\n<p>Nói ngắn gọn lại thì lý do cho việc này là vì chúng tôi muốn đảm bảo người chơi luôn hào hứng với việc mở khóa và liên tục khám phá thêm được những lá bài và chiến thuật mới. Làm chậm lại quá trình mở khóa toàn bộ các lá bài là một trong những phương pháp để chúng tôi có thể đạt được mục đích đó.</p>\r\n\r\n<h2>HTR sẽ có câu chuyện và các Anh hùng của riêng mình hay sẽ cùng tồn tại trong cốt truyện LMHT hiện tại?</h2>\r\n<p>Mọi nhân vật và thẻ bài trong trò chơi đều đến từ một khu vực thuộc Runeterra, cùng một thế giới với các Anh hùng trong Liên Minh Huyền Thoại. Bạn sẽ gặp một số gương mặt quen thuộc cũng như sẽ làm quen với những nhân vật hoàn toàn mới.</p>\r\n\r\n<h2>Sẽ có chế độ xếp hạng chứ?</h2>\r\n<p>Tất nhiên rồi—chế độ này đang trong quá trình hoàn thiện.</p>\r\n\r\n<h2>Sẽ có chế độ chơi \"hạn chế\" hoặc lựa chọn bộ bài chứ?</h2>\r\n<p>Chắc chắn rồi—chúng tôi đã lên kế hoạch để chia sẻ thông tin chi tiết trong thời gian gần nhất.</p>\r\n\r\n<h2>Tôi có thể chơi chung với bạn bè chứ?</h2>\r\n<p>Chúng tôi vẫn đang hoàn thiện tính năng danh sách bạn bè và thách đấu, cả hai tính năng này dự kiến sẽ sẵn sàng cho giai đoạn closed beta vào đầu năm 2020.</p>\r\n\r\n<h2>Thông số tối thiểu để chơi HTR và hệ điều hành được hỗ trợ là gì?</h2>\r\n<ul>\r\n  <li><strong>Windows</strong>\r\n    <ul>\r\n      <li>64-bit Windows 7, 8.1 hoặc 10</li>\r\n      <li>Vi xử lý trung tâm 3 GHz</li>\r\n      <li>4 GB RAM</li>\r\n      <li>Vi xử lý hình ảnh với 512MB+ VRAM</li>\r\n    </ul>\r\n  </li>\r\n  <li><strong>Mac OS</strong>\r\n    <ul>\r\n      <li>Không được hỗ trợ.</li>\r\n    </ul>\r\n  </li>\r\n  <li><strong>Nền tảng di động (iOS & Android)</strong>\r\n    <ul>\r\n      <li>Thông số kỹ thuật sẽ được công bố khi chúng tôi phát hành HTR trên nền tảng di động</li>\r\n    </ul>\r\n  </li>\r\n</ul>\r\n\r\n<h2>HTR có thể trở thành một môn thể thao điện tử không?</h2>\r\n<p>Chúng tôi tin rằng ở đâu có thi đấu cạnh tranh, ở đó có cơ hội để thể thao điện tử phát triển. Tuy nhiên, đây không phải là mục tiêu ưu tiên của chúng tôi. Hiện tại, chúng tôi tập trung hoàn toàn vào việc xây dựng trò chơi thẻ bài hay nhất mà chúng tôi có thể tưởng tượng ra—một trò chơi mà chúng tôi hy vọng người chơi ở khắp nơi đều sẽ yêu thích.</p>\r\n\r\n<h2>Riot đã phát triển trò chơi này bao lâu rồi?</h2>\r\n<p>Chúng tôi đã có ý tưởng về trò chơi thẻ bài LMHT trong một thời gian khá dài rồi. Chúng tôi đã hoàn thiện một số bản mẫu thử nghiệm trong quá trình phát triển, nhưng bản thân Huyền thoại Runeterra chỉ được xây dựng chủ yếu trong vài năm gần đây.</p>\r\n\r\n<h2>Vậy HTR đã hoàn thiện chưa? Bản xem trước là gì?</h2>\r\n<p>HTR vẫn đang trong giai đoạn phát triển, nhưng chúng tôi đang chuẩn bị để ra mắt phiên bản beta vào đầu năm 2020. Tuy nhiên, Sinh nhật 10 năm LMHT là một dịp không thể bỏ qua để chia sẻ bản xem trước với người chơi LMHT.</p>\r\n<p>Đáng tiếc là khu vực Đông Nam Á, Đài Loan, Hồng Kông và Ma Cao sẽ không được hỗ trợ trong bản xem trước đặc biệt.</p>\r\n\r\n<h2>Riot có đang hợp tác cùng đối tác nào để tạo ra HTR không?</h2>\r\n<p>HTR chủ yếu được phát triển bởi Riot, nhưng chúng tôi cũng đang làm việc với ba đối tác nghệ thuật rất tuyệt vời: SIXMOREVODKA, Kudos3d và Beyond FX. Việc hợp tác chặt chẽ với đội ngũ nghệ thuật nội bộ kỳ cựu và các đối tác của chúng tôi đóng một vai trò quan trọng trong việc biến HTR thành một trò chơi đạt đầy đủ tiêu chuẩn nghệ thuật cao mà Riot hướng tới.</p>\r\n<p>Chúng tôi cũng đang làm việc với một số đối tác cung cấp dịch vụ quản lý chất lượng, bản địa hóa và các dịch vụ kiểm tra khả năng tương thích giúp đảm bảo HTR đạt được tiêu chuẩn chất lượng xứng đáng với kỳ vọng của người chơi.</p>\r\n\r\n<h2>Tại sao không sử dụng Riot Points trong HTR?</h2>\r\n<p>Có 2 lý do chính. Đầu tiên, Riot đang phát triển cùng lúc nhiều trò chơi khác nhau trên di động và cả trên Google Play Store và Apple App Store đều không cho phép sử dụng chung tiền tệ giữa các trò chơi khác nhau. Thứ hai, chúng tôi đang thử nghiệm một số công cụ thú vị mới với mô hình kinh doanh HTR và lên kế hoạch tinh chỉnh hệ thống trước khi phát hành.</p>\r\n\r\n<h2>Tôi có cần phải tải hoặc đăng ký tài khoản Liên Minh Huyền Thoại để chơi HTR không?</h2>\r\n<p>Không cần. HTR là một trò chơi tải xuống độc lập. Bạn không thể sử dụng tài khoản Garena hay tài khoản LMHT thuộc Garena để chơi HTR, nhưng bạn có thể tạo một tài khoản Riot để chơi khi trò chơi được phát hành ở Đông Nam Á, Đài Loan, Hồng Kông và Ma Cao.</p>\r\n\r\n<h2>Một trận đấu trong HTR kéo dài bao lâu?</h2>\r\n<p>Các trận đấu trong HTR sẽ kết thúc trong khoảng 10–15 phút, nhưng chúng tôi có một cảnh báo: các bạn có thể sẽ chơi game này thâu đêm.</p>\r\n\r\n<h2>Hệ thống chống gian lận của trò chơi này như thế nào?</h2>\r\n<p>Riot cam kết đảm bảo tính cạnh tranh lành mạnh cho tất cả các sản phẩm của mình. Chúng tôi đã chuẩn bị sẵn các hệ thống bảo vệ và phát hiện gian lận cho HTR, và chúng tôi sẽ làm hết sức mình để đảm bảo một môi trường game công bằng nhất cho tất cả người chơi.</p>\r\n\r\n<h2>Tôi muốn tạo một trang web, ứng dụng, bot... cho HTR, tôi cần phải bắt đầu từ đâu?</h2>\r\n<p>Hãy xem <a href=\"https://developer.riotgames.com/lor\" target=\"_blank\">Mục HTR</a> tại Cổng thông tin Riot Developer của chúng tôi.</p>\r\n\r\n<h2>Nếu tôi là một nhà báo hoặc một người sáng tạo nội dung và tôi muốn viết về HTR hoặc sáng tạo các nội dung về HTR, tôi cần phải bắt đầu từ đâu?</h2>\r\n<p>Hãy truy cập địa chỉ <a href=\"https://www.riotgames.com/en/press\" target=\"_blank\">www.riotgames.com/en/press</a> để nhận những nội dung ban đầu hoặc liên hệ với chúng tôi qua địa chỉ email <a href=\"mailto:media@riotgames.com\">media@riotgames.com</a>.</p>\r\n', 2, 'Bùi Hải Đăng', '2025-11-10 20:40:03', '2025-11-13 21:45:56', 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/be521d6117e173691b9def8f553ac11e253933ec-1280x640.jpg', 'Bạn có thắc mắc ? Hãy để chúng tôi giải đáp.'),
-(3, 'Các câu hỏi thường gặp về Huyền Thoại Runeterra Open Beta tại Đông Nam Á', '<h1>Công bố đối tác phát hành - Các câu hỏi thường gặp</h1>\n<h2>Các câu hỏi thường gặp - Huyền thoại Runeterra phát hành chính thức tại Việt Nam</h2>\n\n<p><strong>Tại sao Riot lại quyết định làm việc với một đối tác phát hành tại Việt Nam?</strong></p>\n<p>Để phát hành chính thức một tựa game ở Việt Nam đòi hỏi phải tuân thủ các quy định của chính phủ, một trong số đó là việc phải hợp tác với một nhà phát hành nội địa. Chúng tôi đã thực hiện một quá trình đánh giá kéo dài nhiều tháng để tìm ra một đối tác có khả năng và mong muốn xây dựng cũng như mang tới cho người chơi trải nghiệm hoàn hảo nhất ngay từ ngày đầu tiên. Chúng tôi rất vui mừng được hợp tác cùng VNG để mang Huyền thoại Runeterra đến với người chơi tại Việt Nam.</p>\n\n<p><strong>Tại sao Riot lại lựa chọn hợp tác cùng VNG?</strong></p>\n<p>VNG có một hồ sơ mạnh mẽ cùng nền tảng vững chắc trong ngành nội dung số và giải trí trực tuyến. Là một trong những công ty công nghệ và nhà cung cấp dịch vụ mạng lớn nhất ở Việt Nam, VNG còn có kinh nghiệm lâu năm trong ngành game, đã từng ra mắt và điều hành nhiều tựa game khác nhau cùng với các công ty game đứng đầu trên thế giới trong 10 năm qua. Quan trọng nhất, VNG luôn cố gắng không ngừng để tìm kiếm sự đổi mới và qua đó cải thiện cộng đồng, đó cũng chính là giá trị cốt lõi mà Riot hướng tới.</p>\n\n<p><strong>Đối với một người chơi ở Việt Nam thì điều này có nghĩa là gì?</strong></p>\n<p>Mục tiêu hàng đầu của chúng tôi là mang tới cho người chơi ở Việt Nam chất lượng trải nghiệm tương tự như người chơi ở các khu vực khác của Riot. Điều này có nghĩa là từ khoảnh khắc game thủ Việt Nam đăng nhập vào Huyền thoại Runeterra, trải nghiệm trò chơi của họ sẽ giống hết mức có thể với trải nghiệm của người chơi ở bất cứ nơi nào khác, ví dụ như Tây Ban Nha chẳng hạn. Đối với Huyền thoại Runeterra, chúng tôi sẽ mang tới một trải nghiệm thuần Riot lần đầu tiên cho người chơi ở khu vực Đông Nam Á, trong đó có cả Việt Nam. Game thủ Việt Nam sẽ có trải nghiệm tương tự với các game thủ khác trên khắp thế giới của Riot, bao gồm cả hệ thống tài khoản Riot.</p>\n\n<p><strong>Bao giờ thì Riot Games và VNG sẽ bắt đầu hợp tác?</strong></p>\n<p>Tính đến thời điểm này, Riot và VNG đã và đang làm việc cùng nhau để mang Huyền thoại Runeterra tới người chơi ở Việt Nam rồi.</p>\n\n<p><strong>Sự hợp tác này có ảnh hưởng gì đến Liên Minh Huyền Thoại trên máy tính không?</strong></p>\n<p>Garena vẫn sẽ là đối tác của chúng tôi cho tựa game Liên Minh Huyền Thoại trên máy tính ở khu vực Đông Nam Á, Đài Loan, Hồng Kông. Chúng tôi vô cùng cảm kích sự hỗ trợ của Garena cho trò chơi này. Tài khoản Liên Minh Huyền Thoại trên Garena vẫn sẽ tiếp tục hoạt động bình thường.</p>\n<p>Tuy nhiên, để chơi những game mới, người chơi sẽ không thể sử dụng tài khoản Liên Minh Huyền Thoại trên Garena của mình và cần tạo 1 tài khoản Riot. Chúng tôi sẽ cập nhật thêm thông tin về cách khởi tạo tài khoản Riot cho các game thủ trong khu vực ĐNÁ trong tương lai.</p>\n\n<p><strong>Khi nào HTR sẽ được phát hành trên di động trong khu vực ĐNÁ?</strong></p>\n<p>Phiên bản di động sẽ được ra mắt ngay vào ngày phát hành chính thức trong năm nay và HTR sẽ hỗ trợ tính năng chơi đa nền tảng.</p>\n\n<p><strong>Tôi có thể chơi HTR bằng tiếng Việt không?</strong></p>\n<p>Tất nhiên rồi! HTR sẽ có phiên bản tiếng Việt. Người chơi cũng sẽ có thể lựa chọn bất cứ ngôn ngữ nào được HTR hỗ trợ.</p>\n', 3, 'Bùi Hải Đăng', '2025-11-10 20:40:03', '2025-11-13 21:54:35', 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/eebb3de26a3d9d1b96d2dae362538f616e6d6a57-1820x1024.jpg', 'Huyền Thoại Runeterra sẽ ra mắt bản open beta, và đây là những thông tin cập nhật dành cho người chơi tại Đông Nam Á');
+INSERT INTO `post` (`id`, `title`, `content`, `category_id`, `author`, `created_at`, `updated_at`, `thumbnail`, `description`, `videoUrl`) VALUES
+(1, 'Thông tin cơ bản về Ngọc', 'Chúng tôi sắp giới thiệu một tính năng mới để bạn có thể cường hóa Anh hùng ưa thích của mình bằng cách sử dụng Ngọc.\r\n\r\nCác anh hùng Hoa Linh Lục Địa mới ra mắt của Huyền Thoại Runeterra sẽ có một nhánh đặc biệt trong tinh tú của họ gọi là Sao Ngọc. Bạn sẽ có thể thu thập Ngọc, về cơ bản là các Sức Mạnh, sau đó đặt chúng vào Sao Ngọc để ban cho anh hùng sức mạnh đó trong các cuộc phiêu lưu! Bạn có thể coi chúng như ngôi sao lớn thứ 4 của một anh hùng, nhưng thay vì bị giới hạn vào một sức mạnh cụ thể mà nhà thiết kế đã đặt ra, bạn có thể chọn một trong những sức mạnh mà bạn đã thu thập được dưới dạng các viên Ngọc.\r\n\r\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/499cc57ee794ee862825209796368796826e0795-1920x1080.jpg[/img]\r\n\r\nNgọc có thể được thu thập thông qua Thùng Ngọc Trồi Non Đầu Xuân hoặc được chế tạo từ một hệ thống tài nguyên mới gọi là Mảnh Ngọc. Ngọc có các độ hiếm sau: Thường, Hiếm, và Huyền Thoại. Chúng có một loạt các sức mạnh mới và cũ được thiết kế đặc trưng cho các anh hùng của một khu vực cụ thể.\r\n\r\nNgọc có đặc trưng theo khu vực, có nghĩa là chúng chỉ có thể được gắn với các anh hùng phù hợp với khu vực được chỉ định của Ngọc. Bản cập nhật đầu tiên này chỉ bao gồm Ngọc Hoa Linh Lục Địa, tuy nhiên theo kế hoạch chúng tôi sẽ triển khai Ngọc mới cho mọi khu vực.\r\n\r\nGiải thích chi tiết về Ngọc:\r\n\r\nGiờ hãy thực sự bắt đầu đi vào chi tiết nào. Chúng hoạt động như thế nào? Dưới đây là phân tích từng bước của chúng tôi.\r\n\r\nBước 1: Mở khóa\r\n\r\nCác Sao Ngọc có thể được mở khóa trong tinh tú của một anh hùng sau khi thu thập 3 ngôi sao với Ngọc Tinh Tú Hoa Linh Lục Địa.\r\n\r\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/9a1457026a621fd727a5099276c622adebdf0de4-1920x1080.jpg[/img]\r\n\r\nBước 2: Thu thập\r\n\r\nKhi bạn đã mở khóa Sao Ngọc của một anh hùng, đã đến lúc thu thập vài viên Ngọc rồi! Bạn có thể làm điều này theo hai cách:\r\n\r\n1. Bằng các Thùng Ngọc, một loại phần thưởng mới đi kèm với Bản Cập Nhật 6.8. Chúng cũng là một cách tuyệt vời để kiếm tài nguyên mới, Mảnh Ngọc.\r\n\r\nNói về Mảnh Ngọc, chúng có thể được dùng để chế tạo Ngọc, vì vậy nếu các Thùng Ngọc không mang lại viên Ngọc bạn muốn, với đủ số mảnh ngọc, bạn có thể tự chế tạo viên Ngọc mà bạn mong muốn!\r\n\r\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/1d4342b18adbf2251bf011539f94ce7c190c404f-1920x1056.jpg[/img]\r\n\r\nBước 3: Trang bị\r\n\r\nKhi bạn đã thu thập hoặc chế tạo được vài viên Ngọc mới tuyệt vời, chúng cần được trang bị vào ô Ngọc của anh hùng.\r\n\r\nĐể thực hiện điều này, hãy điều hướng đến tinh tú của anh hùng, mở trang Ngọc của bạn bằng cách nhấp vào ô Sao Ngọc, và chọn Ngọc mà bạn muốn gán vào anh hùng của mình.\r\n\r\nLưu ý: Khi một viên Ngọc đã được gán vào một anh hùng cụ thể, nó sẽ không thể được trang bị cho anh hùng khác. Không giống như cổ vật, bạn sẽ cần phải có thêm bản sao nếu muốn trang bị một viên Ngọc cho nhiều anh hùng cùng lúc.\r\n\r\nBước 4: Chơi\r\n\r\nKhi bạn đã mở khóa một ô Sao Ngọc, thu thập được vài viên Ngọc và trang bị chúng cho anh hùng yêu thích của mình thì bạn đã sẵn sàng để sử dụng sức mạnh huyền diệu của ngọc rồi đấy! Sức mạnh lớn đi kèm với trách nhiệm lớn, nhưng cũng đừng quên chơi thật vui vẻ và cho chúng tôi biết suy nghĩ của bạn nhé!\r\n\r\nTương lai của Ngọc:\r\n\r\nVới bản cập nhật đầu tiên, những viên Ngọc sẽ dành riêng cho các anh hùng Hoa Linh Lục Địa với kế hoạch phát hành Ngọc cho các khu vực khác trong tương lai.\r\n\r\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/53f50b27d55aa2a6b7f136d121d86615cb9c1c7d-921x1151.jpg[/img]\r\n\r\nCảm ơn vì đã đọc bài viết! Chúng tôi hy vọng các bạn sẽ có những giây phút vui vẻ với sự bổ sung tính năng mới này vào trò chơi, và như mọi khi, hãy cho chúng tôi biết ý kiến của bạn nhé!\r\n\r\nTóm tắt:\r\n\r\n[img]https://cdn.sanity.io/images/dsfx7636/news_live/05a3f34e15ee5f445b3d436fef4b40868bbcb979-1920x1056.jpg[/img]\r\n\r\n- Ngọc là một cách mới để cường hóa sức mạnh cho anh hùng của bạn.\r\n- Ngọc là những sức mạnh có thể trang bị được gắn liền với Sao Ngọc.\r\n- Các Sao Ngọc là các nhánh được tìm thấy trong tinh tú của một anh hùng và có thể mở khóa sau khi đạt sức mạnh ngôi sao thứ ba.\r\n- Ngọc được thu thập thông qua Thùng Ngọc hoặc có thể được chế tạo thông qua Mảnh Ngọc.\r\n- Ngọc bổ trợ gán với một anh hùng khi đã được sử dụng, nhưng sẽ được giữ lại trong kho của anh hùng đó vĩnh viễn khi được bỏ ra.\r\n- Tất cả Ngọc đều gắn liền với một khu vực cụ thể.\r\n- Ngọc có biểu tượng khu vực ở trên cùng, cho biết anh hùng của khu vực nào có thể trang bị chúng.\r\n\r\nCâu Hỏi Thường Gặp\r\n\r\nHỏi: Có kế hoạch phát hành Ngọc cho tất cả các khu vực không và điều này sẽ ảnh hưởng như thế nào đến các anh hùng đa khu vực?\r\n\r\nĐáp: Trong tương lai, chúng tôi sẽ phát hành Ngọc từ tất cả các khu vực khác nhau, với các anh hùng đa khu vực có thể trang bị từ cả hai loại khu vực.\r\n\r\nHỏi: Có bao nhiêu viên Ngọc?\r\n\r\nĐáp: 28. Tính đến thời điểm hiện tại.\r\n\r\nHỏi: Có dễ để nhận được Ngọc/Mảnh Ngọc không?\r\n\r\nĐáp: Chúng tôi muốn người chơi có cơ hội tương tác toàn diện với Ngọc, vì vậy ban đầu bạn có thể tích lũy chúng khá nhanh chóng. Khi mở rộng tính năng này cho nhiều anh hùng và khu vực hơn trong tương lai, chúng tôi sẽ cố gắng đạt được sự cân bằng để việc sưu tầm chúng thú vị hơn và không trở nên nhàm chán.\r\n\r\nHỏi: Tại sao lại chọn Ngọc thay vì thêm một ô Cổ Vật hoặc tinh tú 7 sao?\r\n\r\nĐáp: Các Cổ Vật cực kỳ mạnh mẽ khi kết hợp với nhau, và mỗi ô mới mà chúng tôi thêm vào sẽ tạo ra những kết hợp lớn hơn theo cấp số nhân, điều đó sẽ khiến trò chơi trở nên rối loạn trong thời gian ngắn. Vì mỗi anh hùng chỉ có một ô Ngọc, chúng ta không phải lo lắng về việc hai Ngọc mâu thuẫn với nhau, nên hiệu ứng Ngọc sẽ trở nên thú vị hơn nhiều!\r\n', 3, 'Bùi Hải Đăng', '2025-11-10 20:40:03', '2025-11-19 23:16:56', 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/4cbf7788f3729aa54d22b9d24f907ef5728c7723-3840x2160.jpg', 'Ngọc là một tính năng mới để giúp bạn thăng cấp anh hùng', NULL),
+(2, 'Câu hỏi thường gặp trong Huyền Thoại Runeterra', '<h1>Câu hỏi thường gặp trong Huyền thoại Runeterra</h1>\n\n<h2>Huyền thoại Runeterra là gì?</h2>\n<p>Lấy bối cảnh trong vũ trụ Liên Minh Huyền Thoại, Huyền Thoại Runeterra là trò chơi thẻ bài chiến thuật, nơi kỹ năng, sự sáng tạo và nhanh trí chính là chìa khóa dẫn tới thành công.</p>\n<p>Trong HTR, bạn có thể:</p>\n<ul>\n  <li>Xây dựng bộ bài với những anh hùng LMHT yêu thích của mình (và cả những nhân vật mới) từ các khu vực trong Runeterra, mỗi khu vực có lối chơi riêng và lợi thế chiến thuật khác nhau.</li>\n  <li>Tham gia những cuộc giao tranh tràn đầy tính chiến thuật, với vô vàn cơ hội để giăng bẫy cũng như qua mặt đối phương.</li>\n  <li>Kiếm bài miễn phí trong quá trình chơi hoặc mua đích xác những lá bài mong muốn, hãy sưu tập theo sở thích của bạn.</li>\n</ul>\n<p>Đó chỉ là cái nhìn sơ lược mà thôi, hãy xem <a href=\"https://youtu.be/rPrgrwNARvE\" target=\"_blank\">video này</a> để có thể hiểu rõ hơn về trò chơi.</p>\n\n<h2>Có thể chơi HTR trên nền tảng nào? HTR có hệ thống chơi đa nền tảng không?</h2>\n<p>HTR đang được phát triển cho cả máy tính và di động (sẽ được phát hành song song) và có thể chơi đa nền tảng.</p>\n\n<h2>Làm cách nào để nhận quyền chơi HTR?</h2>\n<p>Chúng tôi vẫn đang trong quá trình chuẩn bị cho khu vực Đông Nam Á, Đài Loan, Hồng Kông và Ma Cao. Bởi vậy những khu vực kể trên sẽ không được hỗ trợ trong bản xem trước đặc biệt.</p>\n\n<h2>Khi nào HTR sẽ chính thức phát hành?</h2>\n<p>Trò chơi sẽ được phát hành chính thức trong năm 2020, bao gồm cả phiên bản di động.</p>\n\n<h2>Có phần thưởng nào cho việc đăng ký sớm không?</h2>\n<p>Tất cả những tài khoản đăng ký sớm sẽ nhận được một Poro Hộ Vệ Ngáo Ngơ độc nhất khi Huyền thoại Runeterra chính thức phát hành trong năm 2020. Để nhận chú Poro Hộ Vệ này, bạn chỉ cần đăng nhập vào trò chơi trong vòng 7 ngày kể từ khi HTR được phát hành.</p>\n\n<h2>Tại sao Riot lại phát triển một trò chơi thẻ bài?</h2>\n<p>Rất nhiều người trong chúng tôi đã và đang chơi các trò chơi thẻ bài từ khi còn nhỏ, bởi vậy chúng tôi hiểu rõ những vấn đề của thể loại trò chơi này: Tiêu tốn cả một tháng lương chỉ để thử một bộ bài mới. \"Nhân phẩm\" quyết định quá nhiều ai sẽ là người chiến thắng. Phải đấu đi đấu lại với một vài bộ bài và những lá bài quá mạnh không được cân bằng trong thời gian dài.</p>\n<p>Và chúng tôi tự hỏi rằng: liệu chúng tôi có thể thay đổi được điều đó không?</p>\n<p>Nói tóm lại, chúng tôi đã dành rất nhiều thời gian để nghĩ xem chúng tôi có thể làm gì khác biệt. Và giờ đây, cơ hội đã tới để chúng tôi muốn đưa thể loại này đến đỉnh cao mới bằng cách lưu giữ những tính năng tốt, cải thiện những điểm hạn chế, và thêm vào những yếu tố đặc sắc mới của riêng chúng tôi.</p>\n\n<h2>HTR có gì khác biệt?</h2>\n<p>Ngoài việc mang thế giới Liên Minh Huyền Thoại—bao gồm các tướng, nhân vật, sinh vật và các khu vực của Runeterra—vào một trò chơi hoàn toàn mới, có 3 điều khiến cho HTR trở nên khác biệt:</p>\n<ul>\n  <li>Đạt được cân bằng giữa giới hạn tiếp cận và chiều sâu chiến thuật.</li>\n  <li>Trao cho người chơi nhiều quyền lựa chọn hơn trong việc làm cách nào để nhận các lá bài.</li>\n  <li>Hỗ trợ cho lối chơi phong phú và thử nghiệm không ngừng bằng việc liên tục đưa ra các cập nhật bổ sung và cân bằng.</li>\n</ul>\n<p>Thật sự thì đó mới chỉ là một phần rất nhỏ về HTR mà thôi, hãy xem <a href=\"https://youtu.be/zDS1qCrFuCU\" target=\"_blank\">video này</a> để hiểu rõ hơn.</p>\n<h2>Tại sao người chơi lại bị giới hạn số tiền có thể tiêu cho các lá bài?</h2>\n<p>Đây là một câu hỏi rất hay, và câu trả lời cũng hơi phức tạp một chút.</p>\n<p>Nói ngắn gọn lại thì lý do cho việc này là vì chúng tôi muốn đảm bảo người chơi luôn hào hứng với việc mở khóa và liên tục khám phá thêm được những lá bài và chiến thuật mới. Làm chậm lại quá trình mở khóa toàn bộ các lá bài là một trong những phương pháp để chúng tôi có thể đạt được mục đích đó.</p>\n\n<h2>HTR sẽ có câu chuyện và các Anh hùng của riêng mình hay sẽ cùng tồn tại trong cốt truyện LMHT hiện tại?</h2>\n<p>Mọi nhân vật và thẻ bài trong trò chơi đều đến từ một khu vực thuộc Runeterra, cùng một thế giới với các Anh hùng trong Liên Minh Huyền Thoại. Bạn sẽ gặp một số gương mặt quen thuộc cũng như sẽ làm quen với những nhân vật hoàn toàn mới.</p>\n\n<h2>Sẽ có chế độ xếp hạng chứ?</h2>\n<p>Tất nhiên rồi—chế độ này đang trong quá trình hoàn thiện.</p>\n\n<h2>Sẽ có chế độ chơi \"hạn chế\" hoặc lựa chọn bộ bài chứ?</h2>\n<p>Chắc chắn rồi—chúng tôi đã lên kế hoạch để chia sẻ thông tin chi tiết trong thời gian gần nhất.</p>\n\n<h2>Tôi có thể chơi chung với bạn bè chứ?</h2>\n<p>Chúng tôi vẫn đang hoàn thiện tính năng danh sách bạn bè và thách đấu, cả hai tính năng này dự kiến sẽ sẵn sàng cho giai đoạn closed beta vào đầu năm 2020.</p>\n\n<h2>Thông số tối thiểu để chơi HTR và hệ điều hành được hỗ trợ là gì?</h2>\n<ul>\n  <li><strong>Windows</strong>\n    <ul>\n      <li>64-bit Windows 7, 8.1 hoặc 10</li>\n      <li>Vi xử lý trung tâm 3 GHz</li>\n      <li>4 GB RAM</li>\n      <li>Vi xử lý hình ảnh với 512MB+ VRAM</li>\n    </ul>\n  </li>\n  <li><strong>Mac OS</strong>\n    <ul>\n      <li>Không được hỗ trợ.</li>\n    </ul>\n  </li>\n  <li><strong>Nền tảng di động (iOS & Android)</strong>\n    <ul>\n      <li>Thông số kỹ thuật sẽ được công bố khi chúng tôi phát hành HTR trên nền tảng di động</li>\n    </ul>\n  </li>\n</ul>\n\n<h2>HTR có thể trở thành một môn thể thao điện tử không?</h2>\n<p>Chúng tôi tin rằng ở đâu có thi đấu cạnh tranh, ở đó có cơ hội để thể thao điện tử phát triển. Tuy nhiên, đây không phải là mục tiêu ưu tiên của chúng tôi. Hiện tại, chúng tôi tập trung hoàn toàn vào việc xây dựng trò chơi thẻ bài hay nhất mà chúng tôi có thể tưởng tượng ra—một trò chơi mà chúng tôi hy vọng người chơi ở khắp nơi đều sẽ yêu thích.</p>\n\n<h2>Riot đã phát triển trò chơi này bao lâu rồi?</h2>\n<p>Chúng tôi đã có ý tưởng về trò chơi thẻ bài LMHT trong một thời gian khá dài rồi. Chúng tôi đã hoàn thiện một số bản mẫu thử nghiệm trong quá trình phát triển, nhưng bản thân Huyền thoại Runeterra chỉ được xây dựng chủ yếu trong vài năm gần đây.</p>\n\n<h2>Vậy HTR đã hoàn thiện chưa? Bản xem trước là gì?</h2>\n<p>HTR vẫn đang trong giai đoạn phát triển, nhưng chúng tôi đang chuẩn bị để ra mắt phiên bản beta vào đầu năm 2020. Tuy nhiên, Sinh nhật 10 năm LMHT là một dịp không thể bỏ qua để chia sẻ bản xem trước với người chơi LMHT.</p>\n<p>Đáng tiếc là khu vực Đông Nam Á, Đài Loan, Hồng Kông và Ma Cao sẽ không được hỗ trợ trong bản xem trước đặc biệt.</p>\n\n<h2>Riot có đang hợp tác cùng đối tác nào để tạo ra HTR không?</h2>\n<p>HTR chủ yếu được phát triển bởi Riot, nhưng chúng tôi cũng đang làm việc với ba đối tác nghệ thuật rất tuyệt vời: SIXMOREVODKA, Kudos3d và Beyond FX. Việc hợp tác chặt chẽ với đội ngũ nghệ thuật nội bộ kỳ cựu và các đối tác của chúng tôi đóng một vai trò quan trọng trong việc biến HTR thành một trò chơi đạt đầy đủ tiêu chuẩn nghệ thuật cao mà Riot hướng tới.</p>\n<p>Chúng tôi cũng đang làm việc với một số đối tác cung cấp dịch vụ quản lý chất lượng, bản địa hóa và các dịch vụ kiểm tra khả năng tương thích giúp đảm bảo HTR đạt được tiêu chuẩn chất lượng xứng đáng với kỳ vọng của người chơi.</p>\n\n<h2>Tại sao không sử dụng Riot Points trong HTR?</h2>\n<p>Có 2 lý do chính. Đầu tiên, Riot đang phát triển cùng lúc nhiều trò chơi khác nhau trên di động và cả trên Google Play Store và Apple App Store đều không cho phép sử dụng chung tiền tệ giữa các trò chơi khác nhau. Thứ hai, chúng tôi đang thử nghiệm một số công cụ thú vị mới với mô hình kinh doanh HTR và lên kế hoạch tinh chỉnh hệ thống trước khi phát hành.</p>\n\n<h2>Tôi có cần phải tải hoặc đăng ký tài khoản Liên Minh Huyền Thoại để chơi HTR không?</h2>\n<p>Không cần. HTR là một trò chơi tải xuống độc lập. Bạn không thể sử dụng tài khoản Garena hay tài khoản LMHT thuộc Garena để chơi HTR, nhưng bạn có thể tạo một tài khoản Riot để chơi khi trò chơi được phát hành ở Đông Nam Á, Đài Loan, Hồng Kông và Ma Cao.</p>\n\n<h2>Một trận đấu trong HTR kéo dài bao lâu?</h2>\n<p>Các trận đấu trong HTR sẽ kết thúc trong khoảng 10–15 phút, nhưng chúng tôi có một cảnh báo: các bạn có thể sẽ chơi game này thâu đêm.</p>\n\n<h2>Hệ thống chống gian lận của trò chơi này như thế nào?</h2>\n<p>Riot cam kết đảm bảo tính cạnh tranh lành mạnh cho tất cả các sản phẩm của mình. Chúng tôi đã chuẩn bị sẵn các hệ thống bảo vệ và phát hiện gian lận cho HTR, và chúng tôi sẽ làm hết sức mình để đảm bảo một môi trường game công bằng nhất cho tất cả người chơi.</p>\n\n<h2>Tôi muốn tạo một trang web, ứng dụng, bot... cho HTR, tôi cần phải bắt đầu từ đâu?</h2>\n<p>Hãy xem <a href=\"https://developer.riotgames.com/lor\" target=\"_blank\">Mục HTR</a> tại Cổng thông tin Riot Developer của chúng tôi.</p>\n\n<h2>Nếu tôi là một nhà báo hoặc một người sáng tạo nội dung và tôi muốn viết về HTR hoặc sáng tạo các nội dung về HTR, tôi cần phải bắt đầu từ đâu?</h2>\n<p>Hãy truy cập địa chỉ <a href=\"https://www.riotgames.com/en/press\" target=\"_blank\">www.riotgames.com/en/press</a> để nhận những nội dung ban đầu hoặc liên hệ với chúng tôi qua địa chỉ email <a href=\"mailto:media@riotgames.com\">media@riotgames.com</a>.</p>\n', 2, 'Bùi Hải Đăng', '2025-11-10 20:40:03', '2025-11-18 10:28:45', 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/be521d6117e173691b9def8f553ac11e253933ec-1280x640.jpg', 'Bạn có thắc mắc ? Hãy để chúng tôi giải đáp.', NULL),
+(3, 'Các câu hỏi thường gặp về Huyền Thoại Runeterra Open Beta tại Đông Nam Á', '<h1>Công bố đối tác phát hành - Các câu hỏi thường gặp</h1>\n<h2>Các câu hỏi thường gặp - Huyền thoại Runeterra phát hành chính thức tại Việt Nam</h2>\n\n<p><strong>Tại sao Riot lại quyết định làm việc với một đối tác phát hành tại Việt Nam?</strong></p>\n<p>Để phát hành chính thức một tựa game ở Việt Nam đòi hỏi phải tuân thủ các quy định của chính phủ, một trong số đó là việc phải hợp tác với một nhà phát hành nội địa. Chúng tôi đã thực hiện một quá trình đánh giá kéo dài nhiều tháng để tìm ra một đối tác có khả năng và mong muốn xây dựng cũng như mang tới cho người chơi trải nghiệm hoàn hảo nhất ngay từ ngày đầu tiên. Chúng tôi rất vui mừng được hợp tác cùng VNG để mang Huyền thoại Runeterra đến với người chơi tại Việt Nam.</p>\n\n<p><strong>Tại sao Riot lại lựa chọn hợp tác cùng VNG?</strong></p>\n<p>VNG có một hồ sơ mạnh mẽ cùng nền tảng vững chắc trong ngành nội dung số và giải trí trực tuyến. Là một trong những công ty công nghệ và nhà cung cấp dịch vụ mạng lớn nhất ở Việt Nam, VNG còn có kinh nghiệm lâu năm trong ngành game, đã từng ra mắt và điều hành nhiều tựa game khác nhau cùng với các công ty game đứng đầu trên thế giới trong 10 năm qua. Quan trọng nhất, VNG luôn cố gắng không ngừng để tìm kiếm sự đổi mới và qua đó cải thiện cộng đồng, đó cũng chính là giá trị cốt lõi mà Riot hướng tới.</p>\n\n<p><strong>Đối với một người chơi ở Việt Nam thì điều này có nghĩa là gì?</strong></p>\n<p>Mục tiêu hàng đầu của chúng tôi là mang tới cho người chơi ở Việt Nam chất lượng trải nghiệm tương tự như người chơi ở các khu vực khác của Riot. Điều này có nghĩa là từ khoảnh khắc game thủ Việt Nam đăng nhập vào Huyền thoại Runeterra, trải nghiệm trò chơi của họ sẽ giống hết mức có thể với trải nghiệm của người chơi ở bất cứ nơi nào khác, ví dụ như Tây Ban Nha chẳng hạn. Đối với Huyền thoại Runeterra, chúng tôi sẽ mang tới một trải nghiệm thuần Riot lần đầu tiên cho người chơi ở khu vực Đông Nam Á, trong đó có cả Việt Nam. Game thủ Việt Nam sẽ có trải nghiệm tương tự với các game thủ khác trên khắp thế giới của Riot, bao gồm cả hệ thống tài khoản Riot.</p>\n\n<p><strong>Bao giờ thì Riot Games và VNG sẽ bắt đầu hợp tác?</strong></p>\n<p>Tính đến thời điểm này, Riot và VNG đã và đang làm việc cùng nhau để mang Huyền thoại Runeterra tới người chơi ở Việt Nam rồi.</p>\n\n<p><strong>Sự hợp tác này có ảnh hưởng gì đến Liên Minh Huyền Thoại trên máy tính không?</strong></p>\n<p>Garena vẫn sẽ là đối tác của chúng tôi cho tựa game Liên Minh Huyền Thoại trên máy tính ở khu vực Đông Nam Á, Đài Loan, Hồng Kông. Chúng tôi vô cùng cảm kích sự hỗ trợ của Garena cho trò chơi này. Tài khoản Liên Minh Huyền Thoại trên Garena vẫn sẽ tiếp tục hoạt động bình thường.</p>\n<p>Tuy nhiên, để chơi những game mới, người chơi sẽ không thể sử dụng tài khoản Liên Minh Huyền Thoại trên Garena của mình và cần tạo 1 tài khoản Riot. Chúng tôi sẽ cập nhật thêm thông tin về cách khởi tạo tài khoản Riot cho các game thủ trong khu vực ĐNÁ trong tương lai.</p>\n\n<p><strong>Khi nào HTR sẽ được phát hành trên di động trong khu vực ĐNÁ?</strong></p>\n<p>Phiên bản di động sẽ được ra mắt ngay vào ngày phát hành chính thức trong năm nay và HTR sẽ hỗ trợ tính năng chơi đa nền tảng.</p>\n\n<p><strong>Tôi có thể chơi HTR bằng tiếng Việt không?</strong></p>\n<p>Tất nhiên rồi! HTR sẽ có phiên bản tiếng Việt. Người chơi cũng sẽ có thể lựa chọn bất cứ ngôn ngữ nào được HTR hỗ trợ.</p>\n', 3, 'Bùi Hải Đăng', '2025-11-10 20:40:03', '2025-11-13 21:54:35', 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/eebb3de26a3d9d1b96d2dae362538f616e6d6a57-1820x1024.jpg', 'Huyền Thoại Runeterra sẽ ra mắt bản open beta, và đây là những thông tin cập nhật dành cho người chơi tại Đông Nam Á', NULL),
+(6, 'Hé Lộ Anivia | Huyền Thoại Runeterra', '', 3, 'Bùi Hải Đăng', '2025-11-09 10:24:31', '2025-11-18 10:51:20', 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/fc8d72b94621d810b1f18b53cfebb45cd50aae14-1920x1080.jpg', 'Anivia sẽ gia nhập Con Đường Anh Hùng trong Bản cập nhật 6.10, Nguyên Tố, ra mắt vào ngày mai.', 'https://www.youtube.com/shorts/lYoXhRBeUrI'),
+(7, 'Hỏi Đáp Với Nhà Phát Triển', '', 4, 'Bùi Hải Đăng', '2025-09-27 10:56:59', '2025-11-18 11:00:09', 'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/a7729757d20c787e6d61653741f69b1d67f3e47f-1920x1080.jpg', '@RiotShen1138, @bkop.me và @RiotLopeeee trả lời các câu hỏi của cộng đồng qua YouTube Live Stream.', 'https://www.youtube.com/watch?v=plysOD-tZ5Q');
 
 -- --------------------------------------------------------
 
@@ -2869,22 +3138,13 @@ CREATE TABLE `purchase_history` (
 --
 
 INSERT INTO `purchase_history` (`id`, `username`, `cardCode`, `cardName`, `price`, `time`) VALUES
-(48, 'admin', '01DE037', 'Phản Đòn', 30, '2025-11-14 19:50:30'),
-(49, 'admin', '01PZ040', 'Jinx', 300, '2025-11-14 19:53:40'),
-(50, 'admin', '01DE001', 'Kỳ Binh Tiên Phong', 30, '2025-11-14 20:11:59'),
-(51, 'admin', '01DE012', 'Garen', 300, '2025-11-14 20:14:08'),
-(52, 'admin', '01DE011', 'Môn Đệ Laurent', 10, '2025-11-14 20:14:21'),
-(53, 'admin', '01DE002', 'Tianna Crownguard', 120, '2025-11-14 20:15:03'),
-(54, 'admin', '01DE009', 'Vệ Binh Giáp Sắt', 10, '2025-11-14 20:46:45'),
-(55, 'admin', '01DE006', 'Trung Sĩ Tiên Phong', 30, '2025-11-14 20:56:16'),
-(56, 'admin', '01DE007', 'Phán Quyết', 120, '2025-11-14 21:29:06'),
-(57, 'admin', '01DE004', 'Cánh Bạc Tiên Phong', 10, '2025-11-14 21:31:18'),
-(58, 'admin', '01DE003', 'Người Giữ Gươm Laurent', 30, '2025-11-14 21:42:32'),
-(59, 'buihaidang', '01DE001', 'Kỳ Binh Tiên Phong', 30, '2025-11-14 21:45:24'),
-(60, 'admin', '01DE012T1', 'Garen', 0, '2025-11-14 22:14:58'),
-(61, 'admin', '01DE010', 'Thương Thủ Mẫn Linh', 30, '2025-11-14 22:59:35'),
 (62, 'admin', '01DE012T2', 'Phán Quyết Của Garen', 0, '2025-11-14 23:01:19'),
-(63, 'admin', '01DE015', 'Thậm Minh Hộ Vệ', 30, '2025-11-17 22:45:23');
+(63, 'admin', '01DE015', 'Thậm Minh Hộ Vệ', 30, '2025-11-17 22:45:23'),
+(64, 'admin', '01DE025', 'Giam Cầm', 10, '2025-11-18 15:51:11'),
+(70, 'admin', '01DE013', 'Giáp Lưới', 10, '2025-11-20 11:15:28'),
+(71, 'admin', '01DE020', 'Cảnh Binh Tiên Phong', 10, '2025-11-20 15:28:51'),
+(72, 'admin', '01DE002', 'Tianna Crownguard', 120, '2025-11-20 15:31:12'),
+(73, 'admin', '01DE001', 'Kỳ Binh Tiên Phong', 30, '2025-11-25 10:00:45');
 
 -- --------------------------------------------------------
 
@@ -3057,7 +3317,475 @@ INSERT INTO `relic_purchase_history` (`id`, `username`, `relicCode`, `relicName`
 (22, 'admin', 'R0113', 'Sách Ẩn', 70, '2025-11-14 23:06:44'),
 (23, 'admin', 'R0126', 'Móng Vuốt Vĩ Đại', 70, '2025-11-14 23:07:28'),
 (24, 'admin', 'R0014', 'Xẻng Của Kẻ Đào Mộ', 30, '2025-11-14 23:08:40'),
-(25, 'admin', 'R0062', 'Tìm Thấy Thần Tài', 70, '2025-11-17 22:45:23');
+(25, 'admin', 'R0062', 'Tìm Thấy Thần Tài', 70, '2025-11-17 22:45:23'),
+(26, 'admin', 'R0035', 'Canh Bạc Của Thần Bài', 30, '2025-11-18 16:27:54'),
+(27, 'admin', 'R0080', 'Quái Thú Bên Trong', 70, '2025-11-18 16:27:54'),
+(28, 'admin', 'R0101', 'Phước Lành Vũ Trụ (Tiêu Thụ)', 10, '2025-11-20 10:08:58'),
+(29, 'admin', 'R0032', 'Ngọn Giáo Linh Hồn', 10, '2025-11-20 16:07:23'),
+(30, 'admin', 'R0058', 'Lựa Chọn Của Tinh Tú', 70, '2025-11-25 10:00:20');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `summoner_icons`
+--
+
+CREATE TABLE `summoner_icons` (
+  `id` int(11) NOT NULL,
+  `name` varchar(46) DEFAULT NULL,
+  `image` varchar(113) DEFAULT NULL,
+  `rarity` varchar(50) DEFAULT 'Thường',
+  `price` int(11) DEFAULT 200
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `summoner_icons`
+--
+
+INSERT INTO `summoner_icons` (`id`, `name`, `image`, `rarity`, `price`) VALUES
+(1, 'Bandle City', 'https://wiki.leagueoflegends.com/en-us/images/Bandle_City_LoR_profileicon.png', 'Thường', 200),
+(2, 'Graduation Day', 'https://wiki.leagueoflegends.com/en-us/images/Graduation_Day_LoR_profileicon.png', 'Thường', 200),
+(3, 'Orientation Day', 'https://wiki.leagueoflegends.com/en-us/images/Orientation_Day_LoR_profileicon.png', 'Thường', 200),
+(4, 'Scout\'s Honor', 'https://wiki.leagueoflegends.com/en-us/images/Scout%27s_Honor_LoR_profileicon.png', 'Thường', 200),
+(5, 'Scout\'s Summit', 'https://wiki.leagueoflegends.com/en-us/images/Scout%27s_Summit_LoR_profileicon.png', 'Thường', 200),
+(6, 'The Hexplosives Expert', 'https://wiki.leagueoflegends.com/en-us/images/The_Hexplosives_Expert_LoR_profileicon.png', 'Thường', 200),
+(7, 'The Keeper of the Hammer', 'https://wiki.leagueoflegends.com/en-us/images/The_Keeper_of_the_Hammer_LoR_profileicon.png', 'Thường', 200),
+(8, 'The Tiny Master of Evil', 'https://wiki.leagueoflegends.com/en-us/images/The_Tiny_Master_of_Evil_LoR_profileicon.png', 'Thường', 200),
+(9, 'The Yordle Gunner', 'https://wiki.leagueoflegends.com/en-us/images/The_Yordle_Gunner_LoR_profileicon.png', 'Thường', 200),
+(10, 'The Magical Cat', 'https://wiki.leagueoflegends.com/en-us/images/The_Magical_Cat_LoR_profileicon.png', 'Thường', 200),
+(11, 'The Missing Link', 'https://wiki.leagueoflegends.com/en-us/images/The_Missing_Link_LoR_profileicon.png', 'Thường', 200),
+(12, 'The Long-Lost Yordle', 'https://wiki.leagueoflegends.com/en-us/images/The_Long-Lost_Yordle_LoR_profileicon.png', 'Thường', 200),
+(13, 'Bilgewater', 'https://wiki.leagueoflegends.com/en-us/images/Bilgewater_LoR_profileicon.png', 'Thường', 200),
+(14, 'Jack', 'https://wiki.leagueoflegends.com/en-us/images/Jack_LoR_profileicon.png', 'Thường', 200),
+(15, 'Nilah', 'https://wiki.leagueoflegends.com/en-us/images/Nilah_LoR_profileicon.png', 'Thường', 200),
+(16, 'The Bloodharbor Ripper', 'https://wiki.leagueoflegends.com/en-us/images/The_Bloodharbor_Ripper_LoR_profileicon.png', 'Thường', 200),
+(17, 'The Kraken Priestess', 'https://wiki.leagueoflegends.com/en-us/images/The_Kraken_Priestess_LoR_profileicon.png', 'Thường', 200),
+(18, 'Cithria the Bold', 'https://wiki.leagueoflegends.com/en-us/images/Cithria_the_Bold_LoR_profileicon.png', 'Thường', 200),
+(19, 'Exemplar of Demacia', 'https://wiki.leagueoflegends.com/en-us/images/Exemplar_of_Demacia_LoR_profileicon.png', 'Thường', 200),
+(20, 'Morgana', 'https://wiki.leagueoflegends.com/en-us/images/Morgana_LoR_profileicon.png', 'Thường', 200),
+(21, 'Demacia', 'https://wiki.leagueoflegends.com/en-us/images/Demacia_LoR_profileicon.png', 'Thường', 200),
+(22, 'Plucky Poro', 'https://wiki.leagueoflegends.com/en-us/images/Plucky_Poro_LoR_profileicon.png', 'Thường', 200),
+(23, 'Radiant Guardian', 'https://wiki.leagueoflegends.com/en-us/images/Radiant_Guardian_LoR_profileicon.png', 'Thường', 200),
+(24, 'Stand Alone', 'https://wiki.leagueoflegends.com/en-us/images/Stand_Alone_LoR_profileicon.png', 'Thường', 200),
+(25, 'The Colossus', 'https://wiki.leagueoflegends.com/en-us/images/The_Colossus_LoR_profileicon.png', 'Thường', 200),
+(26, 'The Monster Slayer', 'https://wiki.leagueoflegends.com/en-us/images/The_Monster_Slayer_LoR_profileicon.png', 'Thường', 200),
+(27, 'Freljord', 'https://wiki.leagueoflegends.com/en-us/images/Freljord_LoR_profileicon.png', 'Thường', 200),
+(28, 'Jubilant Poro', 'https://wiki.leagueoflegends.com/en-us/images/Jubilant_Poro_LoR_profileicon.png', 'Thường', 200),
+(29, 'Mighty Poro', 'https://wiki.leagueoflegends.com/en-us/images/Mighty_Poro_LoR_profileicon.png', 'Thường', 200),
+(30, 'Poro Snax', 'https://wiki.leagueoflegends.com/en-us/images/Poro_Snax_LoR_profileicon.png', 'Thường', 200),
+(31, 'Rimetusk Shaman', 'https://wiki.leagueoflegends.com/en-us/images/Rimetusk_Shaman_LoR_profileicon.png', 'Thường', 200),
+(32, 'Yeti Yearling', 'https://wiki.leagueoflegends.com/en-us/images/Yeti_Yearling_LoR_profileicon.png', 'Thường', 200),
+(33, 'The Missing Link', 'https://wiki.leagueoflegends.com/en-us/images/The_Missing_Link_LoR_profileicon.png', 'Thường', 200),
+(34, 'The Spirit Walker', 'https://wiki.leagueoflegends.com/en-us/images/The_Spirit_Walker_LoR_profileicon.png', 'Thường', 200),
+(35, 'The Fire Below the Mountain', 'https://wiki.leagueoflegends.com/en-us/images/The_Fire_Below_the_Mountain_LoR_profileicon.png', 'Thường', 200),
+(36, 'Volibear', 'https://wiki.leagueoflegends.com/en-us/images/Volibear_LoR_profileicon.png', 'Thường', 200),
+(37, 'Fae Bladetwirler', 'https://wiki.leagueoflegends.com/en-us/images/Fae_Bladetwirler_LoR_profileicon.png', 'Thường', 200),
+(38, 'Festival Kitt', 'https://wiki.leagueoflegends.com/en-us/images/Festival_Kitt_LoR_profileicon.png', 'Thường', 200),
+(39, 'Greenglade Duo', 'https://wiki.leagueoflegends.com/en-us/images/Greenglade_Duo_LoR_profileicon.png', 'Thường', 200),
+(40, 'Health Potion', 'https://wiki.leagueoflegends.com/en-us/images/Health_Potion_LoR_profileicon.png', 'Thường', 200),
+(41, 'Ionia', 'https://wiki.leagueoflegends.com/en-us/images/Ionia_LoR_profileicon.png', 'Thường', 200),
+(42, 'Jeweled Protector', 'https://wiki.leagueoflegends.com/en-us/images/Jeweled_Protector_LoR_profileicon.png', 'Thường', 200),
+(43, 'Nightshade Dragonling', 'https://wiki.leagueoflegends.com/en-us/images/Nightshade_Dragonling_LoR_profileicon.png', 'Thường', 200),
+(44, 'Lee Sin, the Blind Monk', 'https://wiki.leagueoflegends.com/en-us/images/Lee_Sin_the_Blind_Monk_LoR_profileicon.png', 'Thường', 200),
+(45, 'Sett', 'https://wiki.leagueoflegends.com/en-us/images/Sett_LoR_profileicon.png', 'Thường', 200),
+(46, 'Spirit Blossom', 'https://wiki.leagueoflegends.com/en-us/images/Spirit_Blossom_LoR_profileicon.png', 'Thường', 200),
+(47, 'Twin Disciplines', 'https://wiki.leagueoflegends.com/en-us/images/Twin_Disciplines_LoR_profileicon.png', 'Thường', 200),
+(48, 'The Wuju Bladesman', 'https://wiki.leagueoflegends.com/en-us/images/The_Wuju_Bladesman_LoR_profileicon.png', 'Thường', 200),
+(49, 'Draven\'s Biggest Fan', 'https://wiki.leagueoflegends.com/en-us/images/Draven%27s_Biggest_Fan_LoR_profileicon.png', 'Thường', 200),
+(50, 'Legion Saboteur', 'https://wiki.leagueoflegends.com/en-us/images/Legion_Saboteur_LoR_profileicon.png', 'Thường', 200),
+(51, 'Mordekaiser', 'https://wiki.leagueoflegends.com/en-us/images/Mordekaiser_LoR_profileicon.png', 'Thường', 200),
+(52, 'Noxus', 'https://wiki.leagueoflegends.com/en-us/images/Noxus_LoR_profileicon.png', 'Thường', 200),
+(53, 'Reckoning', 'https://wiki.leagueoflegends.com/en-us/images/Reckoning_LoR_profileicon.png', 'Thường', 200),
+(54, 'Samira', 'https://wiki.leagueoflegends.com/en-us/images/Samira_LoR_profileicon.png', 'Thường', 200),
+(55, 'Standard Gauntlet Competitor', 'https://wiki.leagueoflegends.com/en-us/images/Standard_Gauntlet_Competitor_LoR_profileicon.png', 'Thường', 200),
+(56, 'Standard Gauntlet Conqueror', 'https://wiki.leagueoflegends.com/en-us/images/Standard_Gauntlet_Conqueror_LoR_profileicon.png', 'Thường', 200),
+(57, 'Standard Gauntlet Best of 3 Competitor', 'https://wiki.leagueoflegends.com/en-us/images/Standard_Gauntlet_Best_of_3_Competitor_LoR_profileicon.png', 'Thường', 200),
+(58, 'Standard Gauntlet Best of 3 Conqueror', 'https://wiki.leagueoflegends.com/en-us/images/Standard_Gauntlet_Best_of_3_Conqueror_LoR_profileicon.png', 'Thường', 200),
+(59, 'Singleton Gauntlet Competitor', 'https://wiki.leagueoflegends.com/en-us/images/Singleton_Gauntlet_Competitor_LoR_profileicon.png', 'Thường', 200),
+(60, 'Singleton Gauntlet Conqueror', 'https://wiki.leagueoflegends.com/en-us/images/Singleton_Gauntlet_Conqueror_LoR_profileicon.png', 'Thường', 200),
+(61, 'Trifarian Shieldbreaker', 'https://wiki.leagueoflegends.com/en-us/images/Trifarian_Shieldbreaker_LoR_profileicon.png', 'Thường', 200),
+(62, 'The Dark Child', 'https://wiki.leagueoflegends.com/en-us/images/The_Dark_Child_LoR_profileicon.png', 'Thường', 200),
+(63, 'Astute Academic', 'https://wiki.leagueoflegends.com/en-us/images/Astute_Academic_LoR_profileicon.png', 'Thường', 200),
+(64, 'Calculated Creations', 'https://wiki.leagueoflegends.com/en-us/images/Calculated_Creations_LoR_profileicon.png', 'Thường', 200),
+(65, 'Catastrophe', 'https://wiki.leagueoflegends.com/en-us/images/Catastrophe_LoR_profileicon.png', 'Thường', 200),
+(66, 'Chempunk Shredder', 'https://wiki.leagueoflegends.com/en-us/images/Chempunk_Shredder_LoR_profileicon.png', 'Thường', 200),
+(67, 'Janna', 'https://wiki.leagueoflegends.com/en-us/images/Janna_LoR_profileicon.png', 'Thường', 200),
+(68, 'Piltover & Zaun', 'https://wiki.leagueoflegends.com/en-us/images/Piltover_%26_Zaun_LoR_profileicon.png', 'Thường', 200),
+(69, 'Mushroom Cloud', 'https://wiki.leagueoflegends.com/en-us/images/Mushroom_Cloud_LoR_profileicon.png', 'Thường', 200),
+(70, 'Mystic Puffcap', 'https://wiki.leagueoflegends.com/en-us/images/Mystic_Puffcap_LoR_profileicon.png', 'Thường', 200),
+(71, 'The Soul Singer', 'https://wiki.leagueoflegends.com/en-us/images/The_Soul_Singer_LoR_profileicon.png', 'Thường', 200),
+(72, 'Cursed Keeper', 'https://wiki.leagueoflegends.com/en-us/images/Cursed_Keeper_LoR_profileicon.png', 'Thường', 200),
+(73, 'Mark of the Isles', 'https://wiki.leagueoflegends.com/en-us/images/Mark_of_the_Isles_LoR_profileicon.png', 'Thường', 200),
+(74, 'Mordekaiser', 'https://wiki.leagueoflegends.com/en-us/images/Mordekaiser_LoR_profileicon.png', 'Thường', 200),
+(75, 'Shadow Isles', 'https://wiki.leagueoflegends.com/en-us/images/Shadow_Isles_LoR_profileicon.png', 'Thường', 200),
+(76, 'Shark Chariot', 'https://wiki.leagueoflegends.com/en-us/images/Shark_Chariot_LoR_profileicon.png', 'Thường', 200),
+(77, 'Soul Warden\'s Lantern', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Warden%27s_Lantern_LoR_profileicon.png', 'Thường', 200),
+(78, 'Spiderling', 'https://wiki.leagueoflegends.com/en-us/images/Spiderling_LoR_profileicon.png', 'Thường', 200),
+(79, 'The Hallowed Seamstress', 'https://wiki.leagueoflegends.com/en-us/images/The_Hallowed_Seamstress_LoR_profileicon.png', 'Thường', 200),
+(80, 'Shurima', 'https://wiki.leagueoflegends.com/en-us/images/Shurima_LoR_profileicon.png', 'Thường', 200),
+(81, 'The Butcher of the Sands', 'https://wiki.leagueoflegends.com/en-us/images/The_Butcher_of_the_Sands_LoR_profileicon.png', 'Thường', 200),
+(82, 'The Curator of the Sands', 'https://wiki.leagueoflegends.com/en-us/images/The_Curator_of_the_Sands_LoR_profileicon.png', 'Thường', 200),
+(83, 'The Emperor of the Sands', 'https://wiki.leagueoflegends.com/en-us/images/The_Emperor_of_the_Sands_LoR_profileicon.png', 'Thường', 200),
+(84, 'Daughter of the Void', 'https://wiki.leagueoflegends.com/en-us/images/Daughter_of_the_Void_LoR_profileicon.png', 'Thường', 200),
+(85, 'Nidalee', 'https://wiki.leagueoflegends.com/en-us/images/Nidalee_LoR_profileicon.png', 'Thường', 200),
+(86, 'Xerath', 'https://wiki.leagueoflegends.com/en-us/images/Xerath_LoR_profileicon.png', 'Thường', 200),
+(87, 'Moonfall', 'https://wiki.leagueoflegends.com/en-us/images/Moonfall_LoR_profileicon.png', 'Thường', 200),
+(88, 'Sunrise', 'https://wiki.leagueoflegends.com/en-us/images/Sunrise_LoR_profileicon.png', 'Thường', 200),
+(89, 'Targon', 'https://wiki.leagueoflegends.com/en-us/images/Targon_LoR_profileicon.png', 'Thường', 200),
+(90, 'The Skies Descend', 'https://wiki.leagueoflegends.com/en-us/images/The_Skies_Descend_LoR_profileicon.png', 'Thường', 200),
+(91, 'Kayle', 'https://wiki.leagueoflegends.com/en-us/images/Kayle_LoR_profileicon.png', 'Thường', 200),
+(92, 'Morgana', 'https://wiki.leagueoflegends.com/en-us/images/Morgana_LoR_profileicon.png', 'Thường', 200),
+(93, 'The Magical Cat', 'https://wiki.leagueoflegends.com/en-us/images/The_Magical_Cat_LoR_profileicon.png', 'Thường', 200),
+(94, 'Aatrox', 'https://wiki.leagueoflegends.com/en-us/images/Aatrox_LoR_profileicon.png', 'Thường', 200),
+(95, 'The Wandering Caretaker', 'https://wiki.leagueoflegends.com/en-us/images/The_Wandering_Caretaker_LoR_profileicon.png', 'Thường', 200),
+(96, 'Elder Dragon', 'https://wiki.leagueoflegends.com/en-us/images/Elder_Dragon_LoR_profileicon.png', 'Thường', 200),
+(97, 'Agony\'s Embrace', 'https://wiki.leagueoflegends.com/en-us/images/Agony%27s_Embrace_LoR_profileicon.png', 'Thường', 200),
+(98, 'Grandmaster at Arms', 'https://wiki.leagueoflegends.com/en-us/images/Grandmaster_at_Arms_LoR_profileicon.png', 'Thường', 200),
+(99, 'The Shadow Reaper', 'https://wiki.leagueoflegends.com/en-us/images/The_Shadow_Reaper_LoR_profileicon.png', 'Thường', 200),
+(100, 'Neeko', 'https://wiki.leagueoflegends.com/en-us/images/Neeko_LoR_profileicon.png', 'Thường', 200),
+(101, 'Ryze', 'https://wiki.leagueoflegends.com/en-us/images/Ryze_LoR_profileicon.png', 'Thường', 200),
+(102, 'The Darkin Archer', 'https://wiki.leagueoflegends.com/en-us/images/The_Darkin_Archer_LoR_profileicon.png', 'Thường', 200),
+(103, 'The Poro King', 'https://wiki.leagueoflegends.com/en-us/images/The_Poro_King_LoR_profileicon.png', 'Thường', 200),
+(104, 'Labs Legend: Aphelios', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Aphelios_LoR_profileicon.png', 'Thường', 200),
+(105, 'Labs Legend: Braum', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Braum_LoR_profileicon.png', 'Thường', 200),
+(106, 'Labs Legend: Hecarim', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Hecarim_LoR_profileicon.png', 'Thường', 200),
+(107, 'Labs Legend: Heimerdinger', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Heimerdinger_LoR_profileicon.png', 'Thường', 200),
+(108, 'Labs Legend: Lucian', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Lucian_LoR_profileicon.png', 'Thường', 200),
+(109, 'Labs Legend: Lulu', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Lulu_LoR_profileicon.png', 'Thường', 200),
+(110, 'Labs Legend: Miss Fortune', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Miss_Fortune_LoR_profileicon.png', 'Thường', 200),
+(111, 'Labs Legend: Riven', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Riven_LoR_profileicon.png', 'Thường', 200),
+(112, 'Labs Legend: Azir', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Azir_LoR_profileicon.png', 'Thường', 200),
+(113, 'Labs Legend: Taliyah', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Taliyah_LoR_profileicon.png', 'Thường', 200),
+(114, 'Labs Legend: Fizz', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Fizz_LoR_profileicon.png', 'Thường', 200),
+(115, 'Labs Legend: Irelia', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Irelia_LoR_profileicon.png', 'Thường', 200),
+(116, 'Labs Legend: Lissandra', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Lissandra_LoR_profileicon.png', 'Thường', 200),
+(117, 'Labs Legend: Malphite', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Malphite_LoR_profileicon.png', 'Thường', 200),
+(118, 'Labs Legend: Zilean', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Zilean_LoR_profileicon.png', 'Thường', 200),
+(119, 'Labs Legend: Ekko', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Ekko_LoR_profileicon.png', 'Thường', 200),
+(120, 'Labs Legend: Pyke', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Pyke_LoR_profileicon.png', 'Thường', 200),
+(121, 'Labs Legend: Rek\'Sai', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Rek%27Sai_LoR_profileicon.png', 'Thường', 200),
+(122, 'Labs Legend: Shyvana', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Shyvana_LoR_profileicon.png', 'Thường', 200),
+(123, 'Labs Legend: Swain', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Legend_Swain_LoR_profileicon.png', 'Thường', 200),
+(124, 'Labs Saltwater Scourge: Miss Fortune', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Saltwater_Scourge_Miss_Fortune_LoR_profileicon.png', 'Thường', 200),
+(125, 'Labs Saltwater Scourge: Tahm Kench', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Saltwater_Scourge_Tahm_Kench_LoR_profileicon.png', 'Thường', 200),
+(126, 'Labs Saltwater Scourge: Twisted Fate', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Saltwater_Scourge_Twisted_Fate_LoR_profileicon.png', 'Thường', 200),
+(127, 'Labs Saltwater Scourge: Nami', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Saltwater_Scourge_Nami_LoR_profileicon.png', 'Thường', 200),
+(128, 'Labs Saltwater Scourge: Pyke', 'https://wiki.leagueoflegends.com/en-us/images/Labs_Saltwater_Scourge_Pyke_LoR_profileicon.png', 'Thường', 200),
+(129, 'Coven Ahri', 'https://wiki.leagueoflegends.com/en-us/images/Coven_Ahri_LoR_profileicon.png', 'Thường', 200),
+(130, 'Coven Ashe', 'https://wiki.leagueoflegends.com/en-us/images/Coven_Ashe_LoR_profileicon.png', 'Thường', 200),
+(131, 'Old God Elder Dragon', 'https://wiki.leagueoflegends.com/en-us/images/Old_God_Elder_Dragon_LoR_profileicon.png', 'Thường', 200),
+(132, 'Coven LeBlanc', 'https://wiki.leagueoflegends.com/en-us/images/Coven_LeBlanc_LoR_profileicon.png', 'Thường', 200),
+(133, 'Coven Lissandra', 'https://wiki.leagueoflegends.com/en-us/images/Coven_Lissandra_LoR_profileicon.png', 'Thường', 200),
+(134, 'Coven Evelynn', 'https://wiki.leagueoflegends.com/en-us/images/Coven_Evelynn_LoR_profileicon.png', 'Thường', 200),
+(135, 'Old God Malphite', 'https://wiki.leagueoflegends.com/en-us/images/Old_God_Malphite_LoR_profileicon.png', 'Thường', 200),
+(136, 'Old God Mordekaiser', 'https://wiki.leagueoflegends.com/en-us/images/Old_God_Mordekaiser_LoR_profileicon.png', 'Thường', 200),
+(137, 'Coven Morgana', 'https://wiki.leagueoflegends.com/en-us/images/Coven_Morgana_LoR_profileicon.png', 'Thường', 200),
+(138, 'Lunar Eclipse Aatrox', 'https://wiki.leagueoflegends.com/en-us/images/Lunar_Eclipse_Aatrox_LoR_profileicon.png', 'Thường', 200),
+(139, 'Star-Eater Aurelion Sol', 'https://wiki.leagueoflegends.com/en-us/images/Star-Eater_Aurelion_Sol_LoR_profileicon.png', 'Thường', 200),
+(140, 'Eclipse Knight Diana', 'https://wiki.leagueoflegends.com/en-us/images/Eclipse_Knight_Diana_LoR_profileicon.png', 'Thường', 200),
+(141, 'Coven Janna', 'https://wiki.leagueoflegends.com/en-us/images/Coven_Janna_LoR_profileicon.png', 'Thường', 200),
+(142, 'Sun-Eater Kayle', 'https://wiki.leagueoflegends.com/en-us/images/Sun-Eater_Kayle_LoR_profileicon.png', 'Thường', 200),
+(143, 'Solar Eclipse Leona', 'https://wiki.leagueoflegends.com/en-us/images/Solar_Eclipse_Leona_LoR_profileicon.png', 'Thường', 200),
+(144, 'Lunar Eclipse Nilah', 'https://wiki.leagueoflegends.com/en-us/images/Lunar_Eclipse_Nilah_LoR_profileicon.png', 'Thường', 200),
+(145, 'Solar Eclipse Sejuani', 'https://wiki.leagueoflegends.com/en-us/images/Solar_Eclipse_Sejuani_LoR_profileicon.png', 'Thường', 200),
+(146, 'Lunar Eclipse Senna', 'https://wiki.leagueoflegends.com/en-us/images/Lunar_Eclipse_Senna_LoR_profileicon.png', 'Thường', 200),
+(147, 'The Thousand-Pierced Bear', 'https://wiki.leagueoflegends.com/en-us/images/The_Thousand-Pierced_Bear_LoR_profileicon.png', 'Thường', 200),
+(148, 'Soul Fighter Evelynn', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Fighter_Evelynn_LoR_profileicon.png', 'Thường', 200),
+(149, 'Soul Fighter Gwen', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Fighter_Gwen_LoR_profileicon.png', 'Thường', 200),
+(150, 'Soul Fighter Jhin', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Fighter_Jhin_LoR_profileicon.png', 'Thường', 200),
+(151, 'Soul Fighter Nidalee', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Fighter_Nidalee_LoR_profileicon.png', 'Thường', 200),
+(152, 'Soul Fighter Pyke', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Fighter_Pyke_LoR_profileicon.png', 'Thường', 200),
+(153, 'Soul Fighter Samira', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Fighter_Samira_LoR_profileicon.png', 'Thường', 200),
+(154, 'Soul Fighter Sett', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Fighter_Sett_LoR_profileicon.png', 'Thường', 200),
+(155, 'Soul Fighter Viego', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Fighter_Viego_LoR_profileicon.png', 'Thường', 200),
+(156, 'Storm Dragon Aurelion Sol', 'https://wiki.leagueoflegends.com/en-us/images/Storm_Dragon_Aurelion_Sol_LoR_profileicon.png', 'Thường', 200),
+(157, 'Tranquility Dragon Karma', 'https://wiki.leagueoflegends.com/en-us/images/Tranquility_Dragon_Karma_LoR_profileicon.png', 'Thường', 200),
+(158, 'Lagoon Dragon Kai\'Sa', 'https://wiki.leagueoflegends.com/en-us/images/Lagoon_Dragon_Kai%27Sa_LoR_profileicon.png', 'Thường', 200),
+(159, 'Fae Dragon Ashe', 'https://wiki.leagueoflegends.com/en-us/images/Fae_Dragon_Ashe_LoR_profileicon.png', 'Thường', 200),
+(160, 'Carnage Dragon Jack', 'https://wiki.leagueoflegends.com/en-us/images/Carnage_Dragon_Jack_LoR_profileicon.png', 'Thường', 200),
+(161, 'Obsidian Dragon Sett', 'https://wiki.leagueoflegends.com/en-us/images/Obsidian_Dragon_Sett_LoR_profileicon.png', 'Thường', 200),
+(162, 'Cascade Dragon Nami', 'https://wiki.leagueoflegends.com/en-us/images/Cascade_Dragon_Nami_LoR_profileicon.png', 'Thường', 200),
+(163, 'Corrupted Azir', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Azir_LoR_profileicon.png', 'Thường', 200),
+(164, 'Corrupted Nasus', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Nasus_LoR_profileicon.png', 'Thường', 200),
+(165, 'Corrupted Renekton', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Renekton_LoR_profileicon.png', 'Thường', 200),
+(166, 'Corrupted Xerath', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Xerath_LoR_profileicon.png', 'Thường', 200),
+(167, 'Justicar Galio', 'https://wiki.leagueoflegends.com/en-us/images/Justicar_Galio_LoR_profileicon.png', 'Thường', 200),
+(168, 'Arclight Seraphine', 'https://wiki.leagueoflegends.com/en-us/images/Arclight_Seraphine_LoR_profileicon.png', 'Thường', 200),
+(169, 'Arclight Shyvana', 'https://wiki.leagueoflegends.com/en-us/images/Arclight_Shyvana_LoR_profileicon.png', 'Thường', 200),
+(170, 'Arclight Varus', 'https://wiki.leagueoflegends.com/en-us/images/Arclight_Varus_LoR_profileicon.png', 'Thường', 200),
+(171, 'Arclight Vayne', 'https://wiki.leagueoflegends.com/en-us/images/Arclight_Vayne_LoR_profileicon.png', 'Thường', 200),
+(172, 'Corrupted Diana', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Diana_LoR_profileicon.png', 'Thường', 200),
+(173, 'Corrupted Leona', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Leona_LoR_profileicon.png', 'Thường', 200),
+(174, 'Corrupted Pantheon', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Pantheon_LoR_profileicon.png', 'Thường', 200),
+(175, 'Corrupted Taric', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Taric_LoR_profileicon.png', 'Thường', 200),
+(176, 'Corrupted Zoe', 'https://wiki.leagueoflegends.com/en-us/images/Corrupted_Zoe_LoR_profileicon.png', 'Thường', 200),
+(177, 'Star Guardian Jinx', 'https://wiki.leagueoflegends.com/en-us/images/Star_Guardian_Jinx_LoR_profileicon.png', 'Thường', 200),
+(178, 'Star Guardian Kai\'Sa', 'https://wiki.leagueoflegends.com/en-us/images/Star_Guardian_Kai%27Sa_LoR_profileicon.png', 'Thường', 200),
+(179, 'Star Guardian Lulu', 'https://wiki.leagueoflegends.com/en-us/images/Star_Guardian_Lulu_LoR_profileicon.png', 'Thường', 200),
+(180, 'Star Guardian Senna', 'https://wiki.leagueoflegends.com/en-us/images/Star_Guardian_Senna_LoR_profileicon.png', 'Thường', 200),
+(181, 'Star Guardian Taliyah', 'https://wiki.leagueoflegends.com/en-us/images/Star_Guardian_Taliyah_LoR_profileicon.png', 'Thường', 200),
+(182, 'Starphone', 'https://wiki.leagueoflegends.com/en-us/images/Starphone_LoR_profileicon.png', 'Thường', 200),
+(183, 'Aquamarine Poro', 'https://wiki.leagueoflegends.com/en-us/images/Aquamarine_Poro_LoR_profileicon.png', 'Thường', 200),
+(184, 'Pulsefire Akshan', 'https://wiki.leagueoflegends.com/en-us/images/Pulsefire_Akshan_LoR_profileicon.png', 'Thường', 200),
+(185, 'Pulsefire Alune', 'https://wiki.leagueoflegends.com/en-us/images/Pulsefire_Alune_LoR_profileicon.png', 'Thường', 200),
+(186, 'Pulsefire Caitlyn', 'https://wiki.leagueoflegends.com/en-us/images/Pulsefire_Caitlyn_LoR_profileicon.png', 'Thường', 200),
+(187, 'Pulsefire Jhin', 'https://wiki.leagueoflegends.com/en-us/images/Pulsefire_Jhin_LoR_profileicon.png', 'Thường', 200),
+(188, 'Pulsefire Lucian', 'https://wiki.leagueoflegends.com/en-us/images/Pulsefire_Lucian_LoR_profileicon.png', 'Thường', 200),
+(189, 'Pulsefire Thresh', 'https://wiki.leagueoflegends.com/en-us/images/Pulsefire_Thresh_LoR_profileicon.png', 'Thường', 200),
+(190, 'Turning Two', 'https://wiki.leagueoflegends.com/en-us/images/Turning_Two_LoR_profileicon.png', 'Thường', 200),
+(191, 'City of Progress', 'https://wiki.leagueoflegends.com/en-us/images/City_of_Progress_LoR_profileicon.png', 'Thường', 200),
+(192, 'Arcade Miss Fortune', 'https://wiki.leagueoflegends.com/en-us/images/Arcade_Miss_Fortune_LoR_profileicon.png', 'Thường', 200),
+(193, 'Final Boss Veigar', 'https://wiki.leagueoflegends.com/en-us/images/Final_Boss_Veigar_LoR_profileicon.png', 'Thường', 200),
+(194, 'Battle Boss Ziggs', 'https://wiki.leagueoflegends.com/en-us/images/Battle_Boss_Ziggs_LoR_profileicon.png', 'Thường', 200),
+(195, 'Above the Clouds', 'https://wiki.leagueoflegends.com/en-us/images/Above_the_Clouds_LoR_profileicon.png', 'Thường', 200),
+(196, 'A Tale of Two Sisters', 'https://wiki.leagueoflegends.com/en-us/images/A_Tale_of_Two_Sisters_LoR_profileicon.png', 'Thường', 200),
+(197, 'Gilded Caitlyn', 'https://wiki.leagueoflegends.com/en-us/images/Gilded_Caitlyn_LoR_profileicon.png', 'Thường', 200),
+(198, 'Gilded Ekko', 'https://wiki.leagueoflegends.com/en-us/images/Gilded_Ekko_LoR_profileicon.png', 'Thường', 200),
+(199, 'Gilded Jayce', 'https://wiki.leagueoflegends.com/en-us/images/Gilded_Jayce_LoR_profileicon.png', 'Thường', 200),
+(200, 'Gilded Jinx', 'https://wiki.leagueoflegends.com/en-us/images/Gilded_Jinx_LoR_profileicon.png', 'Thường', 200),
+(201, 'Gilded Vi', 'https://wiki.leagueoflegends.com/en-us/images/Gilded_Vi_LoR_profileicon.png', 'Thường', 200),
+(202, 'Hold the Applause', 'https://wiki.leagueoflegends.com/en-us/images/Hold_the_Applause_LoR_profileicon.png', 'Thường', 200),
+(203, 'Eye of Zaun', 'https://wiki.leagueoflegends.com/en-us/images/Eye_of_Zaun_LoR_profileicon.png', 'Thường', 200),
+(204, 'Blade of the Ruined King', 'https://wiki.leagueoflegends.com/en-us/images/Blade_of_the_Ruined_King_LoR_profileicon.png', 'Thường', 200),
+(205, 'Ruination', 'https://wiki.leagueoflegends.com/en-us/images/Ruination_LoR_profileicon.png', 'Thường', 200),
+(206, 'Ruined Draven', 'https://wiki.leagueoflegends.com/en-us/images/Ruined_Draven_LoR_profileicon.png', 'Thường', 200),
+(207, 'Ruined Karma', 'https://wiki.leagueoflegends.com/en-us/images/Ruined_Karma_LoR_profileicon.png', 'Thường', 200),
+(208, 'Senna the Redeemer', 'https://wiki.leagueoflegends.com/en-us/images/Senna_the_Redeemer_LoR_profileicon.png', 'Thường', 200),
+(209, 'Sentinel Diana', 'https://wiki.leagueoflegends.com/en-us/images/Sentinel_Diana_LoR_profileicon.png', 'Thường', 200),
+(210, 'Sentinel Irelia', 'https://wiki.leagueoflegends.com/en-us/images/Sentinel_Irelia_LoR_profileicon.png', 'Thường', 200),
+(211, 'Sentinel of Light', 'https://wiki.leagueoflegends.com/en-us/images/Sentinel_of_Light_LoR_profileicon.png', 'Thường', 200),
+(212, 'The Ruined King', 'https://wiki.leagueoflegends.com/en-us/images/The_Ruined_King_LoR_profileicon.png', 'Thường', 200),
+(213, 'Unbound Thresh', 'https://wiki.leagueoflegends.com/en-us/images/Unbound_Thresh_LoR_profileicon.png', 'Thường', 200),
+(214, 'The Dark Star', 'https://wiki.leagueoflegends.com/en-us/images/The_Dark_Star_LoR_profileicon.png', 'Thường', 200),
+(215, 'Dark Horizon', 'https://wiki.leagueoflegends.com/en-us/images/Dark_Horizon_LoR_profileicon.png', 'Thường', 200),
+(216, 'Dark Star Shyvana', 'https://wiki.leagueoflegends.com/en-us/images/Dark_Star_Shyvana_LoR_profileicon.png', 'Thường', 200),
+(217, 'Dark Star\'s Fury', 'https://wiki.leagueoflegends.com/en-us/images/Dark_Star%27s_Fury_LoR_profileicon.png', 'Thường', 200),
+(218, 'Cosmic Exile Riven', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Exile_Riven_LoR_profileicon.png', 'Thường', 200),
+(219, 'Dark Star Zed', 'https://wiki.leagueoflegends.com/en-us/images/Dark_Star_Zed_LoR_profileicon.png', 'Thường', 200),
+(220, 'Cosmic Zephyr Yasuo', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Zephyr_Yasuo_LoR_profileicon.png', 'Thường', 200),
+(221, 'Rose Quartz Poro', 'https://wiki.leagueoflegends.com/en-us/images/Rose_Quartz_Poro_LoR_profileicon.png', 'Thường', 200),
+(222, 'Sapphire Poro', 'https://wiki.leagueoflegends.com/en-us/images/Sapphire_Poro_LoR_profileicon.png', 'Thường', 200),
+(223, 'Catseye Poro', 'https://wiki.leagueoflegends.com/en-us/images/Catseye_Poro_LoR_profileicon.png', 'Thường', 200),
+(224, 'Obsidian Poro', 'https://wiki.leagueoflegends.com/en-us/images/Obsidian_Poro_LoR_profileicon.png', 'Thường', 200),
+(225, 'Tanzanite Poro', 'https://wiki.leagueoflegends.com/en-us/images/Tanzanite_Poro_LoR_profileicon.png', 'Thường', 200),
+(226, 'Citrine Poro', 'https://wiki.leagueoflegends.com/en-us/images/Citrine_Poro_LoR_profileicon.png', 'Thường', 200),
+(227, 'Rainbow Poro', 'https://wiki.leagueoflegends.com/en-us/images/Rainbow_Poro_LoR_profileicon.png', 'Thường', 200),
+(228, 'First Year', 'https://wiki.leagueoflegends.com/en-us/images/First_Year_LoR_profileicon.png', 'Thường', 200),
+(229, 'Urf', 'https://wiki.leagueoflegends.com/en-us/images/Urf_LoR_profileicon.png', 'Thường', 200),
+(230, 'Fortune\'s Faithful', 'https://wiki.leagueoflegends.com/en-us/images/Fortune%27s_Faithful_LoR_profileicon.png', 'Thường', 200),
+(231, 'Year of the Ox', 'https://wiki.leagueoflegends.com/en-us/images/Year_of_the_Ox_LoR_profileicon.png', 'Thường', 200),
+(232, 'K/DA ALL OUT', 'https://wiki.leagueoflegends.com/en-us/images/KDA_ALL_OUT_LoR_profileicon.png', 'Thường', 200),
+(233, 'K/DA Ahri', 'https://wiki.leagueoflegends.com/en-us/images/KDA_Ahri_LoR_profileicon.png', 'Thường', 200),
+(234, 'K/DA Akali', 'https://wiki.leagueoflegends.com/en-us/images/KDA_Akali_LoR_profileicon.png', 'Thường', 200),
+(235, 'K/DA Evelynn', 'https://wiki.leagueoflegends.com/en-us/images/KDA_Evelynn_LoR_profileicon.png', 'Thường', 200),
+(236, 'K/DA Kai\'Sa', 'https://wiki.leagueoflegends.com/en-us/images/KDA_Kai%27Sa_LoR_profileicon.png', 'Thường', 200),
+(237, 'K/DA Seraphine', 'https://wiki.leagueoflegends.com/en-us/images/KDA_Seraphine_LoR_profileicon.png', 'Thường', 200),
+(238, 'Festival Kitt', 'https://wiki.leagueoflegends.com/en-us/images/Festival_Kitt_LoR_profileicon.png', 'Thường', 200),
+(239, 'Mystic Puffcap', 'https://wiki.leagueoflegends.com/en-us/images/Mystic_Puffcap_LoR_profileicon.png', 'Thường', 200),
+(240, 'Nightshade Dragonling', 'https://wiki.leagueoflegends.com/en-us/images/Nightshade_Dragonling_LoR_profileicon.png', 'Thường', 200),
+(241, 'Soul Warden\'s Lantern', 'https://wiki.leagueoflegends.com/en-us/images/Soul_Warden%27s_Lantern_LoR_profileicon.png', 'Thường', 200),
+(242, 'Spirit Blossom', 'https://wiki.leagueoflegends.com/en-us/images/Spirit_Blossom_LoR_profileicon.png', 'Thường', 200),
+(243, 'Fate\'s Voyage: Onward Standard Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Standard_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(244, 'Fate\'s Voyage: Onward Standard Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Standard_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(245, 'Fate\'s Voyage: Onward Standard Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Standard_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(246, 'Fate\'s Voyage: Onward Standard Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Standard_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(247, 'Fate\'s Voyage: Onward Standard Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Standard_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(248, 'Fate\'s Voyage: Onward Standard Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Standard_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(249, 'Fate\'s Voyage: Onward Standard Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Standard_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(250, 'Fate\'s Voyage: Onward Eternal Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Eternal_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(251, 'Fate\'s Voyage: Onward Eternal Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Eternal_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(252, 'Fate\'s Voyage: Onward Eternal Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Eternal_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(253, 'Fate\'s Voyage: Onward Eternal Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Eternal_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(254, 'Fate\'s Voyage: Onward Eternal Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Eternal_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(255, 'Fate\'s Voyage: Onward Eternal Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Eternal_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(256, 'Fate\'s Voyage: Onward Eternal Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Fate%27s_Voyage_Onward_Eternal_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(257, 'Heart of the Huntress Standard Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Standard_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(258, 'Heart of the Huntress Standard Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Standard_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(259, 'Heart of the Huntress Standard Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Standard_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(260, 'Heart of the Huntress Standard Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Standard_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(261, 'Heart of the Huntress Standard Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Standard_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(262, 'Heart of the Huntress Standard Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Standard_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(263, 'Heart of the Huntress Standard Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Standard_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(264, 'Heart of the Huntress Eternal Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Eternal_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(265, 'Heart of the Huntress Eternal Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Eternal_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(266, 'Heart of the Huntress Eternal Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Eternal_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(267, 'Heart of the Huntress Eternal Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Eternal_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(268, 'Heart of the Huntress Eternal Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Eternal_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(269, 'Heart of the Huntress Eternal Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Eternal_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(270, 'Heart of the Huntress Eternal Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Heart_of_the_Huntress_Eternal_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(271, 'Glory in Navori Standard Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Standard_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(272, 'Glory in Navori Standard Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Standard_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(273, 'Glory in Navori Standard Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Standard_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(274, 'Glory in Navori Standard Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Standard_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(275, 'Glory in Navori Standard Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Standard_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(276, 'Glory in Navori Standard Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Standard_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(277, 'Glory in Navori Standard Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Standard_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(278, 'Glory in Navori Eternal Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Eternal_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(279, 'Glory in Navori Eternal Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Eternal_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(280, 'Glory in Navori Eternal Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Eternal_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(281, 'Glory in Navori Eternal Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Eternal_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(282, 'Glory in Navori Eternal Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Eternal_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(283, 'Glory in Navori Eternal Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Eternal_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(284, 'Glory in Navori Eternal Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Glory_in_Navori_Eternal_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(285, 'Invitation Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Invitation_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(286, 'Invitation Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Invitation_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(287, 'Invitation Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Invitation_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(288, 'Invitation Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Invitation_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(289, 'Invitation Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Invitation_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(290, 'Invitation Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Invitation_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(291, 'Invitation Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Invitation_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(292, 'World Ender Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/World_Ender_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(293, 'World Ender Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/World_Ender_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(294, 'World Ender Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/World_Ender_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(295, 'World Ender Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/World_Ender_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(296, 'World Ender Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/World_Ender_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(297, 'World Ender Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/World_Ender_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(298, 'World Ender Season Master', 'https://wiki.leagueoflegends.com/en-us/images/World_Ender_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(299, 'Domination Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Domination_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(300, 'Domination Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Domination_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(301, 'Domination Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Domination_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(302, 'Domination Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Domination_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(303, 'Domination Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Domination_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(304, 'Domination Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Domination_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(305, 'Domination Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Domination_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(306, 'Awakening Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Awakening_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(307, 'Awakening Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Awakening_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(308, 'Awakening Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Awakening_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(309, 'Awakening Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Awakening_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(310, 'Awakening Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Awakening_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(311, 'Awakening Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Awakening_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(312, 'Awakening Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Awakening_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(313, 'Forces from Beyond Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Forces_from_Beyond_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(314, 'Forces from Beyond Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Forces_from_Beyond_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(315, 'Forces from Beyond Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Forces_from_Beyond_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(316, 'Forces from Beyond Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Forces_from_Beyond_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(317, 'Forces from Beyond Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Forces_from_Beyond_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(318, 'Forces from Beyond Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Forces_from_Beyond_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(319, 'Forces from Beyond Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Forces_from_Beyond_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(320, 'Worldwalker Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Worldwalker_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(321, 'Worldwalker Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Worldwalker_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(322, 'Worldwalker Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Worldwalker_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(323, 'Worldwalker Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Worldwalker_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(324, 'Worldwalker Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Worldwalker_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(325, 'Worldwalker Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Worldwalker_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(326, 'Worldwalker Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Worldwalker_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(327, 'A Curious Journey Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/A_Curious_Journey_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(328, 'A Curious Journey Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/A_Curious_Journey_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(329, 'A Curious Journey Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/A_Curious_Journey_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(330, 'A Curious Journey Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/A_Curious_Journey_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(331, 'A Curious Journey Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/A_Curious_Journey_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(332, 'A Curious Journey Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/A_Curious_Journey_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(333, 'A Curious Journey Season Master', 'https://wiki.leagueoflegends.com/en-us/images/A_Curious_Journey_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(334, 'Magic Misadventures Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Magic_Misadventures_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(335, 'Magic Misadventures Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Magic_Misadventures_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(336, 'Magic Misadventures Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Magic_Misadventures_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(337, 'Magic Misadventures Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Magic_Misadventures_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(338, 'Magic Misadventures Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Magic_Misadventures_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(339, 'Magic Misadventures Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Magic_Misadventures_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(340, 'Magic Misadventures Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Magic_Misadventures_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(341, 'Between Worlds Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Between_Worlds_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(342, 'Between Worlds Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Between_Worlds_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(343, 'Between Worlds Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Between_Worlds_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(344, 'Between Worlds Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Between_Worlds_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(345, 'Between Worlds Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Between_Worlds_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(346, 'Between Worlds Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Between_Worlds_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(347, 'Between Worlds Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Between_Worlds_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(348, 'Beyond the Bandlewood Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Beyond_the_Bandlewood_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(349, 'Beyond the Bandlewood Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Beyond_the_Bandlewood_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(350, 'Beyond the Bandlewood Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Beyond_the_Bandlewood_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(351, 'Beyond the Bandlewood Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Beyond_the_Bandlewood_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(352, 'Beyond the Bandlewood Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Beyond_the_Bandlewood_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(353, 'Beyond the Bandlewood Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Beyond_the_Bandlewood_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(354, 'Beyond the Bandlewood Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Beyond_the_Bandlewood_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(355, 'Rise of the Underworlds Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Rise_of_the_Underworlds_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(356, 'Rise of the Underworlds Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Rise_of_the_Underworlds_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(357, 'Rise of the Underworlds Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Rise_of_the_Underworlds_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(358, 'Rise of the Underworlds Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Rise_of_the_Underworlds_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(359, 'Rise of the Underworlds Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Rise_of_the_Underworlds_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(360, 'Rise of the Underworlds Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Rise_of_the_Underworlds_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(361, 'Rise of the Underworlds Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Rise_of_the_Underworlds_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(362, 'Guardians of the Ancients Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Guardians_of_the_Ancients_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(363, 'Guardians of the Ancients Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Guardians_of_the_Ancients_Season_Bronze_LoR_profileicon.png', 'Thường', 200);
+INSERT INTO `summoner_icons` (`id`, `name`, `image`, `rarity`, `price`) VALUES
+(364, 'Guardians of the Ancients Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Guardians_of_the_Ancients_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(365, 'Guardians of the Ancients Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Guardians_of_the_Ancients_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(366, 'Guardians of the Ancients Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Guardians_of_the_Ancients_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(367, 'Guardians of the Ancients Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Guardians_of_the_Ancients_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(368, 'Guardians of the Ancients Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Guardians_of_the_Ancients_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(369, 'Empires of the Ascended Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Empires_of_the_Ascended_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(370, 'Empires of the Ascended Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Empires_of_the_Ascended_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(371, 'Empires of the Ascended Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Empires_of_the_Ascended_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(372, 'Empires of the Ascended Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Empires_of_the_Ascended_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(373, 'Empires of the Ascended Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Empires_of_the_Ascended_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(374, 'Empires of the Ascended Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Empires_of_the_Ascended_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(375, 'Empires of the Ascended Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Empires_of_the_Ascended_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(376, 'Cosmic Creation Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Creation_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(377, 'Cosmic Creation Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Creation_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(378, 'Cosmic Creation Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Creation_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(379, 'Cosmic Creation Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Creation_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(380, 'Cosmic Creation Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Creation_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(381, 'Cosmic Creation Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Creation_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(382, 'Cosmic Creation Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Cosmic_Creation_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(383, 'Monuments of Power Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Monuments_of_Power_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(384, 'Monuments of Power Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Monuments_of_Power_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(385, 'Monuments of Power Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Monuments_of_Power_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(386, 'Monuments of Power Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Monuments_of_Power_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(387, 'Monuments of Power Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Monuments_of_Power_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(388, 'Monuments of Power Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Monuments_of_Power_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(389, 'Monuments of Power Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Monuments_of_Power_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(390, 'Call of the Mountain Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Call_of_the_Mountain_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(391, 'Call of the Mountain Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Call_of_the_Mountain_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(392, 'Call of the Mountain Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Call_of_the_Mountain_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(393, 'Call of the Mountain Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Call_of_the_Mountain_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(394, 'Call of the Mountain Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Call_of_the_Mountain_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(395, 'Call of the Mountain Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Call_of_the_Mountain_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(396, 'Call of the Mountain Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Call_of_the_Mountain_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(397, 'Fortune Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Fortune_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(398, 'Fortune Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Fortune_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(399, 'Fortune Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Fortune_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(400, 'Fortune Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Fortune_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(401, 'Fortune Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Fortune_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(402, 'Fortune Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Fortune_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(403, 'Fortune Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Fortune_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(404, 'Plunder Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(405, 'Plunder Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(406, 'Plunder Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(407, 'Plunder Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(408, 'Plunder Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(409, 'Plunder Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(410, 'Plunder Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(411, 'Plunder Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Iron_LoR_profileicon_circle.png', 'Thường', 200),
+(412, 'Plunder Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Bronze_LoR_profileicon_circle.png', 'Thường', 200),
+(413, 'Plunder Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Silver_LoR_profileicon_circle.png', 'Thường', 200),
+(414, 'Plunder Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Gold_LoR_profileicon_circle.png', 'Thường', 200),
+(415, 'Plunder Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Platinum_LoR_profileicon_circle.png', 'Thường', 200),
+(416, 'Plunder Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Diamond_LoR_profileicon_circle.png', 'Thường', 200),
+(417, 'Plunder Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Plunder_Season_Master_LoR_profileicon_circle.png', 'Thường', 200),
+(418, 'Beta Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Iron_LoR_profileicon.png', 'Thường', 200),
+(419, 'Beta Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Bronze_LoR_profileicon.png', 'Thường', 200),
+(420, 'Beta Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Silver_LoR_profileicon.png', 'Thường', 200),
+(421, 'Beta Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Gold_LoR_profileicon.png', 'Thường', 200),
+(422, 'Beta Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Platinum_LoR_profileicon.png', 'Thường', 200),
+(423, 'Beta Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Diamond_LoR_profileicon.png', 'Thường', 200),
+(424, 'Beta Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Master_LoR_profileicon.png', 'Thường', 200),
+(425, 'Beta Season Iron', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Iron_LoR_profileicon_circle.png', 'Thường', 200),
+(426, 'Beta Season Bronze', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Bronze_LoR_profileicon_circle.png', 'Thường', 200),
+(427, 'Beta Season Silver', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Silver_LoR_profileicon_circle.png', 'Thường', 200),
+(428, 'Beta Season Gold', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Gold_LoR_profileicon_circle.png', 'Thường', 200),
+(429, 'Beta Season Platinum', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Platinum_LoR_profileicon_circle.png', 'Thường', 200),
+(430, 'Beta Season Diamond', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Diamond_LoR_profileicon_circle.png', 'Thường', 200),
+(431, 'Beta Season Master', 'https://wiki.leagueoflegends.com/en-us/images/Beta_Season_Master_LoR_profileicon_circle.png', 'Thường', 200),
+(432, 'Tournament Competitor 2020', 'https://wiki.leagueoflegends.com/en-us/images/Tournament_Competitor_2020_LoR_profileicon.png', 'Thường', 200),
+(433, 'World Championships 2021', 'https://wiki.leagueoflegends.com/en-us/images/World_Championships_2021_LoR_profileicon.png', 'Thường', 200),
+(434, 'Worlds Championship 2022', 'https://wiki.leagueoflegends.com/en-us/images/Worlds_Championship_2022_LoR_profileicon.png', 'Thường', 200),
+(435, 'World Competitor 2021', 'https://wiki.leagueoflegends.com/en-us/images/World_Competitor_2021_LoR_profileicon.png', 'Thường', 200),
+(436, 'World Competitor 2022', 'https://wiki.leagueoflegends.com/en-us/images/World_Competitor_2022_LoR_profileicon.png', 'Thường', 200),
+(437, 'World Spectator 2021', 'https://wiki.leagueoflegends.com/en-us/images/World_Spectator_2021_LoR_profileicon.png', 'Thường', 200),
+(438, 'Right Place, Right Time', 'https://wiki.leagueoflegends.com/en-us/images/Right_Place%2C_Right_Time_LoR_profileicon.png', 'Thường', 200),
+(439, 'Legion Saboteur', 'https://wiki.leagueoflegends.com/en-us/images/Legion_Saboteur_LoR_profileicon_alt.png', 'Thường', 200),
+(440, 'Mark of the Isles', 'https://wiki.leagueoflegends.com/en-us/images/Mark_of_the_Isles_LoR_profileicon_alt.png', 'Thường', 200),
+(441, 'Spiderling', 'https://wiki.leagueoflegends.com/en-us/images/Spiderling_LoR_profileicon_alt.png', 'Thường', 200),
+(442, 'Trifarian Shieldbreaker', 'https://wiki.leagueoflegends.com/en-us/images/Trifarian_Shieldbreaker_LoR_profileicon_alt.png', 'Thường', 200);
 
 -- --------------------------------------------------------
 
@@ -3095,7 +3823,8 @@ INSERT INTO `topup_log` (`id`, `username`, `method`, `amount`, `code`, `status`,
 (13, 'admin', 'zalopay', 100000, 'lklklklhfhgfhf', 'success', '2025-10-31 15:07:44'),
 (14, 'admin', 'qr', 50000, 'sdjfhsdkjfds', 'success', '2025-11-01 03:04:57'),
 (15, 'admin', 'card', 50000, 'hhhhh', 'success', '2025-11-01 03:05:11'),
-(16, 'buihaidang', 'card', 10000, 'ụyhgnghjghjgh', 'success', '2025-11-14 14:44:39');
+(16, 'buihaidang', 'card', 10000, 'ụyhgnghjghjgh', 'success', '2025-11-14 14:44:39'),
+(17, 'admin', 'card', 20000, '212399913813', 'success', '2025-11-18 08:52:49');
 
 -- --------------------------------------------------------
 
@@ -3117,12 +3846,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `balance`, `role`) VALUES
-(12, 'admin', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 'buihaidang13062004@gmail.com', 921440, 'admin'),
-(16, 'buihaidang', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '123456789@gmail.com', 9970, 'user');
+(12, 'admin', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 'buihaidang13062004@gmail.com', 940170, 'admin'),
+(16, 'buihaidang', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '123456789@gmail.com', 9850, 'user');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `boards`
+--
+ALTER TABLE `boards`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `cards`
@@ -3150,6 +3885,18 @@ ALTER TABLE `category`
   ADD UNIQUE KEY `slug` (`slug`);
 
 --
+-- Chỉ mục cho bảng `emotes`
+--
+ALTER TABLE `emotes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `guardians`
+--
+ALTER TABLE `guardians`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `post`
 --
 ALTER TABLE `post`
@@ -3170,6 +3917,12 @@ ALTER TABLE `relic_purchase_history`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `summoner_icons`
+--
+ALTER TABLE `summoner_icons`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `topup_log`
 --
 ALTER TABLE `topup_log`
@@ -3187,10 +3940,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `boards`
+--
+ALTER TABLE `boards`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
 -- AUTO_INCREMENT cho bảng `card_back_purchase_history`
 --
 ALTER TABLE `card_back_purchase_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -3199,28 +3958,46 @@ ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT cho bảng `emotes`
+--
+ALTER TABLE `emotes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
+--
+-- AUTO_INCREMENT cho bảng `guardians`
+--
+ALTER TABLE `guardians`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+
+--
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `purchase_history`
 --
 ALTER TABLE `purchase_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT cho bảng `relic_purchase_history`
 --
 ALTER TABLE `relic_purchase_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT cho bảng `summoner_icons`
+--
+ALTER TABLE `summoner_icons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=443;
 
 --
 -- AUTO_INCREMENT cho bảng `topup_log`
 --
 ALTER TABLE `topup_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
